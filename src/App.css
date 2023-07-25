@@ -33,3 +33,15 @@ li a {
 li a:hover {
   background-color: #111;
 }
+
+#border {
+  border: 2px dotted red;
+  width: auto;
+  height: 400px;
+}
+
+#startButton{
+  width: 20%;
+ margin-left: 40%;
+ height: 50px;
+}
