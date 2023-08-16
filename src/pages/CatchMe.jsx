@@ -3,14 +3,20 @@ import { useState } from "react";
 
 export default function CatchMe(){
 
-const [heart,setHeart]=useState();
+const [item,setItem]=useState();
 const [location,setLocation]=useState();
-const [start,setStart]=useState();
+const [start,setStart]=useState(false);
 const[con,setCon]=useState();
 
 
+const startGame= ()=>{
+    setStart(true)
+}
 
 
+if(start==true){
+    
+}
 
 
 
@@ -19,9 +25,11 @@ const[con,setCon]=useState();
 <div>
 <div><h1 id="title">Catch Me</h1></div>
 
-<button id="startButton">Start</button>
+<button id="startButton" onClick={startGame}>Start</button>
 
-<div id="border"> </div>
+<div id="border">
+    <p id="heart"></p>
+     </div>
 </div>
 
 
