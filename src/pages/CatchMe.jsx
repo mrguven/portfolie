@@ -14,9 +14,7 @@ const startGame= ()=>{
 }
 
 
-if(start==true){
-    
-}
+
 
 
 

@@ -14,7 +14,16 @@ const db=mySql.createConnection({
 });
 
 
-db.connect();
+db.connect((err)=> {
+  if (err){throw err}  ;
+  console.log('connected');
+  con.query(sql,(err,result)=>{
+    if (err){
+      throw err;
+      console.log(result);
+    }
+  })
+});
 
 app.use(express.urlencoded({extended:true}));
 
