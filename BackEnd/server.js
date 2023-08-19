@@ -17,7 +17,7 @@ const db=mySql.createConnection({
 db.connect((err)=> {
   if (err){throw err}  ;
   console.log('connected');
-  con.query(sql,(err,result)=>{
+  db.query(sql,(err,result)=>{
     if (err){
       throw err;
       console.log(result);
