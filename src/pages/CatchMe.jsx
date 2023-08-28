@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {  useEffect, useState,useRef } from "react";
 
 
 export default function CatchMe(){
@@ -8,11 +8,21 @@ const [location,setLocation]=useState();
 const [start,setStart]=useState(false);
 const[con,setCon]=useState();
 
+const startButton=useRef();
 
 const startGame= ()=>{
-    setStart(true)
+    setStart(true);
+    
+    
 }
 
+useEffect(()=> {
+    if (start) {startButton.current.style.display= 'none';
+
+};
+
+
+},[start]);
 
 
 
@@ -23,7 +33,7 @@ const startGame= ()=>{
 <div>
 <div><h1 id="title">Catch Me</h1></div>
 
-<button id="startButton" onClick={startGame}>Start</button>
+<button id="startButton" ref={startButton} onClick={startGame}>Start</button>
 
 <div id="border">
     <p id="heart"></p>
