@@ -17,6 +17,15 @@ const startGame= ()=>{
 }
 
 
+const change =()=> {
+
+    setStart(false);
+
+    setTimeout(() => {
+        setStart(true)
+    }, 2000);
+
+}
 
 useEffect(()=> {
     if (start) {startButton.current.style.display= 'none';
@@ -29,6 +38,8 @@ if(!start) {
 }
 
 },[start]);
+
+
 
 
 const heartStyle={
@@ -47,7 +58,7 @@ const heartStyle={
 <button id="startButton" ref={startButton} onClick={startGame}>Start</button>
 
 <div id="border">
-    <img id="heart" src={pic}  style={heartStyle} ref={displayHeart} /> 
+    <img id="heart" src={pic}  style={heartStyle} ref={displayHeart} onClick={change} /> 
      </div>
 </div>
 
