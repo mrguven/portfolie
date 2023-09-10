@@ -11,7 +11,7 @@ const[pic,setPic]=useState(heart);
 const [score,setScore]=useState(0);
 const startButton=useRef();
 const displayHeart=useRef();
-
+const scoreWiew=useRef()
 
 const startGame= ()=>{
     setStart(true);
@@ -35,12 +35,12 @@ setInterval(() => {
         setStart(true)
     }, 2000);
 
-   
+  scoreWiew.current= 'Score:'  ;
 }
 
 
 
-
+console.log(scoreWiew.current);
 
 
 useEffect(()=> {
@@ -79,7 +79,7 @@ const heartStyle={
 <div>
 <div>
     <h1 id="title">Catch Me</h1>
-    <h1>Score:0</h1>
+    <h1 id="score" ref={scoreWiew}> </h1>
 </div> 
 
 
