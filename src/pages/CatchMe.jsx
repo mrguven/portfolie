@@ -10,6 +10,8 @@ const[con,setCon]=useState();
 const[pic,setPic]=useState(heart)
 const startButton=useRef();
 const displayHeart=useRef();
+
+
 const startGame= ()=>{
     setStart(true);
     
@@ -17,15 +19,31 @@ const startGame= ()=>{
 }
 
 
+
 const change =()=> {
 
     setStart(false);
 
-    setTimeout(() => {
+setInterval(() => {
+    setStart(false)
+ }, 3000);
+
+   
+
+setInterval(() => {
         setStart(true)
     }, 2000);
 
+
+  
+
+    
 }
+
+
+
+
+
 
 useEffect(()=> {
     if (start) {startButton.current.style.display= 'none';
