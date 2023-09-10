@@ -26,7 +26,7 @@ const change =()=> {
 
 setInterval(() => {
     setStart(false)
- }, 3000);
+ }, 1000);
 
    
 
@@ -46,8 +46,14 @@ setInterval(() => {
 
 
 useEffect(()=> {
+
+    const posX= Math.floor(Math.random()*100);
+    const posy= Math.floor(Math.random()*100);
+
+
     if (start) {startButton.current.style.display= 'none';
     displayHeart.current.style.display= 'block';
+
 
 };
 
