@@ -10,6 +10,7 @@ const[con,setCon]=useState();
 const[pic,setPic]=useState(heart);
 const [score,setScore]=useState(0);
 const [best,setBest]=useState(0);
+const [localBest,setLocalBest]=useState("");
 const startButton=useRef();
 const displayHeart=useRef();
 const scoreWiew=useRef()
@@ -22,7 +23,7 @@ const startGame= ()=>{
 }
 
 
-const sc="";
+
 const change =()=> {
 
     setStart(false);
@@ -46,13 +47,18 @@ if(score>best){
 
 
 }
+
+    if(best>localBest){setLocalBest(best)};
 console.log(score);
 
-bestScoreView.current= 'best score:' + best;
+
 scoreWiew.current= 'Score: '+ score;
 
-localStorage.setItem('bestScore', best);
+localStorage.setItem('bestScore',JSON.stringify(localBest));
+const bestFromLocale=(JSON.parse(localStorage.getItem('bestScore')))
 
+
+bestScoreView.current= 'best score:' + bestFromLocale;
 
 useEffect(()=> {
     const posX= Math.floor(Math.random()*900);
