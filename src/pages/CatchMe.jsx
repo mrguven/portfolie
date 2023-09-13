@@ -7,6 +7,7 @@ const [item,setItem]=useState();
 const [location,setLocation]=useState();
 const [start,setStart]=useState(false);
 const[con,setCon]=useState();
+const [pause,setPause]=useState(false)
 const[pic,setPic]=useState(heart);
 const [score,setScore]=useState(0);
 const [best,setBest]=useState(0);
@@ -25,10 +26,10 @@ const startGame= ()=>{
 
 
 const change =()=> {
-
+    setPause(true)
     setStart(false);
 
-setInterval(() => {
+ var startInterval=setInterval(() => {
     setStart(false)
  }, 1000);
 
@@ -43,9 +44,10 @@ if(score>best){
     setBest(score)
 }
 
+}
 
-
-
+const pauseGame=()=> {
+clearInterval(startInterval)
 }
 
     if(best>localBest){setLocalBest(best)};
@@ -101,6 +103,10 @@ const heartStyle={
 
 
 <button id="startButton" ref={startButton} onClick={startGame}>Start</button>
+{ pause && 
+    <button id="pause"  ref={pause}  onClick={pauseGame}>Pause</button>
+}
+
     <div>
         <div id="border">
                  <img id="heart" src={pic}  style={heartStyle} ref={displayHeart} onClick={change} /> 
