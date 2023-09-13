@@ -9,9 +9,11 @@ const [start,setStart]=useState(false);
 const[con,setCon]=useState();
 const[pic,setPic]=useState(heart);
 const [score,setScore]=useState(0);
+const [best,setBest]=useState(0);
 const startButton=useRef();
 const displayHeart=useRef();
 const scoreWiew=useRef()
+const bestScoreView=useRef();
 
 const startGame= ()=>{
     setStart(true);
@@ -20,7 +22,7 @@ const startGame= ()=>{
 }
 
 
-
+const sc="";
 const change =()=> {
 
     setStart(false);
@@ -34,18 +36,27 @@ setInterval(() => {
 setInterval(() => {
         setStart(true)
     }, 2000);
-
-  scoreWiew.current= 'Score:'  ;
+setScore((score)=>score+=1)
+  
+if(score>best){
+    setBest(score)
 }
 
 
 
-console.log(scoreWiew.current);
+
+}
+console.log(score);
+
+bestScoreView.current= 'best score:' + best;
+scoreWiew.current= 'Score: '+ score;
+
+localStorage.setItem('bestScore', best);
 
 
 useEffect(()=> {
-    const posX= Math.floor(Math.random()*1000);
-    const posY= Math.floor(Math.random()*400);
+    const posX= Math.floor(Math.random()*900);
+    const posY= Math.floor(Math.random()*350);
     
     console.log(posX);
  
@@ -79,7 +90,7 @@ const heartStyle={
 <div>
 <div>
     <h1 id="title">Catch Me</h1>
-    <h1 id="score" ref={scoreWiew}> </h1>
+    <h1 id="score" ref={scoreWiew} > {scoreWiew.current} <br /> {bestScoreView.current}</h1>
 </div> 
 
 
