@@ -1,11 +1,16 @@
 export default function MyTaxi () {
 
 
-
+const head= {
+    fontFamily:'Courier',
+    fontSize:'100px',
+    textAlign:'center'
+    
+}
 
     return(
 
-        <h1>this is taxi page</h1>
+        <h1 style={head}>MyTaxi</h1>
 
     )
 }

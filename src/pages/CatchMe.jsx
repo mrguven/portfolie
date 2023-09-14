@@ -18,6 +18,12 @@ const scoreWiew=useRef()
 const bestScoreView=useRef();
 const pauseRef=useRef();
 
+
+
+
+let bestFromLocale;
+let id;
+let id2;
 const startGame= ()=>{
     setStart(true);
     
@@ -28,28 +34,23 @@ const startInterval=useRef();
 const startInterval2=useRef();
 
 const change =()=> {
-    setPause(true)
+    setPause(true);
     setStart(false);
 
- const id=setInterval(() => {
-    setStart(false)
- }, 1000);
+    id=setInterval(() => {
+        setStart(false)
+     }, 1000);
+    
+       
+    
+     id2= setInterval(() => {
+            setStart(true)
+        }, 2000);
+    setScore((score)=>score+=1)
 
-   
-
- const id2= setInterval(() => {
-        setStart(true)
-    }, 2000);
-setScore((score)=>score+=1)
-  
-if(score>best){
-    setBest(score)
+ 
 }
 
-startInterval.current=id;
-startInterval2.current=id2;
-
-}
 
 
 const pauseGame=()=> {
@@ -62,7 +63,7 @@ console.log(startInterval2.current);
    
 
 
-let bestFromLocale;
+
 
 useEffect(()=> {
     const posX= Math.floor(Math.random()*900);
@@ -87,10 +88,19 @@ console.log(score);
 scoreWiew.current= 'Score: '+ score;
 
 
-
+  
+if(score>best){
+    setBest(score)
+}
 
 
 },[start,localBest]);
+
+startInterval.current=id;
+startInterval2.current=id2;
+
+
+
 
 localStorage.setItem('bestScore',JSON.stringify(localBest));
  bestFromLocale=(JSON.parse(localStorage.getItem('bestScore')))
