@@ -14,6 +14,7 @@ export default function NavBar() {
 <ul>
   <li><Link to="/">Home</Link></li>
   <li><Link to="/costumers">costumers</Link></li>
+  <li><Link to='/mytaxi'>MyTaxi</Link></li>
   <li><Link to='/stock'>Stock</Link></li>
   <li><Link to="/contact">Contact</Link></li>
   <li><Link to="/about">About</Link></li>

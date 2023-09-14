@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Stock from './pages/Stock';
 import About from './pages/About';
 import Costumers from './pages/Costumers';
+import MyTaxi from './pages/MyTaxi';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
 <Route path='/catchMe' element={<CatchMe />} />
 <Route path='/stock' element={<Stock />} />
 <Route path='/about' element={<About />} />
+<Route path='/mytaxi' element={<MyTaxi />}></Route>
 </Routes>
 
 </BrowserRouter>

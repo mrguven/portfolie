@@ -6,7 +6,7 @@ export default function CatchMe(){
 const [item,setItem]=useState();
 const [location,setLocation]=useState();
 const [start,setStart]=useState(false);
-const[con,setCon]=useState();
+const[con,setCon]=useState(false);
 const [pause,setPause]=useState(false)
 const[pic,setPic]=useState(heart);
 const [score,setScore]=useState(0);
