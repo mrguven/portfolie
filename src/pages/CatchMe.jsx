@@ -16,6 +16,7 @@ const startButton=useRef();
 const displayHeart=useRef();
 const scoreWiew=useRef()
 const bestScoreView=useRef();
+const pauseRef=useRef();
 
 const startGame= ()=>{
     setStart(true);
@@ -23,19 +24,20 @@ const startGame= ()=>{
     
 }
 
-
+const startInterval=useRef();
+const startInterval2=useRef();
 
 const change =()=> {
     setPause(true)
     setStart(false);
 
- var startInterval=setInterval(() => {
+ const id=setInterval(() => {
     setStart(false)
  }, 1000);
 
    
 
-setInterval(() => {
+ const id2= setInterval(() => {
         setStart(true)
     }, 2000);
 setScore((score)=>score+=1)
@@ -44,23 +46,23 @@ if(score>best){
     setBest(score)
 }
 
+startInterval.current=id;
+startInterval2.current=id2;
+
 }
+
 
 const pauseGame=()=> {
-clearInterval(startInterval)
+clearInterval(startInterval.current);
+clearInterval(startInterval2.current);
+
+console.log(startInterval2.current);
 }
 
-    if(best>localBest){setLocalBest(best)};
-console.log(score);
+   
 
 
-scoreWiew.current= 'Score: '+ score;
-
-localStorage.setItem('bestScore',JSON.stringify(localBest));
-const bestFromLocale=(JSON.parse(localStorage.getItem('bestScore')))
-
-
-bestScoreView.current= 'best score:' + bestFromLocale;
+let bestFromLocale;
 
 useEffect(()=> {
     const posX= Math.floor(Math.random()*900);
@@ -80,16 +82,30 @@ if(!start) {
     displayHeart.current.style.display= 'none';
 }
 
-},[start]);
+if(best>localBest){setLocalBest(best)};
+console.log(score);
+scoreWiew.current= 'Score: '+ score;
 
 
 
 
+
+},[start,localBest]);
+
+localStorage.setItem('bestScore',JSON.stringify(localBest));
+ bestFromLocale=(JSON.parse(localStorage.getItem('bestScore')))
+ bestScoreView.current= 'best score:' + bestFromLocale;
 const heartStyle={
     width:"75px",
     height:'75px',
 
 
+}
+
+const pauseButtonStyle={
+    width:'170px',
+    height:'55px',
+    marginLeft:'50%'
 }
 
 
@@ -98,13 +114,14 @@ const heartStyle={
 <div>
 <div>
     <h1 id="title">Catch Me</h1>
-    <h1 id="score" ref={scoreWiew} > {scoreWiew.current} <br /> {bestScoreView.current}</h1>
+    <h1 id="score" ref={scoreWiew} > {scoreWiew.current} <br /></h1>
+    <h1> {bestScoreView.current}</h1>
 </div> 
 
 
 <button id="startButton" ref={startButton} onClick={startGame}>Start</button>
 { pause && 
-    <button id="pause"  ref={pause}  onClick={pauseGame}>Pause</button>
+    <button id="pause"  ref={pauseRef} style={pauseButtonStyle}  onClick={pauseGame}>Pause</button>
 }
 
     <div>
