@@ -1,58 +1,55 @@
 export default function MyTaxi () {
 
 
-const head= {
-    fontFamily:'Courier',
-    fontSize:'100px',
-    textAlign:'center'
-    
-}
-const headVertical={
-    fontFamily:'Courier',
-    fontSize:'100px',
-    textAlign:'center',
-    writingMode: 'vertical-rl',
-textOrientation: 'mixed',
-}
 
 
-const departureStyle={
-    fontSize:'30px',
-    margin:'15px'
-}
-const arrivingStyle={
-    fontSize:'30px',
-    margin:'15px'
-}
+
+
+
 
     return(
 <div>
-    <div >
-        <h1 style={head}>MyTaxi</h1>
-        <h1 style={headVertical}>MyTaxi</h1>
+    <div id="header" >
+        <div>
+        <h1 className='headVertical'>MyTaxi</h1>
+        </div>
+        <div>
+        <h1 id='head'>MyTaxi</h1>
+        </div>
+        <div>
+        <h1 className='headVertical'>MyTaxi</h1>
+        </div>
     </div>
 
 
 
-<form action="" method="get">
-    <div>
+<form action="/makeReservation" method="get" id="timingInfo">
+    
          <div>
-                  <label htmlFor="departure" style={departureStyle}  >
-                    Departure:   <input type="text" name="departure" id="departure" />
+                  <label htmlFor="departure" className="reservationLabel"  >
+                    Departure:  
                   </label>
+                  </div>
+                  <div>
+                  <input type="text" name="departure" className="reservationInput" id="departure"  placeholder="departure"/>
+                  </div>
+        <div>
+                  <label htmlFor="arriving"   className="reservationLabel">
+                    Arriving: </label>
+                           
         </div>
         <div>
-                  <label htmlFor="arriving" style={arrivingStyle}>
-                    Arriving: <input type="text" name="arriving" id="arriving" />
-                 </label>
+        <input type="text" name="arriving" className="reservationInput"  placeholder="arriving"/>
         </div>
         <div>
-            <label htmlFor="date"> Date 
-             <input type="datetime-local" name="time" id="time" />
+            <label htmlFor="date" className="reservationLabel"> Date:
+             </label>
             
-            </label>
         </div>
-    </div>
+        <div>
+        <input type="datetime-local" name="time" className="reservationInput"  />
+        </div>
+    <button type="submit" className="submitButtons">Make reservation</button>
 </form>
 
 
