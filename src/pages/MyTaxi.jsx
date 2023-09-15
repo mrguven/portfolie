@@ -7,6 +7,13 @@ const head= {
     textAlign:'center'
     
 }
+const headVertical={
+    fontFamily:'Courier',
+    fontSize:'100px',
+    textAlign:'center',
+    writingMode: 'vertical-rl',
+textOrientation: 'mixed',
+}
 
 
 const departureStyle={
@@ -20,7 +27,10 @@ const arrivingStyle={
 
     return(
 <div>
+    <div >
         <h1 style={head}>MyTaxi</h1>
+        <h1 style={headVertical}>MyTaxi</h1>
+    </div>
 
 
 
