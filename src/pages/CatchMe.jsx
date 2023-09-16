@@ -102,8 +102,8 @@ startInterval2.current=id2;
 
 
 
-localStorage.setItem('bestScore',JSON.stringify(localBest));
- bestFromLocale=(JSON.parse(localStorage.getItem('bestScore')))
+window.localStorage.setItem('bestScore',JSON.stringify(localBest));
+ bestFromLocale=JSON.parse(window.localStorage.getItem('bestScore'));
  bestScoreView.current= 'best score:' + bestFromLocale;
 const heartStyle={
     width:"75px",
