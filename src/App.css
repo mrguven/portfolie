@@ -50,9 +50,11 @@ li a:hover {
 
 /* mytaxi page */
 #header{
-  display: flex;
+  display: grid;
   margin-top: 10px;
   color: rgb(175, 106, 240);
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 100%;
 
 }
 
@@ -71,12 +73,14 @@ li a:hover {
 text-orientation:  mixed
 }
 
-#timingInfo {
+#reservationInfo {
   display: flexbox;
  width: 50% 50%;
   margin: 4%;
   border: 1px blue;
   border-style: inset;
+  margin-top: 10px;
+  background-image: linear-gradient(to right, rgb(235, 234, 255), rgb(101, 24, 245));
   
 }
 
@@ -84,6 +88,8 @@ text-orientation:  mixed
   font-size:30px;
   margin:15px;
   width: 30%;
+  color: rgb(126, 126, 255);
+  
 }
 
 .reservationInput{
@@ -91,6 +97,11 @@ text-orientation:  mixed
   margin: 2%;
   height: 35px;
   font-size: 30px;
+  border-color: rgb(42, 3, 151);
+  border-radius: 2%;
+  border-start-start-radius: 20px;
+  background-color: rgb(235, 234, 255);
+  
   
 }
 
@@ -138,4 +149,10 @@ text-orientation:  mixed
   background-color: #c85000;
   box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
   transform: translateY(0);
+}
+
+#taxiImgParent{
+
+  width: 70%;
+  height: 60%;
 }

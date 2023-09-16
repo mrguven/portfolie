@@ -1,3 +1,8 @@
+
+import taxi from '../taxi.jpg'
+
+
+
 export default function MyTaxi () {
 
 
@@ -19,11 +24,14 @@ export default function MyTaxi () {
         <div>
         <h1 className='headVertical'>MyTaxi</h1>
         </div>
+        <div >
+            <img src={taxi} alt="taxi" id='taxiImgParent' />
+        </div>
     </div>
 
 
 
-<form action="/makeReservation" method="get" id="timingInfo">
+<form action="/makeReservation" method="get" id="reservationInfo">
     
          <div>
                   <label htmlFor="departure" className="reservationLabel"  >
