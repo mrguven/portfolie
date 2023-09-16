@@ -28,6 +28,15 @@ export default function MyTaxi () {
         </div>
         <div >
             <img src={taxi} alt="taxi" id='taxiImg' />
+            
+        </div>
+        <div >
+            <img src={taxi} alt="taxi" id='taxiImg' />
+            
+        </div>
+        <div >
+            <img src={taxi} alt="taxi" id='taxiImg' />
+            
         </div>
     </div>
 
