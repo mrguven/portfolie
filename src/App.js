@@ -9,6 +9,7 @@ import Stock from './pages/Stock';
 import About from './pages/About';
 import Costumers from './pages/Costumers';
 import MyTaxi from './pages/MyTaxi';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
 <Route path='/about' element={<About />} />
 <Route path='/mytaxi' element={<MyTaxi />}></Route>
 </Routes>
-
+<Footer />
 </BrowserRouter>
   
 
