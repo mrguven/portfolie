@@ -102,21 +102,12 @@ startInterval2.current=id2;
 
 
 
-window.localStorage.setItem('bestScore',JSON.stringify(localBest));
- bestFromLocale=JSON.parse(window.localStorage.getItem('bestScore'));
+localStorage.setItem('bestScore',JSON.stringify(localBest));
+ bestFromLocale=JSON.parse(localStorage.getItem('bestScore'));
  bestScoreView.current= 'best score:' + bestFromLocale;
-const heartStyle={
-    width:"75px",
-    height:'75px',
 
 
-}
 
-const pauseButtonStyle={
-    width:'170px',
-    height:'55px',
-    marginLeft:'50%'
-}
 
 
     return(
@@ -131,12 +122,12 @@ const pauseButtonStyle={
 
 <button id="startButton" ref={startButton} onClick={startGame}>Start</button>
 { pause && 
-    <button id="pause"  ref={pauseRef} style={pauseButtonStyle}  onClick={pauseGame}>Pause</button>
+    <button id="pauseButtonStyle"  ref={pauseRef}  onClick={pauseGame}>Pause</button>
 }
 
     <div>
         <div id="border">
-                 <img id="heart" src={pic}  style={heartStyle} ref={displayHeart} onClick={change} /> 
+                 <img id="heartStyle" src={pic}   ref={displayHeart} onClick={change} /> 
          </div>
     </div>
 </div>

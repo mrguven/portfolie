@@ -14,6 +14,8 @@ export default function MyTaxi () {
 
     return(
 <div>
+
+
     <div id="header" >
         <div>
         <h1 className='headVertical'>MyTaxi</h1>
@@ -25,7 +27,7 @@ export default function MyTaxi () {
         <h1 className='headVertical'>MyTaxi</h1>
         </div>
         <div >
-            <img src={taxi} alt="taxi" id='taxiImgParent' />
+            <img src={taxi} alt="taxi" id='taxiImg' />
         </div>
     </div>
 
@@ -57,7 +59,7 @@ export default function MyTaxi () {
         <div>
         <input type="datetime-local" name="time" className="reservationInput"  />
         </div>
-    <button type="submit" className="submitButtons">Make reservation</button>
+    <button type="submit"  className="submitButtons">Make reservation</button>
 </form>
 
 
