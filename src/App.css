@@ -55,6 +55,7 @@ li a:hover {
   color: rgb(175, 106, 240);
   grid-template-columns: 25% 50% 25%;
   grid-template-rows: 100%;
+  
 
 }
 
@@ -74,8 +75,8 @@ text-orientation:  mixed
 }
 
 #reservationInfo {
-  display: flexbox;
- width: 50% 50%;
+  display: grid;
+ grid-template-columns: 50% 50%;
   margin: 4%;
   border: 1px blue;
   border-style: inset;
