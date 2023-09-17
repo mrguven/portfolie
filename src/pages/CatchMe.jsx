@@ -13,6 +13,8 @@ const [score,setScore]=useState(0);
 const [best,setBest]=useState(Number);
 const [localBest,setLocalBest]=useState(Number);
 const [bestLocal,setBestLocal]=useState(Number);
+const [interval1,setInterval1]=useState(null);
+const [interval2,setInterval2]=useState(null)
 const startButton=useRef();
 const displayHeart=useRef();
 const scoreWiew=useRef()
@@ -31,34 +33,40 @@ const startGame= ()=>{
 
 
 
-let interval;
-let interval2;
+
 
 const change =()=> {
     setPause(true);
     setStart(false);
 
-    interval=setInterval(() => {
+if((interval1 && interval2) === null) {
+    setInterval1(setInterval(() => {
         setStart(false)
-     }, 1000);
+     }, 1000))
     
        
     
-     interval2= setInterval(() => {
+     setInterval2(setInterval(() => {
             setStart(true)
-        }, 2000);
+        }, 2000))
+    }
     setScore((score)=>score+=1)
 
- 
+ setPause(true)
 }
 
 
 
 const pauseGame=()=> {
-clearInterval(interval);
-clearInterval(interval2);
+    setStart(false)
 
-console.log(interval);
+    clearInterval(interval1);
+    clearInterval(interval2);
+    setInterval1(null);
+    setInterval2(null);
+setPause(false);
+startButton.current.style.display= 'block';
+
 }
 
    
@@ -82,6 +90,8 @@ useEffect(()=> {
 
 if(!start) {
     displayHeart.current.style.display= 'none';
+   
+   
 }
 
 
