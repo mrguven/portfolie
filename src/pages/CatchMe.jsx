@@ -9,9 +9,10 @@ const [start,setStart]=useState(false);
 const[con,setCon]=useState(false);
 const [pause,setPause]=useState(false)
 const[pic,setPic]=useState(heart);
-const [score,setScore]=useState(0);
-const [best,setBest]=useState(0);
+const [score,setScore]=useState();
+const [best,setBest]=useState();
 const [localBest,setLocalBest]=useState();
+const [bestLocal,setBestLocal]=useState();
 const startButton=useRef();
 const displayHeart=useRef();
 const scoreWiew=useRef()
@@ -21,29 +22,29 @@ const pauseRef=useRef();
 
 
 
-let bestFromLocale;
-let id;
-let id2;
+
 const startGame= ()=>{
     setStart(true);
     
     
 }
 
-const startInterval=useRef();
-const startInterval2=useRef();
+
+
+let interval;
+let interval2;
 
 const change =()=> {
     setPause(true);
     setStart(false);
 
-    id=setInterval(() => {
+    interval=setInterval(() => {
         setStart(false)
      }, 1000);
     
        
     
-     id2= setInterval(() => {
+     interval2= setInterval(() => {
             setStart(true)
         }, 2000);
     setScore((score)=>score+=1)
@@ -54,10 +55,10 @@ const change =()=> {
 
 
 const pauseGame=()=> {
-clearInterval(startInterval.current);
-clearInterval(startInterval2.current);
+clearInterval(interval);
+clearInterval(interval2);
 
-console.log(startInterval2.current);
+console.log(interval);
 }
 
    
@@ -91,33 +92,25 @@ scoreWiew.current= 'Score: '+ score;
 
 
 
-
-
-
-
-useEffect(()=>{
-
-
-    
-    if(score>best){
-        setBest(score)
-    }
-    
-     if(best>localBest){setLocalBest(best);
-        localStorage.setItem('bestScore',JSON.stringify(localBest));
-    };
+if(score>best){
+    setBest(score)
 }
 
+
+if(best>localBest){setLocalBest(best)};
+useEffect(()=>{
+    
+ localStorage.setItem('bestScore',JSON.stringify(localBest));
+    }
 ,[localBest])
 
 
 useEffect(()=>{
-    bestFromLocale=JSON.parse(localStorage.getItem('bestScore'));
-    bestScoreView.current= 'best score:' + bestFromLocale;
-},[])
+    setBestLocal(JSON.parse(localStorage.getItem('bestScore')));
+    bestScoreView.current= 'best score:' + bestLocal;
+})
 
-startInterval.current=id;
-startInterval2.current=id2;
+
 
 
 
@@ -139,7 +132,8 @@ console.log(score);
 <div>
     <h1 id="title">Catch Me</h1>
     <h1 id="score" ref={scoreWiew} > {scoreWiew.current} <br /></h1>
-    <h1> {bestScoreView.current}</h1>
+    {bestLocal !=0 &&  <h1> {bestScoreView.current}</h1>}
+    
 </div> 
 
 
