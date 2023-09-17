@@ -11,7 +11,7 @@ const [pause,setPause]=useState(false)
 const[pic,setPic]=useState(heart);
 const [score,setScore]=useState(0);
 const [best,setBest]=useState(0);
-
+const [localBest,setLocalBest]=useState();
 const startButton=useRef();
 const displayHeart=useRef();
 const scoreWiew=useRef()
@@ -20,7 +20,7 @@ const pauseRef=useRef();
 
 
 
-let localBest=0;
+
 let bestFromLocale;
 let id;
 let id2;
@@ -85,22 +85,36 @@ if(!start) {
 
 
 scoreWiew.current= 'Score: '+ score;
-
+},[start]);
 
   
-if(score>best){
-    setBest(score)
+
+
+
+
+
+
+
+useEffect(()=>{
+
+
+    
+    if(score>best){
+        setBest(score)
+    }
+    
+     if(best>localBest){setLocalBest(best);
+        localStorage.setItem('bestScore',JSON.stringify(localBest));
+    };
 }
 
- if(best>localBest){localBest=best;
-    localStorage.setItem('bestScore',JSON.stringify(localBest));
-};
-
-bestFromLocale=JSON.parse(localStorage.getItem('bestScore'));
-bestScoreView.current= 'best score:' + bestFromLocale;
+,[localBest])
 
 
-},[start,localBest]);
+useEffect(()=>{
+    bestFromLocale=JSON.parse(localStorage.getItem('bestScore'));
+    bestScoreView.current= 'best score:' + bestFromLocale;
+},[])
 
 startInterval.current=id;
 startInterval2.current=id2;
