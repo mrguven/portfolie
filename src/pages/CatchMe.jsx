@@ -1,5 +1,5 @@
 import {  useEffect, useState,useRef } from "react";
-import heart from '../heart-beat.gif'
+import heart from '../x.gif'
 
 export default function CatchMe(){
 
@@ -9,10 +9,10 @@ const [start,setStart]=useState(false);
 const[con,setCon]=useState(false);
 const [pause,setPause]=useState(false)
 const[pic,setPic]=useState(heart);
-const [score,setScore]=useState(Number);
+const [score,setScore]=useState(0);
 
-const [bestToLocal,setBestToLocal]=useState(Number);
-const [bestFromLocal,setBestFromLocal]=useState(Number);
+const [bestToLocal,setBestToLocal]=useState(0);
+const [bestFromLocal,setBestFromLocal]=useState(0);
 const [interval1,setInterval1]=useState(null);
 const [interval2,setInterval2]=useState(null)
 const startButton=useRef();
@@ -75,18 +75,25 @@ startButton.current.style.display= 'block';
 
 
 useEffect(()=> {
-    const posX= Math.floor(Math.random()*800);
-    const posY= Math.floor(Math.random()*300);
+    let posX= Math.floor(Math.random()*800);
+    let posY= Math.floor(Math.random()*300);
     
     console.log(posX);
  
     if (start) {startButton.current.style.display= 'none';
     displayHeart.current.style.display= 'block';
     displayHeart.current.style.position= 'relative';
-    
-        
+    if (posX>window.innerWidth) {
+        posX=window.innerWidth-50;
+        displayHeart.current.style.left=posX+'px';
+        displayHeart.current.style.width='50px';
+        displayHeart.current.style.heigth='30px';
+    }else {
         displayHeart.current.style.top=posY+'px';
-    displayHeart.current.style.left=posX+'px';
+        displayHeart.current.style.left=posX+'px';
+    }
+        
+        
 };
 
 if(!start) {
@@ -98,24 +105,30 @@ scoreWiew.current= 'Score: '+ score;
  
 
 
-
+console.log(window.innerWidth);
 
 
 useEffect(()=>{
     
-    if(score>bestToLocal){
-        setBestToLocal(score)
-    }
-    setBestFromLocal(JSON.parse(localStorage.getItem('bestScore')));
+        if(score>bestToLocal){
+            setBestToLocal(score);
+            
+        }
+       
+        if(bestToLocal>bestFromLocal){
     
-    if(bestToLocal>bestFromLocal){
+            localStorage.setItem('bestScore',JSON.stringify(bestToLocal));
+            
+        }
+        
+        
+  
+ 
 
-    localStorage.setItem('bestScore',JSON.stringify(bestToLocal))
-}
-    
+        setBestFromLocal(JSON.parse(localStorage.getItem('bestScore')));
 
    
-
+        console.log(score);
     
  
     }
@@ -123,9 +136,10 @@ useEffect(()=>{
 
 
 useEffect(()=>{
+    
     setBestFromLocal(JSON.parse(localStorage.getItem('bestScore')));
    
-},[score])
+})
 
 
 bestScoreView.current= 'best score:' + bestFromLocal;
@@ -136,7 +150,7 @@ bestScoreView.current= 'best score:' + bestFromLocal;
 
 
 
-console.log(score);
+
 
 
 
