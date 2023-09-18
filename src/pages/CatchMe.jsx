@@ -9,10 +9,10 @@ const [start,setStart]=useState(false);
 const[con,setCon]=useState(false);
 const [pause,setPause]=useState(false)
 const[pic,setPic]=useState(heart);
-const [score,setScore]=useState(0);
-const [best,setBest]=useState(Number);
-const [localBest,setLocalBest]=useState(Number);
-const [bestLocal,setBestLocal]=useState(Number);
+const [score,setScore]=useState(Number);
+
+const [bestToLocal,setBestToLocal]=useState(Number);
+const [bestFromLocal,setBestFromLocal]=useState(Number);
 const [interval1,setInterval1]=useState(null);
 const [interval2,setInterval2]=useState(null)
 const startButton=useRef();
@@ -83,50 +83,54 @@ useEffect(()=> {
     if (start) {startButton.current.style.display= 'none';
     displayHeart.current.style.display= 'block';
     displayHeart.current.style.position= 'relative';
-    displayHeart.current.style.top=posY+'px';
+    
+        
+        displayHeart.current.style.top=posY+'px';
     displayHeart.current.style.left=posX+'px';
-
 };
 
 if(!start) {
     displayHeart.current.style.display= 'none';
-   
-   
 }
-
-
 scoreWiew.current= 'Score: '+ score;
 },[start]);
 
-  
-
-
-
-if(score>best){
-    setBest(score)
-}
-
-
-if(best>localBest){setLocalBest(best)};
-useEffect(()=>{
-    if(localBest) {
-        localStorage.setItem('bestScore',JSON.stringify(localBest));
-    }
  
-    }
-,[localBest])
+
+
+
 
 
 useEffect(()=>{
-    if(bestLocal>0) {
-        setBestLocal(JSON.parse(localStorage.getItem('bestScore')));
-    }
- 
     
-})
+    if(score>bestToLocal){
+        setBestToLocal(score)
+    }
+    setBestFromLocal(JSON.parse(localStorage.getItem('bestScore')));
+    
+    if(bestToLocal>bestFromLocal){
+
+    localStorage.setItem('bestScore',JSON.stringify(bestToLocal))
+}
+    
+
+   
+
+    
+ 
+    }
+,[score])
 
 
-bestScoreView.current= 'best score:' + bestLocal;
+useEffect(()=>{
+    setBestFromLocal(JSON.parse(localStorage.getItem('bestScore')));
+   
+},[score])
+
+
+bestScoreView.current= 'best score:' + bestFromLocal;
+
+
 
 
 
@@ -147,7 +151,7 @@ console.log(score);
 <div>
     <h1 id="title">Catch Me</h1>
     <h1 id="score" ref={scoreWiew} > {scoreWiew.current} <br /></h1>
-    {bestLocal >0  &&  <h1> {bestScoreView.current}</h1>}
+    {bestFromLocal >0  &&  <h1> {bestScoreView.current}</h1>}
     
 </div> 
 
