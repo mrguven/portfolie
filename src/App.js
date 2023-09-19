@@ -10,6 +10,7 @@ import About from './pages/About';
 import Costumers from './pages/Costumers';
 import MyTaxi from './pages/MyTaxi';
 import Footer from './components/Footer';
+import Nssg from './pages/Nssg';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
 <Route path='/stock' element={<Stock />} />
 <Route path='/about' element={<About />} />
 <Route path='/mytaxi' element={<MyTaxi />}></Route>
+<Route path='/nssg' element={<Nssg />}></Route>
 </Routes>
 <Footer />
 </BrowserRouter>
