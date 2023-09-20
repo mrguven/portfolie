@@ -6,7 +6,7 @@ export default function CatchMe(){
 const [item,setItem]=useState();
 const [location,setLocation]=useState();
 const [start,setStart]=useState(false);
-const[con,setCon]=useState(false);
+const[con,setCon]=useState(2);
 const [pause,setPause]=useState(false)
 const[pic,setPic]=useState(heart);
 const [score,setScore]=useState(0);
@@ -33,12 +33,14 @@ const startGame= ()=>{
 
 
 
-
+useEffect(()=>{
+setCon((con)=>con--)
+},[start])
 
 const change =()=> {
     setPause(true);
     setStart(false);
-
+setCon(2)
 if((interval1 && interval2) === null) {
     setInterval1(setInterval(() => {
         setStart(false)
@@ -54,6 +56,7 @@ if((interval1 && interval2) === null) {
 
  setPause(true)
 }
+
 
 
 
