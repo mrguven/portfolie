@@ -6,7 +6,7 @@ export default function CatchMe(){
 const [item,setItem]=useState();
 const [location,setLocation]=useState();
 const [start,setStart]=useState(false);
-const[con,setCon]=useState(2);
+const[con,setCon]=useState(3);
 const [pause,setPause]=useState(false)
 const[pic,setPic]=useState(heart);
 const [score,setScore]=useState(0);
@@ -33,14 +33,12 @@ const startGame= ()=>{
 
 
 
-useEffect(()=>{
-setCon((con)=>con--)
-},[start])
+
 
 const change =()=> {
     setPause(true);
     setStart(false);
-setCon(2)
+
 if((interval1 && interval2) === null) {
     setInterval1(setInterval(() => {
         setStart(false)
@@ -50,11 +48,14 @@ if((interval1 && interval2) === null) {
     
      setInterval2(setInterval(() => {
             setStart(true)
+
+
         }, 2000))
     }
     setScore((score)=>score+=1)
 
- setPause(true)
+ setPause(true);
+ setCon(2)
 }
 
 
@@ -99,6 +100,27 @@ useEffect(()=> {
         
 };
 
+
+
+if(con>0){
+    setCon(con-1) 
+ }
+ else if(con==0) {
+       alert('you have lost');
+setCon(3);
+clearInterval(interval1);
+    clearInterval(interval2);
+    setInterval1(null);
+    setInterval2(null);
+setPause(false);
+startButton.current.style.display= 'block';
+
+ }
+
+
+console.log(con);
+
+
 if(!start) {
     displayHeart.current.style.display= 'none';
 }
@@ -141,6 +163,8 @@ useEffect(()=>{
 useEffect(()=>{
     
     setBestFromLocal(JSON.parse(localStorage.getItem('bestScore')));
+
+
    
 })
 
