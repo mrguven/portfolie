@@ -44,9 +44,31 @@ li a:hover {
   width: 20%;
  margin-left: 40%;
  height: 50px;
+ border-radius: 20px;
+ background-color: rgb(84, 95, 253);
+}
+#pauseButtonStyle{
+  width: 20%;
+  margin-left: 40%;
+  height: 50px;
+  border-radius: 20px;
+  background-color: chocolate;
+
+}
+
+.scoreInfo {
+  font-family: Courier;
+  color: darkblue;
 }
 
 
+
+
+
+#heartStyle{
+  width: 175px;
+  height: 175px;
+}
 
 /* mytaxi page */
 #header{
@@ -176,16 +198,7 @@ text-orientation:  mixed
   
 }
 
-#pauseButtonStyle{
-  width:170px;
-  height:55px;
-  margin-left:50%
-}
 
-#heartStyle{
-  width: 175px;
-  height: 175px;
-}
 
 
 
@@ -201,7 +214,3 @@ text-orientation:  mixed
 
 /* catchMe */
 
-.scoreInfo {
-  font-family: Courier;
-  color: darkblue;
-}

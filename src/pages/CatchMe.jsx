@@ -23,15 +23,11 @@ const pauseRef=useRef();
 
 
 
-
-
 const startGame= ()=>{
     setStart(true);
     
     
 }
-
-
 
 
 
@@ -59,8 +55,6 @@ if((interval1 && interval2) === null) {
 }
 
 
-
-
 const pauseGame=()=> {
     setStart(false)
 
@@ -72,10 +66,6 @@ setPause(false);
 startButton.current.style.display= 'block';
 
 }
-
-   
-
-
 
 
 useEffect(()=> {
@@ -96,11 +86,8 @@ useEffect(()=> {
         displayHeart.current.style.top=posY+'px';
         displayHeart.current.style.left=posX+'px';
     }
-        
-        
+      
 };
-
-
 
 if(con>0){
     setCon(con-1) 
@@ -128,61 +115,31 @@ if(!start) {
 scoreWiew.current= 'Score: '+ score;
 },[start]);
 
- 
-
-
 console.log(window.innerWidth);
-
 
 useEffect(()=>{
     
         if(score>bestToLocal){
-            setBestToLocal(score);
-            
+            setBestToLocal(score);   
         }
-       
-        if(bestToLocal>bestFromLocal){
+               if(bestToLocal>bestFromLocal){
     
             localStorage.setItem('bestScore',JSON.stringify(bestToLocal));
             
         }
-        
-        
-  
- 
-
-        setBestFromLocal(JSON.parse(localStorage.getItem('bestScore')));
-
-   
-        console.log(score);
-    
- 
-    }
+   setBestFromLocal(JSON.parse(localStorage.getItem('bestScore')));
+ console.log(score);
+ }
 ,[score])
 
 
 useEffect(()=>{
     
     setBestFromLocal(JSON.parse(localStorage.getItem('bestScore')));
-
-
-   
 })
 
 
 bestScoreView.current= 'best score:' + bestFromLocal;
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
