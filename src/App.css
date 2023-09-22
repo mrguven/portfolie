@@ -195,3 +195,13 @@ text-orientation:  mixed
 #footer{
   background-color: rgb(108, 2, 206);
 }
+
+
+
+
+/* catchMe */
+
+.scoreInfo {
+  font-family: Courier;
+  color: darkblue;
+}

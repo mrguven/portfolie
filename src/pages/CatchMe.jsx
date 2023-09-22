@@ -113,6 +113,7 @@ clearInterval(interval1);
     setInterval1(null);
     setInterval2(null);
 setPause(false);
+setScore(0)
 startButton.current.style.display= 'block';
 
  }
@@ -191,8 +192,8 @@ bestScoreView.current= 'best score:' + bestFromLocal;
 <div>
 <div>
     <h1 id="title">Catch Me</h1>
-    <h1 id="score" ref={scoreWiew} > {scoreWiew.current} <br /></h1>
-    {bestFromLocal >0  &&  <h1> {bestScoreView.current}</h1>}
+    <h1 id="score"  className='scoreInfo' ref={scoreWiew} > {scoreWiew.current} <br /> </h1>
+    {bestFromLocal >0  &&  <h1 className='scoreInfo'> {bestScoreView.current}</h1>}
     
 </div> 
 
