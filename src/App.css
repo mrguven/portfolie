@@ -46,6 +46,11 @@ li a:hover {
  height: 50px;
  border-radius: 20px;
  background-color: rgb(84, 95, 253);
+ border-color: #537ff7;
+}
+
+#startButton:hover{
+  background-color: rgb(134, 134, 243);
 }
 #pauseButtonStyle{
   width: 20%;
@@ -54,6 +59,10 @@ li a:hover {
   border-radius: 20px;
   background-color: chocolate;
 
+}
+
+#pauseButtonStyle:hover{
+  background-color: rgb(134, 134, 243);
 }
 
 .scoreInfo {

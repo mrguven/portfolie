@@ -25,7 +25,19 @@ const pauseRef=useRef();
 
 const startGame= ()=>{
     setStart(true);
+    if((interval1 && interval2) === null) {
+        setInterval1(setInterval(() => {
+            setStart(false)
+         }, 1000))
+        
+           
+        
+         setInterval2(setInterval(() => {
+                setStart(true)
     
+    
+            }, 2000))
+        }
     
 }
 
@@ -35,39 +47,12 @@ const change =()=> {
     setPause(true);
     setStart(false);
 
-if((interval1 && interval2) === null) {
-    setInterval1(setInterval(() => {
-        setStart(false)
-     }, 1000))
-    
-       
-    
-     setInterval2(setInterval(() => {
-            setStart(true)
 
-
-        }, 2000))
-    }
-    setScore((score)=>score+=1)
+    setScore(score+1)
 
  setPause(true);
  setCon(2)
 }
-
-
-const pauseGame=()=> {
-    setStart(false)
-
-    clearInterval(interval1);
-    clearInterval(interval2);
-    setInterval1(null);
-    setInterval2(null);
-setPause(false);
-startButton.current.style.display= 'block';
-
-}
-
-
 useEffect(()=> {
     let posX= Math.floor(Math.random()*800);
     let posY= Math.floor(Math.random()*300);
@@ -114,6 +99,22 @@ if(!start) {
 }
 scoreWiew.current= 'Score: '+ score;
 },[start]);
+
+
+const pauseGame=()=> {
+    setStart(false)
+
+    clearInterval(interval1);
+    clearInterval(interval2);
+    setInterval1(null);
+    setInterval2(null);
+setPause(false);
+startButton.current.style.display= 'block';
+
+}
+
+
+
 
 console.log(window.innerWidth);
 
