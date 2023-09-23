@@ -140,13 +140,15 @@ text-orientation:  mixed
   
 }
 
-.submitButtons{
 
+
+.submitButtons{
+  background-image: linear-gradient(to right, rgb(94, 90, 221), rgb(161, 118, 247));
+  border-radius: 15px;
   align-items: center;
   background-clip: padding-box;
-  background-color: #fa6400;
+  background-color: #134ff3;
   border: 1px solid transparent;
-  border-radius: .25rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
   box-sizing: border-box;
   color: #fff;
