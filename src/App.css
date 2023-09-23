@@ -1,6 +1,4 @@
-#title{
-  text-align: center;
-}
+
 
 
 
@@ -29,13 +27,15 @@ li a {
   text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
+
 li a:hover {
   background-color: #111;
 }
 
+
+/* this is catchMe part */
 #border {
-  border: 2px dotted red;
+  border: 2px dotted rgb(86, 28, 245);
   width: auto;
   height: 400px;
 }
@@ -65,10 +65,22 @@ li a:hover {
 
 
 
+
 #heartStyle{
   width: 175px;
   height: 175px;
 }
+
+
+#title{
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-shadow: #066aee 3px 3px;
+  color: #82b3f3;
+}
+
+
 
 /* mytaxi page */
 #header{
