@@ -79,13 +79,14 @@ if(con>0){
  }
  else if(con==0) {
        alert('you have lost');
+       setScore(0);
 setCon(3);
 clearInterval(interval1);
     clearInterval(interval2);
     setInterval1(null);
     setInterval2(null);
 setPause(false);
-setScore(0)
+
 startButton.current.style.display= 'block';
 
  }
@@ -137,7 +138,7 @@ useEffect(()=>{
 useEffect(()=>{
     
     setBestFromLocal(JSON.parse(localStorage.getItem('bestScore')));
-})
+},[bestToLocal])
 
 
 bestScoreView.current= 'best score:' + bestFromLocal;
