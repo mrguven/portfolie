@@ -8,6 +8,14 @@ export default function MyTaxi () {
 
 
 
+const makeReservation =(event)=>{
+        event.preventDefault();
+        
+
+
+
+}
+
 
 
 
@@ -50,7 +58,7 @@ export default function MyTaxi () {
                   </label>
                   </div>
                   <div>
-                  <input type="text" name="departure" className="reservationInput" id="departure"  placeholder="departure"/>
+                  <input type="text" name="departure" required className="reservationInput" id="departure"  placeholder="departure"/>
                   </div>
         <div>
                   <label htmlFor="arriving"   className="reservationLabel">
@@ -58,7 +66,7 @@ export default function MyTaxi () {
                            
         </div>
         <div>
-        <input type="text" name="arriving" className="reservationInput"  placeholder="arriving"/>
+        <input type="text" name="arriving" className="reservationInput" required  placeholder="arriving"/>
         </div>
         <div>
             <label htmlFor="date" className="reservationLabel"> Date:
@@ -66,9 +74,9 @@ export default function MyTaxi () {
             
         </div>
         <div>
-        <input type="datetime-local" name="time" className="reservationInput"  />
+        <input type="datetime-local" name="time" className="reservationInput"  required />
         </div>
-    <button type="submit"  className="submitButtons">Make reservation</button>
+    <button type="submit"  onClick={makeReservation}  className="submitButtons">Make reservation</button>
 </form>
 
 
