@@ -11,7 +11,7 @@ const [departure,setDeparture]=useState();
 const [arriving,setArriving]=useState();
 const[time, setTime]=useState();
 
-
+console.log(time);
 
 
 
@@ -66,7 +66,9 @@ const makeReservation =(event)=>{
                   </label>
                   </div>
                   <div>
-                  <input type="text" name="departure" required className="reservationInput" id="departure"  placeholder="departure"/>
+                  <input type="text" name="departure" required
+                  value={departure} onChange={(event)=> setDeparture(event.target.value)}
+                  className="reservationInput" id="departure"  placeholder="departure"/>
                   </div>
         <div>
                   <label htmlFor="arriving"   className="reservationLabel">
@@ -74,7 +76,9 @@ const makeReservation =(event)=>{
                            
         </div>
         <div>
-        <input type="text" name="arriving" className="reservationInput" required  placeholder="arriving"/>
+        <input type="text" name="arriving" 
+        value={arriving} onChange={(event)=> setArriving(event.target.value)}
+         className="reservationInput" required  placeholder="arriving"/>
         </div>
         <div>
             <label htmlFor="date" className="reservationLabel"> Date:
@@ -82,7 +86,8 @@ const makeReservation =(event)=>{
             
         </div>
         <div>
-        <input type="datetime-local" name="time" className="reservationInput"  required />
+        <input type="datetime-local" name="time" className="reservationInput"
+         value={time} onChange={(event)=>setTime(event.target.value)}  required />
         </div>
     <button type="submit"  onClick={makeReservation}  className="submitButtons">Make reservation</button>
 </form>
