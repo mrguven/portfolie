@@ -1,4 +1,5 @@
 
+import { useState } from 'react';
 import taxi from '../taxi.jpg'
 
 
@@ -6,11 +7,18 @@ import taxi from '../taxi.jpg'
 export default function MyTaxi () {
 
 
+const [departure,setDeparture]=useState();
+const [arriving,setArriving]=useState();
+const[time, setTime]=useState();
+
+
+
 
 
 const makeReservation =(event)=>{
-        
+        event.preventDefault();
 
+        
 
 
 
