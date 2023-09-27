@@ -122,11 +122,11 @@ text-orientation:  mixed
   display: grid;
  grid-template-columns: 50% 50%;
   margin: 4%;
-  border: 1px blue;
+  
   border-style: inset;
   margin-top: 10px;
   background-image: linear-gradient(to right, rgb(235, 234, 255), rgb(101, 24, 245));
-  
+  border-style: none;
 }
 
 .reservationLabel {
