@@ -1,6 +1,8 @@
 
 import { useState } from 'react';
-import taxi from '../taxi.jpg'
+import taxi from '../taxi.jpg';
+import axios from 'axios';
+
 
 
 
@@ -10,19 +12,26 @@ export default function MyTaxi () {
 const [departure,setDeparture]=useState();
 const [arriving,setArriving]=useState();
 const[time, setTime]=useState();
+const[result,setResult]=useState();
 
 console.log(time);
-
+console.log(arriving);
+console.log(departure);
 
 
 const makeReservation =(event)=>{
         event.preventDefault();
 
         
-
+        axios.get(`https://maps.googleapis.com/maps/api/directions/json?destination=${arriving}&origin=${departure}&key=${process.env. google_maps_api_key}`)
+        .then((response) => console.log(response.data))
+        .catch((error) => console.log(error));
 
 
 }
+
+
+
 
 
 
@@ -92,6 +101,11 @@ const makeReservation =(event)=>{
     <button type="submit"  onClick={makeReservation}  className="submitButtons">Make reservation</button>
 </form>
 
+
+
+<div>
+    <h2 id='result'></h2>
+</div>
 
 
 
