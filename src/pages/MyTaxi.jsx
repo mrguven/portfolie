@@ -9,8 +9,8 @@ export default function MyTaxi () {
 
 
 const makeReservation =(event)=>{
-        event.preventDefault();
         
+
 
 
 
