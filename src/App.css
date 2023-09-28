@@ -45,12 +45,14 @@ li a:hover {
  margin-left: 40%;
  height: 50px;
  border-radius: 20px;
- background-color: rgb(3, 3, 3);
+ background-color: rgb(60, 89, 255);
  border-color: #537ff7;
+ color: white;
 }
 
 #startButton:hover{
   background-color: rgb(209, 209, 253);
+  color: #111;
 }
 #pauseButtonStyle{
   width: 20%;

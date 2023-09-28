@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import taxi from '../taxi.jpg';
 import axios from 'axios';
-
+import { Loader } from "@googlemaps/js-api-loader";
 
 
 
@@ -23,11 +23,42 @@ const makeReservation =(event)=>{
         event.preventDefault();
 
         
-        axios.get(`https://maps.googleapis.com/maps/api/directions/json?destination=${arriving}&origin=${departure}&key=${process.env. google_maps_api_key}`)
-        .then((response) => console.log(response.data))
-        .catch((error) => console.log(error));
+        // axios.get(`https://maps.googleapis.com/maps/api/directions/json?destination=${arriving}&origin=${departure}&key=${process.env. google_maps_api_key}`)
+        // .then((response) => setResult(response.data))
+        // .catch((error) => console.log(error));
 
 
+
+
+
+        let map;
+
+async function initMap() {
+  // The location of Uluru
+  const position = { lat: -25.344, lng: 131.031 };
+  // Request needed libraries.
+  //@ts-ignore
+  const { Map } = await google.maps.importLibrary("maps");
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+  // The map, centered at Uluru
+  map = new Map(document.getElementById("map"), {
+    zoom: 4,
+    center: position,
+    mapId: "DEMO_MAP_ID",
+  });
+
+  // The marker, positioned at Uluru
+  const marker = new AdvancedMarkerElement({
+    map: map,
+    position: position,
+    title: "Uluru",
+  });
+}
+
+initMap();
+
+console.log(result);
 }
 
 
