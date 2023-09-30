@@ -1,9 +1,9 @@
 const express=require('express');
-
+var cors = require('cors')
 const mySql= require('mysql');
 
 const app= express();
-
+app.use(cors())
 const dotenv=require('dotenv').config();
 
 const db=mySql.createConnection({
