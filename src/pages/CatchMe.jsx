@@ -157,10 +157,10 @@ bestScoreView.current= 'best score:' + bestFromLocal;
     <h1 id="title">Catch Me</h1>
        
     </div>
-    
+    <div id="scoreTable">
     <h1 id="score"  className='scoreInfo' ref={scoreWiew} > {scoreWiew.current} <br /> </h1>
     {bestFromLocal >0  &&  <h1 className='scoreInfo'> {bestScoreView.current}</h1>}
-    
+    </div>
 </div> 
 
 
@@ -174,6 +174,8 @@ bestScoreView.current= 'best score:' + bestFromLocal;
                  <img id="heartStyle" src={pic}   ref={displayHeart} onClick={change} /> 
          </div>
     </div>
+
+
 </div>
 
 

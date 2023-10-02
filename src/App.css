@@ -79,12 +79,49 @@ li a:hover {
 .scoreInfo {
   font-family: Courier;
   color: darkblue;
+  
+}
+#scoreTable{
+  margin-left: 5%;
+  border: #066aee double 1px;
+  padding-left: 1%;
+  width: 20%;
+  border-radius: 3%;
+  background-color: aliceblue;
 }
 
 
+@keyframes changeText {
+  0%{
+    font-size: 50px;
+    color: #82b3f3;
+  }
+  30%{
+    font-size: 53px;
+color: #db4b9f;
+  }
+  60%{
+    font-size: 55px;
+    color: #f1b57c;
+  }
+  100%{
+    font-size: 57px;
+    color: rgb(236, 10, 10);
+    text-shadow: #fb8332;
+  }
+}
 
-
-
+#title{
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-shadow: #066aee 3px 3px;
+  color: #82b3f3;
+  animation: changeText 7s   infinite alternate backwards;
+  animation-timing-function: ease-out;
+  height: 80px;
+  margin: 3%;
+}
 
 #heartStyle{
   width: 175px;
@@ -96,13 +133,7 @@ li a:hover {
 }
 
 
-#title{
-  text-align: center;
-  font-size: 50px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  text-shadow: #066aee 3px 3px;
-  color: #82b3f3;
-}
+
 
 
 
