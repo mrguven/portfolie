@@ -57,8 +57,8 @@ const change =()=> {
     
 }
 useEffect(()=> {
-    let posX= Math.floor(Math.random()*800);
-    let posY= Math.floor(Math.random()*300);
+    let posX= Math.floor(Math.random()*750);
+    let posY= Math.floor(Math.random()*250);
     
     console.log(posX);
  
