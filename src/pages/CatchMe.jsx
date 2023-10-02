@@ -44,14 +44,17 @@ const startGame= ()=>{
 
 
 const change =()=> {
-    setPause(true);
-    setStart(false);
-
-
-    setScore(score+1)
-
- setPause(true);
- setCon(2)
+    if(start) {
+        setPause(true);
+        setStart(false);
+    
+    
+        setScore(score+1)
+    
+     setPause(true);
+     setCon(2)
+    }
+    
 }
 useEffect(()=> {
     let posX= Math.floor(Math.random()*800);
