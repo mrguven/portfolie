@@ -278,9 +278,12 @@ opacity: 0.5;
 /* footer part */
 #footer{
   background-color: rgb(108, 2, 206);
+  
 }
 
-
+.footerLinks{
+  color: #fff;
+}
 
 
 /* catchMe */
