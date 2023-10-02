@@ -35,9 +35,17 @@ li a:hover {
 
 /* this is catchMe part */
 #border {
-  border: 2px dotted rgb(86, 28, 245);
+  border: 2px  rgb(86, 28, 245);
   width: auto;
   height: 400px;
+  border-style: ridge;
+  margin-top: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-image:url('./background.jpg')   ;
+  background-size: 100% 400px;
+  background-repeat: no-repeat;
+  opacity: 0.3;
 }
 
 #startButton{
@@ -81,6 +89,10 @@ li a:hover {
 #heartStyle{
   width: 175px;
   height: 175px;
+
+ 
+  
+
 }
 
 
