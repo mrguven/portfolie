@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import taxi from '../taxi.jpg';
 import axios from 'axios';
-import { Loader } from "@googlemaps/js-api-loader";
+import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 
 
 
