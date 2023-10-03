@@ -78,9 +78,10 @@ console.log(result);
                   </label>
                   </div>
                   <div>
-                  <input type="text" name="departure" required
+                  <Autocomplete>  <input type="text" name="departure" required
                   value={departure} onChange={(event)=> setDeparture(event.target.value)}
                   className="reservationInput" id="departure"  placeholder="departure"/>
+                   </Autocomplete>
                   </div>
         <div>
                   <label htmlFor="arriving"   className="reservationLabel">
@@ -88,9 +89,11 @@ console.log(result);
                            
         </div>
         <div>
+        <Autocomplete> 
         <input type="text" name="arriving" 
         value={arriving} onChange={(event)=> setArriving(event.target.value)}
          className="reservationInput" required  placeholder="arriving"/>
+          </Autocomplete>
         </div>
         <div>
             <label htmlFor="date" className="reservationLabel"> Date:
