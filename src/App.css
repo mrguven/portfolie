@@ -140,9 +140,10 @@ color: #db4b9f;
 /* mytaxi page */
 #header{
   display: grid;
-  margin-top: 10px;
+  margin-top: 40px;
+  margin-left: 17%;
   color: rgb(175, 106, 240);
-  grid-template-columns: 25% 50% 25%;
+  grid-template-columns: 25% 30% 25%;
   grid-template-rows: 80% 20% ;
   
 

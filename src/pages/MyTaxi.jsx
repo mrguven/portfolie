@@ -2,7 +2,11 @@
 import { useState } from 'react';
 import taxi from '../taxi.jpg';
 import axios from 'axios';
-import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
+import { useJsApiLoader,
+    GoogleMap,
+    Marker,
+    Autocomplete,
+    DirectionsRenderer, useLoadScript } from "@react-google-maps/api";
 
 
 
@@ -52,10 +56,14 @@ console.log(result);
         <h1 className='headVertical'>MyTaxi</h1>
         </div>
         <div>
+        
+        <h1 id='head'>MyTaxi</h1>
+        
         <h1 id='head'>MyTaxi</h1>
         </div>
         <div>
         <h1 className='headVertical'>MyTaxi</h1>
+        
         </div>
         <div >
             <img src={taxi} alt="taxi" id='taxiImg' />
