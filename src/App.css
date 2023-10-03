@@ -142,18 +142,21 @@ color: #db4b9f;
   display: grid;
   margin-top: 40px;
   margin-left: 17%;
-  color: rgb(175, 106, 240);
-  grid-template-columns: 25% 30% 25%;
+  margin-right: 19%;
+  color: rgb(108, 22, 189);
+  grid-template-columns: 25% 30% 20%;
   grid-template-rows: 80% 20% ;
-  
-
+  background-image: linear-gradient(to left, rgb(235, 234, 255), rgb(211, 187, 255));
+height: 300px;
 }
 
 
 #head{
   font-family:Courier;
     font-size:100px;
-    text-align:center
+    text-align:center;
+    margin-top: 20px;
+    z-index: -1;
 }
 
 .headVertical{
@@ -161,7 +164,10 @@ color: #db4b9f;
   font-size:100px;
   text-align:center;
   writing-mode:  vertical-rl;
-text-orientation:  mixed
+text-orientation:  mixed;
+margin-left: 50%;
+margin-top: 20px;
+z-index: -1;
 }
 
 #reservationInfo {

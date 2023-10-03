@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import taxi from '../taxi.jpg';
+
 import axios from 'axios';
 import { useJsApiLoader,
     GoogleMap,
@@ -65,18 +65,7 @@ console.log(result);
         <h1 className='headVertical'>MyTaxi</h1>
         
         </div>
-        <div >
-            <img src={taxi} alt="taxi" id='taxiImg' />
-            
-        </div>
-        <div >
-            <img src={taxi} alt="taxi" id='taxiImg' />
-            
-        </div>
-        <div >
-            <img src={taxi} alt="taxi" id='taxiImg' />
-            
-        </div>
+     
     </div>
 
 
