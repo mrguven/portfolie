@@ -10,6 +10,11 @@ import { useJsApiLoader,
 
 
 
+    const center = {
+        lat: 51.9244,
+        lng: 4.4777,
+      };
+
 export default function MyTaxi () {
 
 
@@ -22,14 +27,29 @@ console.log(time);
 console.log(arriving);
 console.log(departure);
 
+const { isLoaded } = useJsApiLoader({
+    id: "google-map-script",
+    googleMapsApiKey: process.env.google_maps_api_key,
+  });
 
-const makeReservation =(event)=>{
+  const [map, setMap] = useState(null);
+  const [directionsResponse, setDirectionsResponse] = useState(null);
+
+const makeReservation = async (event)=>{
         event.preventDefault();
 
-        
-        axios.get(`https://maps.googleapis.com/maps/api/directions/json?destination=${arriving}&origin=${departure}&key=${process.env.google_maps_api_key}`)
-        .then((response) => setResult(response.data))
-        .catch((error) => console.log(error));
+        if (arriving === "" || departure === "") {
+            return;
+          }
+       
+          const directionsService = new window.google.maps.DirectionsService();
+          const results = await directionsService.route({
+            origin: departure,
+            destination: arriving,
+            travelMode: window.google.maps.TravelMode.DRIVING,
+          });
+          setDirectionsResponse(results);
+        }
 
 
 
@@ -37,8 +57,6 @@ const makeReservation =(event)=>{
 
 
 
-console.log(result);
-}
 
 
 
@@ -78,10 +96,10 @@ console.log(result);
                   </label>
                   </div>
                   <div>
-                  <Autocomplete>  <input type="text" name="departure" required
+                   <input type="text" name="departure" required
                   value={departure} onChange={(event)=> setDeparture(event.target.value)}
-                  className="reservationInput" id="departure"  placeholder="departure"/>
-                   </Autocomplete>
+                  className="reservationInput" id="departure"  placeholder="departure" />
+                   
                   </div>
         <div>
                   <label htmlFor="arriving"   className="reservationLabel">
@@ -89,11 +107,11 @@ console.log(result);
                            
         </div>
         <div>
-        <Autocomplete> 
+       
         <input type="text" name="arriving" 
         value={arriving} onChange={(event)=> setArriving(event.target.value)}
-         className="reservationInput" required  placeholder="arriving"/>
-          </Autocomplete>
+         className="reservationInput" required  placeholder="arriving" />
+          
         </div>
         <div>
             <label htmlFor="date" className="reservationLabel"> Date:
@@ -112,6 +130,28 @@ console.log(result);
 <div>
     <h2 id='result'></h2>
 </div>
+
+{
+     isLoaded &&
+     <GoogleMap
+        center={center}
+        zoom={9}
+        mapContainerStyle={{ width: "80%", height: "90vh", margin:'10%' }}
+        options={{
+          zoomControl: true,
+          streetViewControl: true,
+          mapTypeControl: true,
+          fullscreenControl: true,
+        }}
+        onLoad={(map) => setMap(map)}
+      >
+        <Marker position={center} />
+        {directionsResponse && (
+          <DirectionsRenderer directions={directionsResponse} />
+        )}
+      </GoogleMap>
+}
+
 
 
 
