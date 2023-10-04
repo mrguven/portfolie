@@ -6,7 +6,7 @@ import { useJsApiLoader,
     GoogleMap,
     Marker,
     Autocomplete,
-    DirectionsRenderer, useLoadScript } from "@react-google-maps/api";
+    DirectionsRenderer, DirectonsService } from "@react-google-maps/api";
 
 
 
@@ -49,6 +49,7 @@ const makeReservation = async (event)=>{
             travelMode: window.google.maps.TravelMode.DRIVING,
           });
           setDirectionsResponse(results);
+          console.log(directionsResponse);
         }
 
 
@@ -136,7 +137,7 @@ const makeReservation = async (event)=>{
      <GoogleMap
         center={center}
         zoom={9}
-        mapContainerStyle={{ width: "80%", height: "90vh", margin:'10%' }}
+        mapContainerStyle={{ width: "60%", height: "40vh", margin:'10%' }}
         options={{
           zoomControl: true,
           streetViewControl: true,
