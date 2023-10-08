@@ -7,7 +7,23 @@ import { useJsApiLoader,
     GoogleMap,
     Marker,
     Autocomplete,
-    DirectionsRenderer, DirectonsService } from "@react-google-maps/api";
+    DirectionsRenderer, DirectonsService,Map, InfoWindow, GoogleApiWrapper } from "@react-google-maps/api";
+
+    
+
+    import {
+        setKey,
+        setDefaults,
+        setLanguage,
+        setRegion,
+        fromAddress,
+        fromLatLng,
+        fromPlaceId,
+        setLocationType,
+        geocode,
+        RequestType,
+      } from "react-geocode";
+      
     
 
     const GOOGLE_MAP_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
@@ -16,6 +32,8 @@ import { useJsApiLoader,
         lat: 51.9244,
         lng: 4.4777,
       };
+
+    
 
 export default function MyTaxi () {
 console.log(GOOGLE_MAP_API_KEY);
@@ -29,7 +47,7 @@ const [loadMap, setLoadMap] = useState(false);
 
 useEffect(() => {
   const options = {
-    apiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+    apiKey: GOOGLE_MAP_API_KEY,
     version: "weekly",
     libraries: ['geometry']
   };
@@ -70,11 +88,17 @@ const makeReservation = async (event)=>{
           });
           setDirectionsResponse(results);
           console.log(directionsResponse);
+
+
+
+
+
+
         }
 
 
 
-
+   
 
 
 
@@ -174,10 +198,10 @@ const makeReservation = async (event)=>{
 }
 
 <div className="App">
-      <h4>Draw a route between two points using Google Maps API in React - <a href="https://www.cluemediator.com">Clue Mediator</a></h4>
-      {!loadMap ? <div>Loading...</div> : <GMap />}
-      <br />
-      <small><b>Note:</b> In order to make it work, you have to set the YOUR_GOOGLE_MAP_API_KEY in App.js file. </small>
+     
+      {!loadMap && !arriving && !departure ? <div>Loading...</div> : <GMap  arriving={arriving} departure={departure}   />}
+     
+     
     </div>
 
 

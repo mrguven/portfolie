@@ -52,22 +52,30 @@ const change =()=> {
         setScore(score+1)
     
      setPause(true);
-     setCon(2)
+     setCon(5)
     }
     
 }
 useEffect(()=> {
-    let posX= Math.floor(Math.random()*750);
-    let posY= Math.floor(Math.random()*250);
+    console.log('w', window.innerWidth)
+    console.log('h', window.innerHeight)
+    let elHeight = document.getElementById('border').clientHeight
+    let elWidth = document.getElementById('border').clientWidth
+    console.log('elHeight', elHeight)
+    console.log('elWidth', elWidth)
+    let posX= Math.floor(Math.random()*(elWidth-50));
+    let posY= Math.floor(Math.random()*(elHeight-50));
     
-    console.log(posX);
+    console.log(posX, 'posX');
+    console.log(posY, 'posY');
  
     if (start) {startButton.current.style.display= 'none';
     displayHeart.current.style.display= 'block';
     displayHeart.current.style.position= 'relative';
-    if (posX>window.innerWidth) {
+    if (posX>elWidth) {
+        console.log('out of border')
         posX=window.innerWidth-50;
-        displayHeart.current.style.left=posX+'px';
+        // displayHeart.current.style.left=posX+'px';
         displayHeart.current.style.width='50px';
         displayHeart.current.style.heigth='30px';
     }else {
@@ -106,7 +114,7 @@ scoreWiew.current= 'Score: '+ score;
 
 
 const pauseGame=()=> {
-    setStart(false)
+    setStart(true)
 
     clearInterval(interval1);
     clearInterval(interval2);
