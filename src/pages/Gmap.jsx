@@ -28,13 +28,14 @@ export default function Gmap (info){
     const googleMap = initGoogleMap();
     setMap(googleMap);
   }, []);
-
+  console.log(info);
   useEffect(() => {
     if (!map) return;
 
     var directionsService = new window.google.maps.DirectionsService();
     var directionsRenderer = new window.google.maps.DirectionsRenderer();
-if(info.departure==String && info.arriving==String) {fromAddress( info.departure)
+if(info) {fromAddress( info.deparPlace)
+  
   .then(({ results }) => {
     const { lat, lng } = results[0].geometry.location;
     console.log(lat, lng);
@@ -42,7 +43,7 @@ if(info.departure==String && info.arriving==String) {fromAddress( info.departure
  
   
   
-  fromAddress(info.arriving)
+  fromAddress(info.arrPlace)
   .then(({ results }) => {
     const { lat, lng } = results[0].geometry.location;
     console.log(results);

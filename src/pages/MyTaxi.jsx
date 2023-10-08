@@ -41,6 +41,7 @@ export default function MyTaxi () {
 const [departure,setDeparture]=useState();
 const [arriving,setArriving]=useState();
 const[time, setTime]=useState();
+const [distance,setDistance]=useState();
 const[result,setResult]=useState();
 
 const [loadMap, setLoadMap] = useState(false);
@@ -199,7 +200,7 @@ const makeReservation = async (event)=>{
 
 <div className="App">
      
-      {!loadMap && !arriving && !departure ? <div>Loading...</div> : <GMap  arriving={arriving} departure={departure}   />}
+      { !arriving && !departure ? <div>Loading...</div> : <GMap  arrPlace={arriving} deparPlace={departure}   />}
      
      
     </div>
