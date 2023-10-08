@@ -187,10 +187,11 @@ margin-top: 20px;
 }
 
 .reservationInput{
-  width: 50%;
+  width: 80%;
   margin: 2%;
   height: 35px;
-  font-size: 30px;
+  font-size: auto;
+  text-align: center;
   color: blue;
   border-radius: 2%;
   border-start-start-radius: 20px;
