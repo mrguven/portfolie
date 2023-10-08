@@ -77,8 +77,8 @@ else {
 
   const initGoogleMap = () => {
     return new window.google.maps.Map(googleMapRef.current, {
-      center: new window.google.maps.LatLng(37.7699298, -122.4469157),
-      zoom: 8
+      center: new window.google.maps.LatLng(51.9244, 4.4777),
+      zoom: 10
     });
   }
 

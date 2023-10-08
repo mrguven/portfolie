@@ -36,7 +36,7 @@ import { useJsApiLoader,
     
 
 export default function MyTaxi () {
-console.log(GOOGLE_MAP_API_KEY);
+
 
 const [departure,setDeparture]=useState();
 const [arriving,setArriving]=useState();
