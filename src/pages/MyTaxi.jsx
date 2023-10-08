@@ -142,7 +142,7 @@ const makeReservation = async (event)=>{
                   </label>
                   </div>
                   <div>
-                   <input type="text" name="departure" required
+                   <input type="text" name="departure" required 
                   value={departure} onChange={(event)=> setDeparture(event.target.value)}
                   className="reservationInput" id="departure"  placeholder="departure" />
                    
