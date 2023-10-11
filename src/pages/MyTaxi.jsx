@@ -96,7 +96,7 @@ const makeReservation = async (event)=>{
 
 
 
-        const { depart  } = usePlacesWidget({
+        const { depart } = usePlacesWidget({
           apiKey: GOOGLE_MAP_API_KEY,
           onPlaceSelected: (place) => console.log(place)
         })
