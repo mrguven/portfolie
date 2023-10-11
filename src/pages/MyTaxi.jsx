@@ -4,12 +4,9 @@ import { Loader } from '@googlemaps/js-api-loader';
 // import GMap from '../pages/Gmap'
 // import axios from 'axios';
 import { useJsApiLoader,
-    GoogleMap,
-    Marker,
-    Autocomplete,
-    DirectionsRenderer, DirectonsService,Map, InfoWindow, GoogleApiWrapper } from "@react-google-maps/api";
+    GoogleMap,Marker,DirectionsRenderer, DirectonsService,Map, InfoWindow, GoogleApiWrapper } from "@react-google-maps/api";
+import { usePlacesWidget,Autocomplete } from "react-google-autocomplete";
 
-    
 
     // import {
     //     setKey,
@@ -99,9 +96,15 @@ const makeReservation = async (event)=>{
 
 
 
-   
+        const { depart  } = usePlacesWidget({
+          apiKey: GOOGLE_MAP_API_KEY,
+          onPlaceSelected: (place) => console.log(place)
+        })
 
-
+        const { arrivingRef } = usePlacesWidget({
+          apiKey: GOOGLE_MAP_API_KEY,
+          onPlaceSelected: (place) => console.log(place)
+        })
 
 
 
@@ -142,7 +145,7 @@ const makeReservation = async (event)=>{
                   </label>
                   </div>
                   <div>
-                   <input type="text" name="departure" required 
+                   <input type="text" name="departure" required  ref={depart}
                   value={departure} onChange={(event)=> setDeparture(event.target.value)}
                   className="reservationInput" id="departure"  placeholder="departure" />
                    
@@ -154,7 +157,7 @@ const makeReservation = async (event)=>{
         </div>
         <div>
        
-        <input type="text" name="arriving" 
+        <input type="text" name="arriving"  ref={arrivingRef}
         value={arriving} onChange={(event)=> setArriving(event.target.value)}
          className="reservationInput" required  placeholder="arriving" />
           
