@@ -179,10 +179,10 @@ const makeReservation = async (event)=>{
 
 {
      isLoaded &&
-     <GoogleMap
+     <GoogleMap id='mapContainerStyle'
         center={center}
         zoom={9}
-        mapContainerStyle={{ width: "60%", height: "40vh", margin:'10%' }}
+       
         options={{
           zoomControl: true,
           streetViewControl: true,
@@ -198,12 +198,12 @@ const makeReservation = async (event)=>{
       </GoogleMap>
 }
 
-<div className="App">
+    {/* <div className="App">
      
       { !arriving && !departure ? <div>Loading...</div> : <GMap  arrPlace={arriving} deparPlace={departure}   />}
      
      
-    </div>
+    </div> */}
 
 
 

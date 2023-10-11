@@ -1,93 +1,93 @@
-import React, { useEffect, useRef, useState } from 'react';
+// import React, { useEffect, useRef, useState } from 'react';
 
-import {
-  setKey,
-  setDefaults,
-  setLanguage,
-  setRegion,
-  fromAddress,
-  fromLatLng,
-  fromPlaceId,
-  setLocationType,
-  geocode,
-  RequestType,
-} from "react-geocode";
+// import {
+//   setKey,
+//   setDefaults,
+//   setLanguage,
+//   setRegion,
+//   fromAddress,
+//   fromLatLng,
+//   fromPlaceId,
+//   setLocationType,
+//   geocode,
+//   RequestType,
+// } from "react-geocode";
 
-export default function Gmap (info){
-  const GOOGLE_MAP_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-  setDefaults({
-    key:  GOOGLE_MAP_API_KEY , // Your API key here.
-    language: "en", // Default language for responses.
-    region: "nl", // Default region for responses.
-  });
+// export default function Gmap (info){
+//   const GOOGLE_MAP_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+//   setDefaults({
+//     key:  GOOGLE_MAP_API_KEY , // Your API key here.
+//     // Default language for responses.
+//      // Default region for responses.
+//   });
 
-  const googleMapRef = useRef(null);
-  const [map, setMap] = useState(null);
+//   const googleMapRef = useRef(null);
+//   const [map, setMap] = useState(null);
 
-  useEffect(() => {
-    const googleMap = initGoogleMap();
-    setMap(googleMap);
-  }, []);
-  console.log(info);
-  useEffect(() => {
-    if (!map) return;
+//   useEffect(() => {
+//     const googleMap = initGoogleMap();
+//     setMap(googleMap);
+//   }, []);
+//   console.log(info);
+//   useEffect(() => {
+//     if (!map) return;
 
-    var directionsService = new window.google.maps.DirectionsService();
-    var directionsRenderer = new window.google.maps.DirectionsRenderer();
-if(info) {fromAddress( info.deparPlace)
+//     var directionsService = new window.google.maps.DirectionsService();
+//     var directionsRenderer = new window.google.maps.DirectionsRenderer();
+// if(info) {fromAddress( info.deparPlace)
   
-  .then(({ results }) => {
-    const { lat, lng } = results[0].geometry.location;
-    console.log(lat, lng);
-    var haight = new window.google.maps.LatLng(lat, lng);
+//   .then(({ results }) => {
+//     const { lat, lng } = results[0].geometry.location;
+//     console.log(lat, lng);
+//     var haight = new window.google.maps.LatLng(lat, lng);
  
   
   
-  fromAddress(info.arrPlace)
-  .then(({ results }) => {
-    const { lat, lng } = results[0].geometry.location;
-    console.log(results);
-    var oceanBeach = new window.google.maps.LatLng(lat, lng);
-    var request = {
-      origin: haight,
-      destination: oceanBeach,
-      travelMode: 'DRIVING'
-    };
-    directionsService.route(request, function (response, status) {
-      if (status == 'OK') {
-        directionsRenderer.setDirections(response);
-        console.log(response);
-        directionsRenderer.setMap(map);
-      }
-    });
+//   fromAddress(info.arrPlace)
+//   .then(({ results }) => {
+//     const { lat, lng } = results[0].geometry.location;
+//     console.log(results);
+//     var oceanBeach = new window.google.maps.LatLng(lat, lng);
+//     var request = {
+//       origin: haight,
+//       destination: oceanBeach,
+//       travelMode: 'DRIVING'
+//     };
+//     directionsService.route(request, function (response, status) {
+//       if (status == 'OK') {
+//         directionsRenderer.setDirections(response);
+//         console.log(response);
+//         directionsRenderer.setMap(map);
+//       }
+//     });
 
 
-  })
-  .catch(console.error);
+//   })
+//   .catch(console.error);
 
   
-})
-.catch(console.error);}
-else {
-  return
-}
+// })
+// .catch(console.error);}
+// else {
+//   return
+// }
     
-  }, [map])
+//   }, [map])
 
   
 
-  const initGoogleMap = () => {
-    return new window.google.maps.Map(googleMapRef.current, {
-      center: new window.google.maps.LatLng(51.9244, 4.4777),
-      zoom: 10
-    });
-  }
+//   const initGoogleMap = () => {
+//     return new window.google.maps.Map(googleMapRef.current, {
+//       center: new window.google.maps.LatLng(51.9244, 4.4777),
+//       zoom: 10
+//     });
+//   }
 
-  return <div
-    ref={googleMapRef}
-    style={{ width: 600, height: 500 }}
-  />
+//   return <div
+//     ref={googleMapRef}
+//     style={{ width: 600, height: 500 }}
+//   />
 
 
 
-}
+// }

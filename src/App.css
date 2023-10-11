@@ -167,6 +167,13 @@ margin-top: 20px;
 
 }
 
+
+#mapContainerStyle {
+  width: 60%; 
+  height: 400px; 
+  margin-left:10%;
+  
+}
 #reservationInfo {
   display: grid;
  grid-template-columns: 50% 50%;
