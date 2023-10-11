@@ -1,8 +1,8 @@
 
 import { useState,useEffect  } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
-import GMap from '../pages/Gmap'
-import axios from 'axios';
+// import GMap from '../pages/Gmap'
+// import axios from 'axios';
 import { useJsApiLoader,
     GoogleMap,
     Marker,
@@ -11,18 +11,18 @@ import { useJsApiLoader,
 
     
 
-    import {
-        setKey,
-        setDefaults,
-        setLanguage,
-        setRegion,
-        fromAddress,
-        fromLatLng,
-        fromPlaceId,
-        setLocationType,
-        geocode,
-        RequestType,
-      } from "react-geocode";
+    // import {
+    //     setKey,
+    //     setDefaults,
+    //     setLanguage,
+    //     setRegion,
+    //     fromAddress,
+    //     fromLatLng,
+    //     fromPlaceId,
+    //     setLocationType,
+    //     geocode,
+    //     RequestType,
+    //   } from "react-geocode";
       
     
 
