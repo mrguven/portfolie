@@ -8,6 +8,7 @@ import { useJsApiLoader,
 import { usePlacesWidget,Autocomplete } from "react-google-autocomplete";
 
 
+
     // import {
     //     setKey,
     //     setDefaults,
@@ -96,18 +97,21 @@ const makeReservation = async (event)=>{
 
 
 
-        const { depart } = usePlacesWidget({
+        const { ref } = usePlacesWidget({
           apiKey: GOOGLE_MAP_API_KEY,
           onPlaceSelected: (place) => console.log(place)
+          
         })
 
-        const { arrivingRef } = usePlacesWidget({
-          apiKey: GOOGLE_MAP_API_KEY,
-          onPlaceSelected: (place) => console.log(place)
-        })
+        // const { arrivingRef } = usePlacesWidget({
+        //   apiKey: GOOGLE_MAP_API_KEY,
+        //   onPlaceSelected: (place) => console.log(place)
+        // })
+
+     
 
 
-
+console.log(ref);
 
 
 
@@ -145,7 +149,7 @@ const makeReservation = async (event)=>{
                   </label>
                   </div>
                   <div>
-                   <input type="text" name="departure" required  ref={depart}
+                   <input type="text" name="departure" required  ref={ref}
                   value={departure} onChange={(event)=> setDeparture(event.target.value)}
                   className="reservationInput" id="departure"  placeholder="departure" />
                    
@@ -155,9 +159,10 @@ const makeReservation = async (event)=>{
                     Arriving: </label>
                            
         </div>
+
         <div>
        
-        <input type="text" name="arriving"  ref={arrivingRef}
+        <input type="text" name="arriving"  
         value={arriving} onChange={(event)=> setArriving(event.target.value)}
          className="reservationInput" required  placeholder="arriving" />
           
@@ -172,6 +177,7 @@ const makeReservation = async (event)=>{
          value={time} onChange={(event)=>setTime(event.target.value)}  required />
         </div>
     <button type="submit"  onClick={makeReservation}  className="submitButtons">Make reservation</button>
+   
 </form>
 
 
