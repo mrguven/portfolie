@@ -1,7 +1,7 @@
 
 import { useState,useEffect  } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
-// import GMap from '../pages/Gmap'
+ import GMap from '../pages/Gmap'
 // import axios from 'axios';
 import { useJsApiLoader,
     GoogleMap,Marker,DirectionsRenderer, DirectonsService,Map, InfoWindow, GoogleApiWrapper } from "@react-google-maps/api";
@@ -9,22 +9,22 @@ import { usePlacesWidget,Autocomplete } from "react-google-autocomplete";
 
 
 
-    // import {
-    //     setKey,
-    //     setDefaults,
-    //     setLanguage,
-    //     setRegion,
-    //     fromAddress,
-    //     fromLatLng,
-    //     fromPlaceId,
-    //     setLocationType,
-    //     geocode,
-    //     RequestType,
-    //   } from "react-geocode";
+    import {
+        setKey,
+        setDefaults,
+        setLanguage,
+        setRegion,
+        fromAddress,
+        fromLatLng,
+        fromPlaceId,
+        setLocationType,
+        geocode,
+        RequestType,
+      } from "react-geocode";
       
     
 
-    const GOOGLE_MAP_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+    
 
     const center = {
         lat: 51.9244,
@@ -34,11 +34,11 @@ import { usePlacesWidget,Autocomplete } from "react-google-autocomplete";
     
 
 export default function MyTaxi () {
+  const GOOGLE_MAP_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
-
-const [departure,setDeparture]=useState();
-const [arriving,setArriving]=useState();
-const[time, setTime]=useState();
+const [departure,setDeparture]=useState('');
+const [arriving,setArriving]=useState('');
+const[time, setTime]=useState('');
 const [distance,setDistance]=useState();
 const[result,setResult]=useState();
 
@@ -69,8 +69,8 @@ const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.google_maps_api_key,
   });
 
-  const [map, setMap] = useState(null);
-  const [directionsResponse, setDirectionsResponse] = useState(null);
+   const [map, setMap] = useState(null);
+   const [directionsResponse, setDirectionsResponse] = useState(null);
 
 const makeReservation = async (event)=>{
         event.preventDefault();
@@ -97,21 +97,17 @@ const makeReservation = async (event)=>{
 
 
 
-        const { ref } = usePlacesWidget({
-          apiKey: GOOGLE_MAP_API_KEY,
-          onPlaceSelected: (place) => console.log(place)
-          
-        })
-
-        // const { arrivingRef } = usePlacesWidget({
+        // const { ref } = usePlacesWidget({
         //   apiKey: GOOGLE_MAP_API_KEY,
         //   onPlaceSelected: (place) => console.log(place)
+          
         // })
 
+ 
      
 
 
-console.log(ref);
+// console.log(ref);
 
 
 
@@ -149,8 +145,8 @@ console.log(ref);
                   </label>
                   </div>
                   <div>
-                   <input type="text" name="departure" required  ref={ref}
-                  value={departure} onChange={(event)=> setDeparture(event.target.value)}
+                   <input type="text" name="departure" required  value={departure}
+                   onChange={(event)=> setDeparture(event.target.value)}
                   className="reservationInput" id="departure"  placeholder="departure" />
                    
                   </div>
@@ -162,8 +158,8 @@ console.log(ref);
 
         <div>
        
-        <input type="text" name="arriving"  
-        value={arriving} onChange={(event)=> setArriving(event.target.value)}
+        <input type="text" name="arriving"  value={arriving}
+         onChange={(event)=> setArriving(event.target.value)}
          className="reservationInput" required  placeholder="arriving" />
           
         </div>
@@ -182,11 +178,9 @@ console.log(ref);
 
 
 
-<div>
-    <h2 id='result'></h2>
-</div>
 
-{
+
+{/* {
      isLoaded &&
      <GoogleMap id='mapContainerStyle'
         center={center}
@@ -205,16 +199,18 @@ console.log(ref);
           <DirectionsRenderer directions={directionsResponse} />
         )}
       </GoogleMap>
-}
+} */}
 
-    {/* <div className="App">
+    <div className="App">
      
-      { !arriving && !departure ? <div>Loading...</div> : <GMap  arrPlace={arriving} deparPlace={departure}   />}
+      { !directionsResponse ? <div>Loading...</div> : <GMap  arrPlace={arriving} deparPlace={departure}   />}
      
      
-    </div> */}
+    </div>
 
-
+    <div>
+    <h2 id='result'></h2>
+</div>
 
 
 </div>

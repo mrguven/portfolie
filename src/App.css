@@ -168,11 +168,17 @@ margin-top: 20px;
 }
 
 
-#mapContainerStyle {
+/* #mapContainerStyle {
   width: 60%; 
   height: 400px; 
   margin-left:10%;
   
+} */
+
+#mapsStyle {
+  width: 70%; 
+  height: 500px;
+  margin-left:10%;
 }
 #reservationInfo {
   display: grid;
