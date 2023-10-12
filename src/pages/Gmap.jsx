@@ -70,7 +70,7 @@ else {
   return
 }
     
-  }, [map,info])
+  }, [map])
 
   
 
