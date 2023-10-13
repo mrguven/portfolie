@@ -37,7 +37,7 @@ if(info) {fromAddress( info.deparPlace)
   .then(({ results }) => {
     const { lat, lng } = results[0].geometry.location;
     console.log(lat, lng);
-    var haight = new window.google.maps.LatLng(lat, lng);
+    var departure = new window.google.maps.LatLng(lat, lng);
  
   
   
@@ -45,10 +45,10 @@ if(info) {fromAddress( info.deparPlace)
   .then(({ results }) => {
     const { lat, lng } = results[0].geometry.location;
     console.log(results);
-    var oceanBeach = new window.google.maps.LatLng(lat, lng);
+    var arriving = new window.google.maps.LatLng(lat, lng);
     var request = {
-      origin: haight,
-      destination: oceanBeach,
+      origin: departure,
+      destination: arriving,
       travelMode: 'DRIVING'
     };
     directionsService.route(request, function (response, status) {
