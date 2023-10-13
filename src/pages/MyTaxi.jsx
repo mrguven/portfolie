@@ -40,7 +40,7 @@ const [arriving,setArriving]=useState('');
 const[time, setTime]=useState('');
 const [distance,setDistance]=useState();
 const[travelTime,setTravelTime]=useState();
-const [search, setSearch] = useState(false);
+//const [search, setSearch] = useState(false);
 const [directionsResponse, setDirectionsResponse] = useState(null);
 const [loadMap, setLoadMap] = useState(false);
 
@@ -73,11 +73,11 @@ const { isLoaded } = useJsApiLoader({
 
 const makeReservation = async (event)=>{
         event.preventDefault();
-        setSearch(true);
+       
 
         if (arriving === "" || departure === "") {
             return;
-          } else if(search) {
+          } else  {
             const directionsService = new window.google.maps.DirectionsService();
             const results = await directionsService.route({
               origin: departure,
@@ -205,7 +205,7 @@ const makeReservation = async (event)=>{
 
     <div className="App">
      
-      { !directionsResponse ? <div>Loading...</div> : <GMap  search={search} arrPlace={arriving} deparPlace={departure}   />}
+      { !directionsResponse ? <div>Loading...</div> : <GMap   arrPlace={arriving} deparPlace={departure}   />}
      
      
     </div>
