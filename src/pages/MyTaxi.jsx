@@ -3,24 +3,23 @@ import { useState,useEffect  } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
  import GMap from '../pages/Gmap'
 // import axios from 'axios';
-import { useJsApiLoader,
-    GoogleMap,Marker,DirectionsRenderer, DirectonsService,Map, InfoWindow, GoogleApiWrapper } from "@react-google-maps/api";
-import { usePlacesWidget,Autocomplete } from "react-google-autocomplete";
+import { useJsApiLoader } from "@react-google-maps/api";
+//import { usePlacesWidget,Autocomplete } from "react-google-autocomplete";
 
 
 
-    import {
-        setKey,
-        setDefaults,
-        setLanguage,
-        setRegion,
-        fromAddress,
-        fromLatLng,
-        fromPlaceId,
-        setLocationType,
-        geocode,
-        RequestType,
-      } from "react-geocode";
+    // import {
+    //     setKey,
+    //     setDefaults,
+    //     setLanguage,
+    //     setRegion,
+    //     fromAddress,
+    //     fromLatLng,
+    //     fromPlaceId,
+    //     setLocationType,
+    //     geocode,
+    //     RequestType,
+    //   } from "react-geocode";
       
     
 
@@ -40,8 +39,9 @@ const [departure,setDeparture]=useState('');
 const [arriving,setArriving]=useState('');
 const[time, setTime]=useState('');
 const [distance,setDistance]=useState();
-const[result,setResult]=useState();
-
+const[travelTime,setTravelTime]=useState();
+const [search, setSearch] = useState(false);
+const [directionsResponse, setDirectionsResponse] = useState(null);
 const [loadMap, setLoadMap] = useState(false);
 
 useEffect(() => {
@@ -69,25 +69,27 @@ const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.google_maps_api_key,
   });
 
-   const [map, setMap] = useState(null);
-   const [directionsResponse, setDirectionsResponse] = useState(null);
+
 
 const makeReservation = async (event)=>{
         event.preventDefault();
+        setSearch(true);
 
         if (arriving === "" || departure === "") {
             return;
+          } else if(search) {
+            const directionsService = new window.google.maps.DirectionsService();
+            const results = await directionsService.route({
+              origin: departure,
+              destination: arriving,
+              travelMode: window.google.maps.TravelMode.DRIVING,
+            });
+            setDirectionsResponse(results);
+            console.log(directionsResponse);
+  
           }
        
-          const directionsService = new window.google.maps.DirectionsService();
-          const results = await directionsService.route({
-            origin: departure,
-            destination: arriving,
-            travelMode: window.google.maps.TravelMode.DRIVING,
-          });
-          setDirectionsResponse(results);
-          console.log(directionsResponse);
-
+         
 
 
 
@@ -203,7 +205,7 @@ const makeReservation = async (event)=>{
 
     <div className="App">
      
-      { !directionsResponse ? <div>Loading...</div> : <GMap  arrPlace={arriving} deparPlace={departure}   />}
+      { !directionsResponse ? <div>Loading...</div> : <GMap  search={search} arrPlace={arriving} deparPlace={departure}   />}
      
      
     </div>
