@@ -114,7 +114,7 @@ const makeReservation = async (event)=>{
        
          
 
-          if (!map) return;
+          if (!map)  return;
 
           var directionsService = new window.google.maps.DirectionsService();
           var directionsRenderer = new window.google.maps.DirectionsRenderer();
