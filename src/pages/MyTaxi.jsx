@@ -167,6 +167,8 @@ const makeReservation = async (event)=>{
           });
         }
 
+        
+
         // const { ref } = usePlacesWidget({
         //   apiKey: GOOGLE_MAP_API_KEY,
         //   onPlaceSelected: (place) => console.log(place)
