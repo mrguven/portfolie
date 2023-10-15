@@ -3,8 +3,8 @@ import { useState,useEffect, useRef } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
 // import GMap from '../pages/Gmap'
 // import axios from 'axios';
-//import { GoogleMap, Marker,google } from "react-google-maps"
-import { useJsApiLoader,googleMapsApiKey } from "@react-google-maps/api";
+//import { GoogleMap, Marker,GeoCoder  } from "react-google-maps"
+import { useJsApiLoader,googleMapsApiKey,OverlayView  } from "@react-google-maps/api";
 //import { usePlacesWidget,Autocomplete } from "react-google-autocomplete";
 
 
@@ -89,11 +89,11 @@ useEffect(() => {
   const loader = new Loader({
     apiKey: GOOGLE_MAP_API_KEY,
     version: "weekly",
-    libraries: ['geometry']
+    libraries: ['geometry','places']
   });
   
   loader.load().then(async () => {
-    const { Map } = await google.maps.importLibrary("maps");
+    const { Map } = await new window.google.maps.importLibrary("maps");
   
     map = new Map(googleMapRef.current, {
       center: new window.google.maps.LatLng(51.9244, 4.4777),
