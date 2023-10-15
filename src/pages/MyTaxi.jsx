@@ -3,7 +3,8 @@ import { useState,useEffect, useRef } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
 // import GMap from '../pages/Gmap'
 // import axios from 'axios';
-import { useJsApiLoader } from "@react-google-maps/api";
+//import { GoogleMap, Marker,google } from "react-google-maps"
+import { useJsApiLoader,googleMapsApiKey } from "@react-google-maps/api";
 //import { usePlacesWidget,Autocomplete } from "react-google-autocomplete";
 
 
@@ -53,7 +54,7 @@ const [distance,setDistance]=useState();
 const[travelTime,setTravelTime]=useState();
 //const [search, setSearch] = useState(false);
 const [directionsResponse, setDirectionsResponse] = useState(null);
-const [loadMap, setLoadMap] = useState(false);
+//const [loadMap, setLoadMap] = useState(false);
 
 
 setDefaults({
@@ -61,28 +62,62 @@ setDefaults({
   
 });
 
+
+
 const googleMapRef = useRef(null);
 const [map, setMap] = useState(null);
 
+
+const initGoogleMap = () => {
+  return new window.google.maps.Map(googleMapRef.current, {
+    center: new window.google.maps.LatLng(51.9244, 4.4777),
+    zoom: 10
+  });
+}
+
+
 useEffect(() => {
   const googleMap = initGoogleMap();
-  setMap(googleMap);
+   setMap(googleMap);
 }, []);
 
 
-// useEffect(() => {
-//   const options = {
-//     apiKey: GOOGLE_MAP_API_KEY,
-//     version: "weekly",
-//     libraries: ['geometry']
-//   };
+useEffect(() => {
 
-//   new Loader(options).load().then(() => {
-//     setLoadMap(true);
-//   }).catch(e => {
-//     console.error('Sorry, something went wrong: Please try again later. Error:', e);
-//   });
-// }, []);
+
+
+  const loader = new Loader({
+    apiKey: GOOGLE_MAP_API_KEY,
+    version: "weekly",
+    libraries: ['geometry']
+  });
+  
+  loader.load().then(async () => {
+    const { Map } = await google.maps.importLibrary("maps");
+  
+    map = new Map(googleMapRef.current, {
+      center: new window.google.maps.LatLng(51.9244, 4.4777),
+      zoom: 10
+    });
+  });
+
+
+
+
+
+
+  // const options = {
+  //   apiKey: GOOGLE_MAP_API_KEY,
+  //   version: "weekly",
+  //   libraries: ['geometry']
+  // };
+
+  // new Loader(options).load().then(() => {
+   
+  // }).catch(e => {
+  //   console.error('Sorry, something went wrong: Please try again later. Error:', e);
+  // });
+}, []);
 
 
 
@@ -156,16 +191,11 @@ const makeReservation = async (event)=>{
         return
       }
 
-   
+  
 
         }
 
-        const initGoogleMap = () => {
-          return new window.google.maps.Map(googleMapRef.current, {
-            center: new window.google.maps.LatLng(51.9244, 4.4777),
-            zoom: 10
-          });
-        }
+  
 
         
 
@@ -180,7 +210,6 @@ const makeReservation = async (event)=>{
 
 
 // console.log(ref);
-
 
 
 
