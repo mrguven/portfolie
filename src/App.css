@@ -169,8 +169,8 @@ margin-top: 20px;
 
 
 #mapContainerStyle {
-  width: 60%; 
-  height: 400px; 
+  width: 80%; 
+  height: auto; 
   margin-left:10%;
   
 }

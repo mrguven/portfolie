@@ -52,7 +52,7 @@ const [arriving,setArriving]=useState('');
 const[time, setTime]=useState('');
 const [distance,setDistance]=useState();
 const[travelTime,setTravelTime]=useState();
-//const [search, setSearch] = useState(false);
+const [search, setSearch] = useState();
 const [directionsResponse, setDirectionsResponse] = useState(null);
 const [loadMap, setLoadMap] = useState(false);
 
@@ -145,9 +145,9 @@ const makeReservation = async (event)=>{
 
         if (arriving === "" || departure === "") {
       
-          directionsRenderer.setMap(map);
+          directionsRenderer.setMap(null);
         }
-          if (!map)  return;
+          //if (!map)  return;
 
       // if(arriving  && departure) 
       //{fromAddress( departure)
