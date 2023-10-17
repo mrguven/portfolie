@@ -1,10 +1,10 @@
 
 import { useState,useEffect, useRef } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
-// import GMap from '../pages/Gmap'
+ import GMap from '../pages/Gmap'
 // import axios from 'axios';
 //import { GoogleMap, Marker  } from "react-google-maps"
-import { useJsApiLoader,googleMapsApiKey,OverlayView  } from "@react-google-maps/api";
+import { GoogleMap, Marker, useLoadScript,DirectionsRenderer } from "@react-google-maps/api";
 import { usePlacesWidget,Autocomplete } from "react-google-autocomplete";
 
 
@@ -62,7 +62,9 @@ const [loadMap, setLoadMap] = useState(false);
   
 // });
 
-
+const { isLoaded } = useLoadScript({
+  googleMapsApiKey: GOOGLE_MAP_API_KEY,
+});
 
 const googleMapRef = useRef(null);
 const [map, setMap] = useState(null);
@@ -154,8 +156,8 @@ const makeReservation = async (event)=>{
 
           if (!map)  return;
 
-          // var directionsService = new window.google.maps.DirectionsService();
-          // var directionsRenderer = new window.google.maps.DirectionsRenderer();
+           var directionsService = new window.google.maps.DirectionsService();
+          var directionsRenderer = new window.google.maps.DirectionsRenderer();
       // if(arriving  && departure) 
       //{fromAddress( departure)
       //   .then(({ results }) => {
@@ -170,19 +172,19 @@ const makeReservation = async (event)=>{
       //     const { lat, lng } = results[0].geometry.location;
       //     console.log(results);
       //     var arriving = new window.google.maps.LatLng(lat, lng);
-      //     var request = {
-      //       origin: departure,
-      //       destination: arriving,
-      //       travelMode: 'DRIVING'
-      //     };
-      //     directionsService.route(request, function (response, status) {
-      //       if (status == 'OK') {
-      //         directionsRenderer.setDirections(response);
-      //         console.log(response);
-      //         directionsRenderer.setMap(map);
-      //         console.log(map);
-      //       }
-      //     });
+          var request = {
+            origin: departure,
+            destination: arriving,
+            travelMode: 'DRIVING'
+          };
+          directionsService.route(request, function (response, status) {
+            if (status == 'OK') {
+              directionsRenderer.setDirections(response);
+              console.log(response);
+              directionsRenderer.setMap(map);
+              console.log(map);
+            }
+          });
       
       
       //   })
@@ -201,22 +203,22 @@ const makeReservation = async (event)=>{
       //           directionsRenderer.setMap(map);
       //           console.log(map)}})
               
-           }
+           
   
-
-        
+    }
+      
 
       
 
         
+        
+     
 
-        const { ref } = usePlacesWidget({
-          apiKey: GOOGLE_MAP_API_KEY,
-          onPlaceSelected: (place) => console.log(place)
-          
-        })
-
- 
+          const { ref } = usePlacesWidget({
+            apiKey: GOOGLE_MAP_API_KEY,
+            onPlaceSelected: (place) => console.log(place)
+            
+          })
      
 
 
