@@ -66,7 +66,7 @@ const { isLoaded } = useLoadScript({
   googleMapsApiKey: GOOGLE_MAP_API_KEY,
 });
 
-const googleMapRef = useRef(null);
+//const googleMapRef = useRef(null);
 const [map, setMap] = useState(null);
 
 
@@ -140,15 +140,15 @@ console.log(departure);
 const makeReservation = async (event)=>{
         event.preventDefault();
        
+        var directionsService = new window.google.maps.DirectionsService();
+        var directionsRenderer = new window.google.maps.DirectionsRenderer();
 
         if (arriving === "" || departure === "") {
       
-         
+          directionsRenderer.setMap(map);
         }
           if (!map)  return;
 
-           var directionsService = new window.google.maps.DirectionsService();
-          var directionsRenderer = new window.google.maps.DirectionsRenderer();
       // if(arriving  && departure) 
       //{fromAddress( departure)
       //   .then(({ results }) => {
@@ -311,11 +311,11 @@ const makeReservation = async (event)=>{
      
     </div>
 
-    <div id='mapsStyle'
+    {/* <div id='mapsStyle'
     ref={googleMapRef}
     
    
-  />
+  /> */}
 
     <div>
     <h2 id='result'></h2>
