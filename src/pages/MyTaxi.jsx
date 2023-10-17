@@ -142,18 +142,9 @@ const makeReservation = async (event)=>{
        
 
         if (arriving === "" || departure === "") {
-          const initGoogleMap = () => {
-            return new window.google.maps.Map(googleMapRef.current, {
-              center: new window.google.maps.LatLng(51.9244, 4.4777),
-              zoom: 10
-            });
-          }
-    
-          initGoogleMap();
-          } 
-       
+      
          
-
+        }
           if (!map)  return;
 
            var directionsService = new window.google.maps.DirectionsService();
@@ -214,15 +205,15 @@ const makeReservation = async (event)=>{
         
      
 
-          const { ref } = usePlacesWidget({
-            apiKey: GOOGLE_MAP_API_KEY,
-            onPlaceSelected: (place) => console.log(place)
+//           const { ref } = usePlacesWidget({
+//             apiKey: GOOGLE_MAP_API_KEY,
+//             onPlaceSelected: (place) => console.log(place)
             
-          })
+//           })
      
 
 
-console.log(ref);
+// console.log(ref);
 
 
 
@@ -289,8 +280,6 @@ console.log(ref);
     <button type="submit"  onClick={makeReservation}  className="submitButtons">Make reservation</button>
    
 </form>
-
-
 
 
 
