@@ -3,9 +3,10 @@ import { useState,useEffect, useRef } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
 // import GMap from '../pages/Gmap'
 // import axios from 'axios';
-//import { GoogleMap, Marker,GeoCoder  } from "react-google-maps"
+//import { GoogleMap, Marker  } from "react-google-maps"
 import { useJsApiLoader,googleMapsApiKey,OverlayView  } from "@react-google-maps/api";
-//import { usePlacesWidget,Autocomplete } from "react-google-autocomplete";
+import { usePlacesWidget,Autocomplete } from "react-google-autocomplete";
+
 
 
 
@@ -22,18 +23,18 @@ import { useJsApiLoader,googleMapsApiKey,OverlayView  } from "@react-google-maps
     //     RequestType,
     //   } from "react-geocode";
       
-    import {
-      setKey,
-      setDefaults,
-      setLanguage,
-      setRegion,
-      fromAddress,
-      fromLatLng,
-      fromPlaceId,
-      setLocationType,
-      geocode,
-      RequestType,
-    } from "react-geocode";
+    // import {
+    //   setKey,
+    //   setDefaults,
+    //   setLanguage,
+    //   setRegion,
+    //   fromAddress,
+    //   fromLatLng,
+    //   fromPlaceId,
+    //   setLocationType,
+    //   geocode,
+    //   RequestType,
+    // } from "react-geocode";
 
     
 
@@ -42,11 +43,10 @@ import { useJsApiLoader,googleMapsApiKey,OverlayView  } from "@react-google-maps
         lng: 4.4777,
       };
 
-    
+      const GOOGLE_MAP_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 export default function MyTaxi () {
-  const GOOGLE_MAP_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-
+ 
 const [departure,setDeparture]=useState('');
 const [arriving,setArriving]=useState('');
 const[time, setTime]=useState('');
@@ -54,13 +54,13 @@ const [distance,setDistance]=useState();
 const[travelTime,setTravelTime]=useState();
 //const [search, setSearch] = useState(false);
 const [directionsResponse, setDirectionsResponse] = useState(null);
-//const [loadMap, setLoadMap] = useState(false);
+const [loadMap, setLoadMap] = useState(false);
 
 
-setDefaults({
-  key:  GOOGLE_MAP_API_KEY 
+// setDefaults({
+//   key:  GOOGLE_MAP_API_KEY 
   
-});
+// });
 
 
 
@@ -68,55 +68,58 @@ const googleMapRef = useRef(null);
 const [map, setMap] = useState(null);
 
 
-const initGoogleMap = () => {
-  return new window.google.maps.Map(googleMapRef.current, {
-    center: new window.google.maps.LatLng(51.9244, 4.4777),
-    zoom: 10
-  });
-}
+// const initGoogleMap = () => {
+//   return new window.google.maps.Map(googleMapRef.current, {
+//     center: new window.google.maps.LatLng(51.9244, 4.4777),
+//     zoom: 10
+//   });
+// }
+
+
+// useEffect(() => {
+//    const googleMap = initGoogleMap();
+//    setMap(googleMap);
+// }, []);
 
 
 useEffect(() => {
-  const googleMap = initGoogleMap();
-   setMap(googleMap);
-}, []);
-
-
-useEffect(() => {
 
 
 
-  const loader = new Loader({
-    apiKey: GOOGLE_MAP_API_KEY,
-    version: "weekly",
-    libraries: ['geometry','places']
-  });
-  
-  loader.load().then(async () => {
-    const { Map } = await new window.google.maps.importLibrary("maps");
-  
-    map = new Map(googleMapRef.current, {
-      center: new window.google.maps.LatLng(51.9244, 4.4777),
-      zoom: 10
-    });
-  });
-
-
-
-
-
-
-  // const options = {
+  // const loader = new Loader({
   //   apiKey: GOOGLE_MAP_API_KEY,
   //   version: "weekly",
-  //   libraries: ['geometry']
-  // };
-
-  // new Loader(options).load().then(() => {
-   
-  // }).catch(e => {
-  //   console.error('Sorry, something went wrong: Please try again later. Error:', e);
+  //   libraries: ['geometry','places']
   // });
+  
+  // loader.load().then(async () => {
+  //   const { Map } = await new window.google.maps.importLibrary("maps");
+  
+  //   new Map(googleMapRef.current, {
+  //     center: {
+  //       lat: 51.9244,
+  //       lng: 4.4777
+  //     },
+  //     zoom: 10
+  //   });
+  // });
+
+
+
+
+
+
+  const options = {
+    apiKey: GOOGLE_MAP_API_KEY,
+    version: "weekly",
+    libraries: ['geometry']
+  };
+
+  new Loader(options).load().then(() => {
+   
+  }).catch(e => {
+    console.error('Sorry, something went wrong: Please try again later. Error:', e);
+  });
 }, []);
 
 
@@ -151,65 +154,73 @@ const makeReservation = async (event)=>{
 
           if (!map)  return;
 
-          var directionsService = new window.google.maps.DirectionsService();
-          var directionsRenderer = new window.google.maps.DirectionsRenderer();
-      if(arriving  && departure) {fromAddress( departure)
-        .then(({ results }) => {
-          const { lat, lng } = results[0].geometry.location;
-          console.log(lat, lng);
-          var departure = new window.google.maps.LatLng(lat, lng);
+          // var directionsService = new window.google.maps.DirectionsService();
+          // var directionsRenderer = new window.google.maps.DirectionsRenderer();
+      // if(arriving  && departure) 
+      //{fromAddress( departure)
+      //   .then(({ results }) => {
+      //     const { lat, lng } = results[0].geometry.location;
+      //     console.log(lat, lng);
+      //     var departure = new window.google.maps.LatLng(lat, lng);
        
         
         
-        fromAddress(arriving)
-        .then(({ results }) => {
-          const { lat, lng } = results[0].geometry.location;
-          console.log(results);
-          var arriving = new window.google.maps.LatLng(lat, lng);
-          var request = {
-            origin: departure,
-            destination: arriving,
-            travelMode: 'DRIVING'
-          };
-          directionsService.route(request, function (response, status) {
-            if (status == 'OK') {
-              directionsRenderer.setDirections(response);
-              console.log(response);
-              directionsRenderer.setMap(map);
-              console.log(map);
-            }
-          });
+      //   fromAddress(arriving)
+      //   .then(({ results }) => {
+      //     const { lat, lng } = results[0].geometry.location;
+      //     console.log(results);
+      //     var arriving = new window.google.maps.LatLng(lat, lng);
+      //     var request = {
+      //       origin: departure,
+      //       destination: arriving,
+      //       travelMode: 'DRIVING'
+      //     };
+      //     directionsService.route(request, function (response, status) {
+      //       if (status == 'OK') {
+      //         directionsRenderer.setDirections(response);
+      //         console.log(response);
+      //         directionsRenderer.setMap(map);
+      //         console.log(map);
+      //       }
+      //     });
       
       
-        })
-        .catch(console.error);
+      //   })
+      //   .catch(console.error);
       
         
-      })
-      .catch(console.error);}
-      else {
-        return
-      }
-
-  
-
-        }
-
+      // })
+      // .catch(console.error);}
+      // else {
+      //   return
+      // }
+      // directionsService.route(request, function (response, status) {
+      //         if (status == 'OK') {
+      //           directionsRenderer.setDirections(response);
+      //           console.log(response);
+      //           directionsRenderer.setMap(map);
+      //           console.log(map)}})
+              
+           }
   
 
         
 
-        // const { ref } = usePlacesWidget({
-        //   apiKey: GOOGLE_MAP_API_KEY,
-        //   onPlaceSelected: (place) => console.log(place)
+      
+
+        
+
+        const { ref } = usePlacesWidget({
+          apiKey: GOOGLE_MAP_API_KEY,
+          onPlaceSelected: (place) => console.log(place)
           
-        // })
+        })
 
  
      
 
 
-// console.log(ref);
+console.log(ref);
 
 
 
@@ -281,7 +292,7 @@ const makeReservation = async (event)=>{
 
 
 
-{/* {
+{
      isLoaded &&
      <GoogleMap id='mapContainerStyle'
         center={center}
@@ -300,14 +311,14 @@ const makeReservation = async (event)=>{
           <DirectionsRenderer directions={directionsResponse} />
         )}
       </GoogleMap>
-} */}
+} 
 
-    {/* <div className="App">
+     <div className="App">
      
       { !directionsResponse ? <div>Loading...</div> : <GMap   arrPlace={arriving} deparPlace={departure}   />}
      
      
-    </div> */}
+    </div>
 
     <div id='mapsStyle'
     ref={googleMapRef}
