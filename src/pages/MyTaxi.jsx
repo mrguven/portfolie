@@ -84,45 +84,45 @@ const [map, setMap] = useState(null);
 // }, []);
 
 
-useEffect(() => {
+// useEffect(() => {
 
 
 
-  // const loader = new Loader({
-  //   apiKey: GOOGLE_MAP_API_KEY,
-  //   version: "weekly",
-  //   libraries: ['geometry','places']
-  // });
+//   // const loader = new Loader({
+//   //   apiKey: GOOGLE_MAP_API_KEY,
+//   //   version: "weekly",
+//   //   libraries: ['geometry','places']
+//   // });
   
-  // loader.load().then(async () => {
-  //   const { Map } = await new window.google.maps.importLibrary("maps");
+//   // loader.load().then(async () => {
+//   //   const { Map } = await new window.google.maps.importLibrary("maps");
   
-  //   new Map(googleMapRef.current, {
-  //     center: {
-  //       lat: 51.9244,
-  //       lng: 4.4777
-  //     },
-  //     zoom: 10
-  //   });
-  // });
+//   //   new Map(googleMapRef.current, {
+//   //     center: {
+//   //       lat: 51.9244,
+//   //       lng: 4.4777
+//   //     },
+//   //     zoom: 10
+//   //   });
+//   // });
 
 
 
 
 
 
-  const options = {
-    apiKey: GOOGLE_MAP_API_KEY,
-    version: "weekly",
-    libraries: ['geometry']
-  };
+//   const options = {
+//     apiKey: GOOGLE_MAP_API_KEY,
+//     version: "weekly",
+//     libraries: ['geometry']
+//   };
 
-  new Loader(options).load().then(() => {
+//   new Loader(options).load().then(() => {
    
-  }).catch(e => {
-    console.error('Sorry, something went wrong: Please try again later. Error:', e);
-  });
-}, []);
+//   }).catch(e => {
+//     console.error('Sorry, something went wrong: Please try again later. Error:', e);
+//   });
+// }, []);
 
 
 
@@ -143,10 +143,10 @@ const makeReservation = async (event)=>{
         var directionsService = new window.google.maps.DirectionsService();
         var directionsRenderer = new window.google.maps.DirectionsRenderer();
 
-        if (arriving === "" || departure === "") {
+        // if (arriving === "" || departure === "") {
       
-          directionsRenderer.setMap(null);
-        }
+        //   directionsRenderer.setMap(null);
+        // }
           //if (!map)  return;
 
       // if(arriving  && departure) 
@@ -174,10 +174,12 @@ const makeReservation = async (event)=>{
               console.log(response);
               directionsRenderer.setMap(map);
               console.log(map);
+              setSearch(response)
             }
           });
       
       
+          
       //   })
       //   .catch(console.error);
       
@@ -198,8 +200,12 @@ const makeReservation = async (event)=>{
   
     }
       
+console.log(search);
+      useEffect(()=>{
 
-      
+        setDistance(search)
+console.log(distance);
+      },[search])
 
         
         
