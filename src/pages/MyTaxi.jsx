@@ -1,6 +1,6 @@
 
 import { useState,useEffect, useRef } from 'react';
-import { Loader } from '@googlemaps/js-api-loader';
+import { Loader } from "@googlemaps/js-api-loader"
  import GMap from '../pages/Gmap'
 // import axios from 'axios';
 //import { GoogleMap, Marker  } from "react-google-maps"
@@ -62,11 +62,12 @@ const [loadMap, setLoadMap] = useState(false);
   
 // });
 
-const { isLoaded } = useLoadScript({
-  googleMapsApiKey: GOOGLE_MAP_API_KEY,
-});
 
-//const googleMapRef = useRef(null);
+// const { isLoaded } = useLoadScript({
+//   googleMapsApiKey: GOOGLE_MAP_API_KEY,
+// });
+
+const googleMapRef = useRef(null);
 const [map, setMap] = useState(null);
 
 
@@ -111,6 +112,7 @@ const [map, setMap] = useState(null);
 
 
 
+
 //   const options = {
 //     apiKey: GOOGLE_MAP_API_KEY,
 //     version: "weekly",
@@ -122,7 +124,7 @@ const [map, setMap] = useState(null);
 //   }).catch(e => {
 //     console.error('Sorry, something went wrong: Please try again later. Error:', e);
 //   });
-// }, []);
+//  }, []);
 
 
 
@@ -290,7 +292,7 @@ console.log(distance);
 
 
 {
-     isLoaded &&
+    
      <GoogleMap id='mapContainerStyle'
         center={center}
         zoom={9}
@@ -317,11 +319,11 @@ console.log(distance);
      
     </div>
 
-    {/* <div id='mapsStyle'
+    <div id='mapsStyle'
     ref={googleMapRef}
     
    
-  /> */}
+  />
 
     <div>
     <h2 id='result'></h2>
