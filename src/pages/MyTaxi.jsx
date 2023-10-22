@@ -4,7 +4,7 @@ import { Loader } from "@googlemaps/js-api-loader"
  import GMap from '../pages/Gmap'
 // import axios from 'axios';
 //import { GoogleMap, Marker  } from "react-google-maps"
-import { GoogleMap, Marker, useLoadScript,DirectionsRenderer } from "@react-google-maps/api";
+import { GoogleMap, Marker, useLoadScript,DirectionsRenderer,useJsApiLoader } from "@react-google-maps/api";
 import { usePlacesWidget,Autocomplete } from "react-google-autocomplete";
 
 
@@ -23,18 +23,18 @@ import { usePlacesWidget,Autocomplete } from "react-google-autocomplete";
     //     RequestType,
     //   } from "react-geocode";
       
-    // import {
-    //   setKey,
-    //   setDefaults,
-    //   setLanguage,
-    //   setRegion,
-    //   fromAddress,
-    //   fromLatLng,
-    //   fromPlaceId,
-    //   setLocationType,
-    //   geocode,
-    //   RequestType,
-    // } from "react-geocode";
+    import {
+      setKey,
+      setDefaults,
+      setLanguage,
+      setRegion,
+      fromAddress,
+      fromLatLng,
+      fromPlaceId,
+      setLocationType,
+      geocode,
+      RequestType,
+    } from "react-geocode";
 
     
 
@@ -57,10 +57,10 @@ const [directionsResponse, setDirectionsResponse] = useState(null);
 const [loadMap, setLoadMap] = useState(false);
 
 
-// setDefaults({
-//   key:  GOOGLE_MAP_API_KEY 
+setDefaults({
+  key:  GOOGLE_MAP_API_KEY 
   
-// });
+});
 
 
 // const { isLoaded } = useLoadScript({
@@ -132,10 +132,10 @@ console.log(time);
 console.log(arriving);
 console.log(departure);
 
-// const { isLoaded } = useJsApiLoader({
-//     id: "google-map-script",
-//     googleMapsApiKey: process.env.google_maps_api_key,
-//   });
+const { isLoaded } = useJsApiLoader({
+    
+    googleMapsApiKey:  GOOGLE_MAP_API_KEY,
+  });
 
 
 
@@ -213,11 +213,11 @@ console.log(distance);
         
      
 
-//           const { ref } = usePlacesWidget({
-//             apiKey: GOOGLE_MAP_API_KEY,
-//             onPlaceSelected: (place) => console.log(place)
+          const { ref } = usePlacesWidget({
+            apiKey: GOOGLE_MAP_API_KEY,
+            onPlaceSelected: (place) => console.log(place)
             
-//           })
+          })
      
 
 
@@ -291,7 +291,7 @@ console.log(distance);
 
 
 
-{
+{ isLoaded &&
     
      <GoogleMap id='mapContainerStyle'
         center={center}
@@ -312,12 +312,12 @@ console.log(distance);
       </GoogleMap>
 } 
 
-     <div className="App">
+     {/* <div className="App">
      
       { !directionsResponse ? <div>Loading...</div> : <GMap   arrPlace={arriving} deparPlace={departure}   />}
      
      
-    </div>
+    </div> */}
 
     <div id='mapsStyle'
     ref={googleMapRef}
