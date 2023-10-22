@@ -204,10 +204,19 @@ const makeReservation = async (event)=>{
       
 console.log(search);
       useEffect(()=>{
+if(search) {
 
-        setDistance(search)
-console.log(distance);
-      },[search])
+  setDistance(search.routes[0].legs[0].distance.value/1000)
+  
+  setTravelTime(search.routes[0].legs[0].duration.value/60)
+ 
+console.log(travelTime);
+  console.log(distance);
+}else 
+  {return}
+
+
+      })
 
         
         
