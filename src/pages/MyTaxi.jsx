@@ -56,7 +56,7 @@ const [search, setSearch] = useState();
 const [directionsResponse, setDirectionsResponse] = useState(null);
 const [loadMap, setLoadMap] = useState(false);
 const [total,setTotal]=useState();
-const result=useRef('');
+const result=useRef();
 
 setDefaults({
   key:  GOOGLE_MAP_API_KEY 
