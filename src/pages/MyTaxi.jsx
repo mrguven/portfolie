@@ -55,7 +55,8 @@ const[travelTime,setTravelTime]=useState();
 const [search, setSearch] = useState();
 const [directionsResponse, setDirectionsResponse] = useState(null);
 const [loadMap, setLoadMap] = useState(false);
-
+const [total,setTotal]=useState();
+const result=useRef('');
 
 setDefaults({
   key:  GOOGLE_MAP_API_KEY 
@@ -210,6 +211,10 @@ if(search) {
   
   setTravelTime(search.routes[0].legs[0].duration.value/60)
  
+  setTotal((distance*3)+(travelTime*0.40))
+  result.current=total;
+  console.log(total);
+  console.log(result.current);
 console.log(travelTime);
   console.log(distance);
 }else 
@@ -328,18 +333,27 @@ console.log(travelTime);
      
     </div> */}
 
+    <div>
+    {
+  total && 
+
+ 
+  <h2 id='result' ref={result}> ~ {result.current} euro ~</h2>
+
+
+}
+    </div>
+
     <div id='mapsStyle'
     ref={googleMapRef}
     
    
-  />
-
-    <div>
-    <h2 id='result'></h2>
-</div>
+  /></div>
 
 
-</div>
+ 
+
+
 
     )
 }
