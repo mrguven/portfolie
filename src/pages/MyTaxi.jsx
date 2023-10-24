@@ -56,7 +56,7 @@ const [search, setSearch] = useState();
 const [directionsResponse, setDirectionsResponse] = useState(null);
 const [loadMap, setLoadMap] = useState(false);
 const [total,setTotal]=useState();
-const result=useRef();
+const result=useRef(Number);
 
 setDefaults({
   key:  GOOGLE_MAP_API_KEY 
@@ -146,6 +146,38 @@ const makeReservation = async (event)=>{
         var directionsService = new window.google.maps.DirectionsService();
         var directionsRenderer = new window.google.maps.DirectionsRenderer();
 
+
+        var request = {
+          origin: departure,
+          destination: arriving,
+          travelMode: 'DRIVING'
+        };
+     await   directionsService.route(request, function (response, status) {
+          if (status == 'OK') {
+            directionsRenderer.setDirections(response);
+            console.log(response);
+            directionsRenderer.setMap(map);
+            console.log(map);
+            setSearch(response)
+console.log(search);
+          }
+
+        }
+          )
+
+            
+
+          
+       
+    
+
+       
+
+
+
+
+
+
         // if (arriving === "" || departure === "") {
       
         //   directionsRenderer.setMap(null);
@@ -166,23 +198,7 @@ const makeReservation = async (event)=>{
       //     const { lat, lng } = results[0].geometry.location;
       //     console.log(results);
       //     var arriving = new window.google.maps.LatLng(lat, lng);
-          var request = {
-            origin: departure,
-            destination: arriving,
-            travelMode: 'DRIVING'
-          };
-          directionsService.route(request, function (response, status) {
-            if (status == 'OK') {
-              directionsRenderer.setDirections(response);
-              console.log(response);
-              directionsRenderer.setMap(map);
-              console.log(map);
-              setSearch(response)
-            }
-          });
-      
-      
-          
+        
       //   })
       //   .catch(console.error);
       
@@ -203,28 +219,42 @@ const makeReservation = async (event)=>{
   
     }
       
-console.log(search);
-      useEffect(()=>{
-if(search) {
 
-  setDistance(search.routes[0].legs[0].distance.value/1000)
-  
-  setTravelTime(search.routes[0].legs[0].duration.value/60)
+
+
+useEffect(()=>{
+
+  if(distance && travelTime) {
+    setDistance(search.routes[0].legs[0].distance.value/1000)
+              
+    setTravelTime(search.routes[0].legs[0].duration.value/60)
+   
+    setTotal((distance*3)+(travelTime*0.40))
+    result.current=total;
+     console.log(result.current);
+  } 
  
-  setTotal((distance*3)+(travelTime*0.40))
-  result.current=total;
-  console.log(total);
-  console.log(result.current);
-console.log(travelTime);
-  console.log(distance);
-}else 
-  {return}
+   else {
+     return
+ 
+   }
+  
 
 
-      })
+  
+
+   console.log(total);
+   
+ console.log(travelTime);
+   console.log(distance);
+
+
+})
+
+
 
         
-        
+       
      
 
           const { ref } = usePlacesWidget({
