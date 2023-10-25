@@ -50,13 +50,13 @@ export default function MyTaxi () {
 const [departure,setDeparture]=useState('');
 const [arriving,setArriving]=useState('');
 const[time, setTime]=useState('');
-const [distance,setDistance]=useState();
-const[travelTime,setTravelTime]=useState();
+const [distance,setDistance]=useState(Number);
+const[travelTime,setTravelTime]=useState(Number);
 const [search, setSearch] = useState();
 const [directionsResponse, setDirectionsResponse] = useState(null);
 const [loadMap, setLoadMap] = useState(false);
 const [total,setTotal]=useState();
-const result=useRef(Number);
+const result=useRef();
 
 setDefaults({
   key:  GOOGLE_MAP_API_KEY 
@@ -224,14 +224,13 @@ console.log(search);
 
 useEffect(()=>{
 
-  if(distance && travelTime) {
+  if(search) {
     setDistance(search.routes[0].legs[0].distance.value/1000)
               
     setTravelTime(search.routes[0].legs[0].duration.value/60)
    
-    setTotal((distance*3)+(travelTime*0.40))
-    result.current=total;
-     console.log(result.current);
+    
+    
   } 
  
    else {
@@ -252,6 +251,18 @@ useEffect(()=>{
 })
 
 
+useEffect( ()=>{
+  setTotal((distance*3)+(travelTime*0.40))
+   if(total>0) {
+    result.current=total;
+    console.log(result.current);
+  }
+  else {
+    return
+  }
+
+
+})
 
         
        
@@ -365,7 +376,7 @@ useEffect(()=>{
 
     <div>
     {
-  total && 
+  result.current && 
 
  
   <h2 id='result' ref={result}> ~ {result.current} euro ~</h2>
