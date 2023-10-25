@@ -6,7 +6,7 @@ import Login from './pages/Login';
 import CatchMe from './pages/CatchMe';
 import Home from './pages/Home';
 import Stock from './pages/Stock';
-import About from './pages/About';
+import Todo from './pages/Todo';
 import Costumers from './pages/Costumers';
 import MyTaxi from './pages/MyTaxi';
 import Footer from './components/Footer';
@@ -24,7 +24,7 @@ function App() {
 <Route path='/costumers' element={<Costumers />} />
 <Route path='/catchMe' element={<CatchMe />} />
 <Route path='/stock' element={<Stock />} />
-<Route path='/about' element={<About />} />
+<Route path='/todo' element={<Todo />} />
 <Route path='/mytaxi' element={<MyTaxi />}></Route>
 <Route path='/nssg' element={<Nssg />}></Route>
 </Routes>
