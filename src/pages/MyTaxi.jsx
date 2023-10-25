@@ -223,20 +223,15 @@ console.log(search);
 
 
 useEffect(()=>{
-
-  if(search) {
-    setDistance(search.routes[0].legs[0].distance.value/1000)
+console.log(search);
+ 
+    setDistance(search?.routes[0]?.legs[0]?.distance.value/1000)
               
-    setTravelTime(search.routes[0].legs[0].duration.value/60)
+    setTravelTime(search?.routes[0]?.legs[0]?.duration.value/60)
    
     
     
-  } 
  
-   else {
-     return
- 
-   }
   
 
 
@@ -253,6 +248,7 @@ useEffect(()=>{
 
 useEffect( ()=>{
   setTotal((distance*3)+(travelTime*0.40))
+  console.log(total);
    if(total>0) {
     result.current=total;
     console.log(result.current);
