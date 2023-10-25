@@ -57,6 +57,8 @@ const [directionsResponse, setDirectionsResponse] = useState(null);
 const [loadMap, setLoadMap] = useState(false);
 const [total,setTotal]=useState();
 const result=useRef();
+const googleMapRef = useRef(null);
+const [map, setMap] = useState(null);
 
 setDefaults({
   key:  GOOGLE_MAP_API_KEY 
@@ -68,8 +70,7 @@ setDefaults({
 //   googleMapsApiKey: GOOGLE_MAP_API_KEY,
 // });
 
-const googleMapRef = useRef(null);
-const [map, setMap] = useState(null);
+
 
 
 // const initGoogleMap = () => {
