@@ -235,7 +235,7 @@ console.log(search);
   
 
 
-  
+    setTotal((distance*3)+(travelTime*0.40))
 
    console.log(total);
    
@@ -247,7 +247,7 @@ console.log(search);
 
 
 useEffect( ()=>{
-  setTotal((distance*3)+(travelTime*0.40))
+
   console.log(total);
    if(total>0) {
     result.current=total;
