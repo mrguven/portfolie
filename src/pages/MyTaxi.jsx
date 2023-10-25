@@ -60,10 +60,10 @@ const result=useRef();
 const googleMapRef = useRef(null);
 const [map, setMap] = useState(null);
 
-setDefaults({
-  key:  GOOGLE_MAP_API_KEY 
+// setDefaults({
+//   key:  GOOGLE_MAP_API_KEY 
   
-});
+// });
 
 
 // const { isLoaded } = useLoadScript({
