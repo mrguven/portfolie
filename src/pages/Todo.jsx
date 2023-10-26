@@ -9,9 +9,14 @@ const result=useRef();
 
 const addToList=()=>{
 console.log('hello');
-setTodoList(
-    [...todoList,todo]
-)
+if(todo!==''){
+    setTodoList(
+        [...todoList,todo]
+    )
+}else {
+    alert('you should add somethings')
+}
+
 
 console.log(todoList);
 
@@ -32,6 +37,18 @@ return(
 <button  onClick={addToList} >add</button>
 
 <h3 ref={result} ></h3>
+
+
+{
+    todoList && 
+   
+    todoList.map((task)=>{
+       
+       return( <ul><li> <h2> {task}</h2></li></ul>
+       )
+    })
+    
+}
 
 </div>
 

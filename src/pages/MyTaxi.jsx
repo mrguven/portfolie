@@ -55,7 +55,7 @@ const[travelTime,setTravelTime]=useState(Number);
 const [search, setSearch] = useState();
 const [directionsResponse, setDirectionsResponse] = useState(null);
 const [loadMap, setLoadMap] = useState(false);
-const [total,setTotal]=useState();
+const [total,setTotal]=useState(Number);
 const result=useRef();
 const googleMapRef = useRef(null);
 const [map, setMap] = useState(null);
@@ -247,19 +247,19 @@ console.log(search);
 })
 
 
-useEffect( ()=>{
+// useEffect( ()=>{
 
-  console.log(total);
-   if(total>0) {
-    result.current=total;
-    console.log(result.current);
-  }
-  else {
-    return
-  }
+//   console.log(total);
+//    if(total>0) {
+//     result.current=total;
+//     console.log(result.current);
+//   }
+//   else {
+//     return
+//   }
 
 
-})
+// })
 
 
 
@@ -376,10 +376,10 @@ useEffect( ()=>{
 
     <div>
     {
-  result.current && 
+  total>0 && 
 
  
-  <h2 id='result' ref={result}> ~ {result.current} euro ~</h2>
+  <h2 id='result' ref={result}> ~ total cost: { total} euro ~</h2>
 
 
 }
