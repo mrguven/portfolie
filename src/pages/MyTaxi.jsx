@@ -236,7 +236,7 @@ console.log(search);
   
 
 
-    setTotal((distance*3)+(travelTime*0.40))
+    setTotal(((distance*3)+(travelTime*0.40)).toFixed(2))
 
    console.log(total);
    
