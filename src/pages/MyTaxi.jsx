@@ -261,6 +261,9 @@ useEffect( ()=>{
 
 })
 
+
+
+
         
        
      
@@ -302,7 +305,7 @@ useEffect( ()=>{
 
 
 
-<form action="/makeReservation" method="get" id="reservationInfo">
+<form action="/makeReservation" method="post" id="reservationInfo">
     
          <div>
                   <label htmlFor="departure" className="reservationLabel"  >
