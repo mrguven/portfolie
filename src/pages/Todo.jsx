@@ -4,14 +4,14 @@ export default function Todo(){
 
 const [todoList,setTodoList]=useState([]);
 const [todo,setTodo]=useState('');
-const result=useRef();
 
 
+let id;
 const addToList=()=>{
 console.log('hello');
 if(todo!==''){
     setTodoList(
-        [...todoList,todo]
+        [...todoList,{todo:todo, id:todoList.length}]
     )
 }else {
     alert('you should add somethings')
@@ -36,8 +36,9 @@ return(
   onChange={(e)=>{setTodo(e.target.value)}} value={todo}/>
 <button  onClick={addToList} >add</button>
 
-<h3 ref={result} ></h3>
 
+
+<div>
 
 {
     todoList && 
@@ -45,12 +46,12 @@ return(
     todoList.map((task)=>{
        
        return(
-         <ul><li> <h2 id="task"> {task}</h2></li></ul>
+         <ul key={id} id="taskList"><li> <h2 id="task" > {task.todo}</h2></li></ul>
        )
     })
     
 }
-
+</div>
 </div>
 
  
