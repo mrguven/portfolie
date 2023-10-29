@@ -60,15 +60,12 @@ const result=useRef();
 const googleMapRef = useRef(null);
 const [map, setMap] = useState(null);
 
-// setDefaults({
-//   key:  GOOGLE_MAP_API_KEY 
+setDefaults({
+  key:  GOOGLE_MAP_API_KEY 
   
-// });
+});
 
 
-// const { isLoaded } = useLoadScript({
-//   googleMapsApiKey: GOOGLE_MAP_API_KEY,
-// });
 
 
 
@@ -87,27 +84,27 @@ const [map, setMap] = useState(null);
 // }, []);
 
 
-// useEffect(() => {
+useEffect(() => {
 
 
 
-//   // const loader = new Loader({
-//   //   apiKey: GOOGLE_MAP_API_KEY,
-//   //   version: "weekly",
-//   //   libraries: ['geometry','places']
-//   // });
+  const loader = new Loader({
+    apiKey: GOOGLE_MAP_API_KEY,
+    version: "weekly",
+    libraries: ['geometry']
+  });
   
-//   // loader.load().then(async () => {
-//   //   const { Map } = await new window.google.maps.importLibrary("maps");
+  loader.load().then(async () => {
+    const { Map } = await  window.google.maps.importLibrary("maps");
   
-//   //   new Map(googleMapRef.current, {
-//   //     center: {
-//   //       lat: 51.9244,
-//   //       lng: 4.4777
-//   //     },
-//   //     zoom: 10
-//   //   });
-//   // });
+    new Map(googleMapRef.current, {
+      center: {
+        lat: 51.9244,
+        lng: 4.4777
+      },
+      zoom: 10
+    });
+  });
 
 
 
@@ -115,18 +112,18 @@ const [map, setMap] = useState(null);
 
 
 
-//   const options = {
-//     apiKey: GOOGLE_MAP_API_KEY,
-//     version: "weekly",
-//     libraries: ['geometry']
-//   };
+  // const options = {
+  //   apiKey: GOOGLE_MAP_API_KEY,
+  //   version: "weekly",
+  //   libraries: ['geometry']
+  // };
 
-//   new Loader(options).load().then(() => {
+  // new Loader(options).load().then(() => {
    
-//   }).catch(e => {
-//     console.error('Sorry, something went wrong: Please try again later. Error:', e);
-//   });
-//  }, []);
+  // }).catch(e => {
+  //   console.error('Sorry, something went wrong: Please try again later. Error:', e);
+  // });
+ }, []);
 
 
 
@@ -144,7 +141,7 @@ const { isLoaded } = useJsApiLoader({
 const makeReservation = async (event)=>{
         event.preventDefault();
        
-        var directionsService = new window.google.maps.DirectionsService();
+       var directionsService = new window.google.maps.DirectionsService();
         var directionsRenderer = new window.google.maps.DirectionsRenderer();
 
 
@@ -153,18 +150,18 @@ const makeReservation = async (event)=>{
           destination: arriving,
           travelMode: 'DRIVING'
         };
-     await   directionsService.route(request, function (response, status) {
-          if (status == 'OK') {
-            directionsRenderer.setDirections(response);
-            console.log(response);
-            directionsRenderer.setMap(map);
-            console.log(map);
-            setSearch(response)
-console.log(search);
-          }
+//      await   directionsService.route(request, function (response, status) {
+//           if (status == 'OK') {
+//             directionsRenderer.setDirections(response);
+//             console.log(response);
+//             directionsRenderer.setMap(map);
+//             console.log(map);
+//             setSearch(response)
+// console.log(search);
+//           }
 
-        }
-          )
+//         }
+//           )
 
             
 
@@ -179,44 +176,56 @@ console.log(search);
 
 
 
-        // if (arriving === "" || departure === "") {
+        if (arriving === "" || departure === "") {
       
-        //   directionsRenderer.setMap(null);
-        // }
-          //if (!map)  return;
+          directionsRenderer.setMap(null);
+        }
+          if (!map)  return;
 
-      // if(arriving  && departure) 
-      //{fromAddress( departure)
-      //   .then(({ results }) => {
-      //     const { lat, lng } = results[0].geometry.location;
-      //     console.log(lat, lng);
-      //     var departure = new window.google.maps.LatLng(lat, lng);
+      if(arriving  && departure) 
+      {fromAddress( departure)
+        .then(({ results }) => {
+          const { lat, lng } = results[0].geometry.location;
+          console.log(lat, lng);
+          var departure = new window.google.maps.LatLng(lat, lng);
        
         
         
-      //   fromAddress(arriving)
-      //   .then(({ results }) => {
-      //     const { lat, lng } = results[0].geometry.location;
-      //     console.log(results);
-      //     var arriving = new window.google.maps.LatLng(lat, lng);
+        fromAddress(arriving)
+        .then(({ results }) => {
+          const { lat, lng } = results[0].geometry.location;
+          console.log(results);
+          var arriving = new window.google.maps.LatLng(lat, lng);
         
-      //   })
-      //   .catch(console.error);
+          const dir=  directionsService.route(request, function (response, status) {
+            if (status == 'OK') {
+              directionsRenderer.setDirections([response]);
+              console.log('response', response);
+              directionsRenderer.setMap(map);
+              console.log(map)
+              
+              
+              setSearch(response);
+              console.log(search);
+            }}
+              
+             
+              )
+  
+              setDirectionsResponse(dir);
+        
+        })
+        .catch(console.error);
       
         
-      // })
-      // .catch(console.error);}
-      // else {
-      //   return
-      // }
-      // directionsService.route(request, function (response, status) {
-      //         if (status == 'OK') {
-      //           directionsRenderer.setDirections(response);
-      //           console.log(response);
-      //           directionsRenderer.setMap(map);
-      //           console.log(map)}})
-              
-           
+      })
+      .catch(console.error);}
+      else {
+        return
+      }
+
+      
+      
   
     }
       
@@ -268,11 +277,11 @@ console.log(search);
        
      
 
-          const { ref } = usePlacesWidget({
-            apiKey: GOOGLE_MAP_API_KEY,
-            onPlaceSelected: (place) => console.log(place)
+          // const { ref } = usePlacesWidget({
+          //   apiKey: GOOGLE_MAP_API_KEY,
+          //   onPlaceSelected: (place) => console.log(place)
             
-          })
+          // })
      
 
 

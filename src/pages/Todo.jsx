@@ -17,7 +17,7 @@ if(todo!==''){
     alert('you should add somethings')
 }
 
-
+console.log(todoList.id);
 console.log(todoList);
 
 }

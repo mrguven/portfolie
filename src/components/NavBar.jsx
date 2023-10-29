@@ -17,7 +17,7 @@ export default function NavBar() {
   <li><Link to='/mytaxi'>MyTaxi</Link></li>
   <li><Link to='/nssg'>Nssg</Link></li>
   <li><Link to='/stock'>Stock</Link></li>
-  <li><Link to="/contact">Contact</Link></li>
+  <li><Link to="/taxi2">Taxi2</Link></li>
   <li><Link to="/todo">Todo</Link></li>
   <li><Link to='/catchMe'>Catch Me</Link></li>
   <li><Link className="active"  to="/login">Log In</Link></li>
