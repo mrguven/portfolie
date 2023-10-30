@@ -377,12 +377,12 @@ console.log(search);
       </GoogleMap>
 } 
 
-     <div className="App">
+     {/* <div className="App">
      
       { !directionsResponse ? <div>Loading...</div> : <GMap   arrPlace={arriving} deparPlace={departure}   />}
      
      
-    </div>
+    </div> */}
 
     <div>
     {
