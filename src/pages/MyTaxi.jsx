@@ -3,7 +3,7 @@ import { useState,useEffect, useRef } from 'react';
 import { Loader } from "@googlemaps/js-api-loader"
  import GMap from '../pages/Gmap'
 // import axios from 'axios';
-//import { GoogleMap, Marker  } from "react-google-maps"
+
 import { GoogleMap, Marker, useLoadScript,DirectionsRenderer,useJsApiLoader } from "@react-google-maps/api";
 import { usePlacesWidget,Autocomplete } from "react-google-autocomplete";
 
@@ -150,18 +150,18 @@ const makeReservation = async (event)=>{
           destination: arriving,
           travelMode: 'DRIVING'
         };
-//      await   directionsService.route(request, function (response, status) {
-//           if (status == 'OK') {
-//             directionsRenderer.setDirections(response);
-//             console.log(response);
-//             directionsRenderer.setMap(map);
-//             console.log(map);
-//             setSearch(response)
-// console.log(search);
-//           }
+     await   directionsService.route(request, function (response, status) {
+          if (status == 'OK') {
+            directionsRenderer.setDirections(response);
+            console.log(response);
+            directionsRenderer.setMap(map);
+            console.log(map);
+            setSearch(response)
+console.log(search);
+          }
 
-//         }
-//           )
+        }
+          )
 
             
 
@@ -176,53 +176,54 @@ const makeReservation = async (event)=>{
 
 
 
-        if (arriving === "" || departure === "") {
+      //   if (arriving === "" || departure === "") {
       
-          directionsRenderer.setMap(null);
-        }
-          if (!map)  return;
+      //     directionsRenderer.setMap(null);
+      //   }
+      //     if (!map)  return;
 
-      if(arriving  && departure) 
-      {fromAddress( departure)
-        .then(({ results }) => {
-          const { lat, lng } = results[0].geometry.location;
-          console.log(lat, lng);
-          var departure = new window.google.maps.LatLng(lat, lng);
+      // if(arriving  && departure) 
+      // {fromAddress( departure)
+      //   .then(({ results }) => {
+      //     const { lat, lng } = results[0].geometry.location;
+      //     console.log(lat, lng);
+      //     var departure = new window.google.maps.LatLng(lat, lng);
        
         
         
-        fromAddress(arriving)
-        .then(({ results }) => {
-          const { lat, lng } = results[0].geometry.location;
-          console.log(results);
-          var arriving = new window.google.maps.LatLng(lat, lng);
+      //   fromAddress(arriving)
+      //   .then(({ results }) => {
+      //     const { lat, lng } = results[0].geometry.location;
+      //     console.log(results);
+      //     var arriving = new window.google.maps.LatLng(lat, lng);
         
-          const dir=  directionsService.route(request, function (response, status) {
-            if (status == 'OK') {
-              directionsRenderer.setDirections([response]);
-              console.log('response', response);
-              directionsRenderer.setMap(map);
-              console.log(map)
+      //     const dir=  directionsService.route(request, function (response, status) {
+      //       if (status == 'OK') {
+      //         directionsRenderer.setDirections(response);
+      //         console.log('response', response);
+      //         directionsRenderer.setMap(map);
+      //         console.log(map)
               
               
-              setSearch(response);
-              console.log(search);
-            }}
+      //         setSearch(response);
+      //         console.log(search);
+      //       }}
               
              
-              )
+      //         )
   
-              setDirectionsResponse(dir);
+      //         setDirectionsResponse(dir);
+      //         console.log(dir);
         
-        })
-        .catch(console.error);
+      //   })
+      //   .catch(console.error);
       
         
-      })
-      .catch(console.error);}
-      else {
-        return
-      }
+      // })
+      // .catch(console.error);}
+      // else {
+      //   return
+      // }
 
       
       
@@ -376,12 +377,12 @@ console.log(search);
       </GoogleMap>
 } 
 
-     {/* <div className="App">
+     <div className="App">
      
       { !directionsResponse ? <div>Loading...</div> : <GMap   arrPlace={arriving} deparPlace={departure}   />}
      
      
-    </div> */}
+    </div>
 
     <div>
     {

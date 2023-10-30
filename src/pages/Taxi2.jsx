@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState,useEffect } from "react";
 
 import {
   useJsApiLoader,
@@ -7,6 +7,7 @@ import {
   Autocomplete,
   DirectionsRenderer,
 } from "@react-google-maps/api";
+
 
 const center = {
     lat: 51.9244,
@@ -39,6 +40,8 @@ function App() {
     });
     setDirectionsResponse(results);
   }
+
+
 
   function clearRoute() {
     setDirectionsResponse(null);
