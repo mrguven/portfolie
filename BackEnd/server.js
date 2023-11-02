@@ -3,9 +3,11 @@ var cors = require('cors')
 const mySql= require('mysql');
 
 const app= express();
+const rout=require('./routes/route')
+
 app.use(cors())
 const dotenv=require('dotenv').config();
-
+app.use(rout)
 // const db=mySql.createConnection({
 //     host     : 'localhost',
 //   user     : 'me',
@@ -25,9 +27,11 @@ const dotenv=require('dotenv').config();
 //   })
 // });
 
+
+
 app.use(express.urlencoded({extended:true}));
 
 
-app.listen(4000, ()=>{
+app.listen(3000, ()=>{
     console.log('connected the server');
 })
