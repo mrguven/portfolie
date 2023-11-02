@@ -172,16 +172,17 @@ console.log(search);
        
     fetch(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${departure}&types=geocode&key=${GOOGLE_MAP_API_KEY}`)
 .then(response=>response.json())
+.then(res=>setDepartureOptions(res))
 .catch(e=>console.log(e))
     
-    
+    console.log(departureOptions);
     
     fetch(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${arriving}&types=geocode&key=${GOOGLE_MAP_API_KEY}`)
     .then(response=>response.json())
-    .then()
+    .then(res=>setArrivingOptions(res))
 .catch(e=>console.log(e))
 
-
+console.log(arrivingOptions);
 
 
 
