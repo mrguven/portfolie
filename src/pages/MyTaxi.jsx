@@ -169,7 +169,37 @@ console.log(search);
 
             
 
+          const fetchData=async()=>{
+         await   fetch((`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${departure}&types=geocode&key=${GOOGLE_MAP_API_KEY}`),
+            {    
+             method: 'GET',    
+             withCredentials: true,    
+             crossorigin: true,    
+             mode: 'no-cors',       
+           }
+           ).then(res=>res.JSON.parse())
+           .then(res1=>console.log(res1))
+       .catch(e=>console.log(e))
+           
+           console.log(departureOptions);
+           
+         await  fetch(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${arriving}&types=geocode&key=${GOOGLE_MAP_API_KEY}`,
+            {    
+             method: 'GET',    
+             withCredentials: true,    
+             crossorigin: true,    
+             mode: 'no-cors',       
+           })
+           .then(ress=>ress.JSON.parse())
+           
+          .catch(e=>console.log(e))
        
+       console.log(arrivingOptions);
+          }
+       
+   fetchData();
+
+
 
 
       //   if (arriving === "" || departure === "") {
@@ -226,43 +256,6 @@ console.log(search);
   
     }
       
-
-
-    useEffect(()=>{
-      const fetchData=async()=>{
-        await   fetch((`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${departure}&types=geocode&key=${GOOGLE_MAP_API_KEY}`),
-           {    
-            method: 'GET',    
-            withCredentials: true,    
-            crossorigin: true,    
-            mode: 'no-cors',       
-          }
-          ).then(res=>res.json())
-          .then(resEnd=>setDepartureOptions(JSON.parse(resEnd)))
-      .catch(e=>console.log(e))
-          
-          console.log(departureOptions);
-          
-       await   fetch(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${arriving}&types=geocode&key=${GOOGLE_MAP_API_KEY}`,
-           {    
-            method: 'GET',    
-            withCredentials: true,    
-            crossorigin: true,    
-            mode: 'no-cors',       
-          }).then((res)=>(res.json()))
-          .then(res1=>setArrivingOptions(JSON.parse(res1)))
-         .catch(e=>console.log(e))
-      
-      console.log(arrivingOptions);
-      
-         }
-      
-         fetchData();
-
-    },[arriving,departure]
-   
-
-    )
 
 
 
