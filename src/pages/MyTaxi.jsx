@@ -170,14 +170,27 @@ console.log(search);
 
           
        
-    fetch(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${departure}&types=geocode&key=${GOOGLE_MAP_API_KEY}`)
+    fetch(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${departure}&types=geocode&key=${GOOGLE_MAP_API_KEY}`,
+     {    
+      method: 'GET',    
+      withCredentials: true,    
+      crossorigin: true,    
+      mode: 'no-cors',       
+    }
+    )
 .then(response=>response.json())
 .then(res=>setDepartureOptions(res))
 .catch(e=>console.log(e))
     
     console.log(departureOptions);
     
-    fetch(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${arriving}&types=geocode&key=${GOOGLE_MAP_API_KEY}`)
+    fetch(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${arriving}&types=geocode&key=${GOOGLE_MAP_API_KEY}`,
+     {    
+      method: 'GET',    
+      withCredentials: true,    
+      crossorigin: true,    
+      mode: 'no-cors',       
+    })
     .then(response=>response.json())
     .then(res=>setArrivingOptions(res))
 .catch(e=>console.log(e))
