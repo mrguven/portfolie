@@ -1,6 +1,7 @@
 
 import { useState,useEffect, useRef } from 'react';
 import { Loader } from "@googlemaps/js-api-loader"
+
  import GMap from '../pages/Gmap'
 // import axios from 'axios';
 
@@ -59,6 +60,8 @@ const [total,setTotal]=useState(Number);
 const result=useRef();
 const googleMapRef = useRef(null);
 const [map, setMap] = useState(null);
+const [departureOptions,setDepartureOptions]=useState();
+const [arrivingOptions,setArrivingOptions]=useState()
 
 setDefaults({
   key:  GOOGLE_MAP_API_KEY 
@@ -167,9 +170,16 @@ console.log(search);
 
           
        
+    fetch(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${departure}&types=geocode&key=${GOOGLE_MAP_API_KEY}`)
+.then(response=>response.json())
+.catch(e=>console.log(e))
     
-
-       
+    
+    
+    fetch(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${arriving}&types=geocode&key=${GOOGLE_MAP_API_KEY}`)
+    .then(response=>response.json())
+    .then()
+.catch(e=>console.log(e))
 
 
 
