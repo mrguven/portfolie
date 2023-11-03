@@ -233,25 +233,14 @@ useEffect(()=>{
 
   const fetchData=async()=>{
     await fetch(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${departure}&types=geocode&key=${GOOGLE_MAP_API_KEY}`,
-       {    
-        method: 'GET',    
-        withCredentials: true,    
-        crossorigin: true,    
-        mode: 'no-cors',       
-      }
-      ).then(res=>res.json())
+).then(res=>res.json())
       .then(res1=>console.log(res1))
   .catch(e=>console.log(e))
       
       console.log(departureOptions);
       
     await fetch(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${arriving}&types=geocode&key=${GOOGLE_MAP_API_KEY}`,
-       {    
-        method: 'GET',    
-        withCredentials: true,    
-        crossorigin: true,    
-        mode: 'no-cors',       
-      })
+      )
       .then(ress=>ress.json())
      
      .catch(e=>console.log(e))
