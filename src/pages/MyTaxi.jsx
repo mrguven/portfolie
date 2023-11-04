@@ -3,7 +3,7 @@ import { useState,useEffect, useRef } from 'react';
 import { Loader } from "@googlemaps/js-api-loader";
 import axios from 'axios';
 
- import GMap from '../pages/Gmap'
+// import GMap from '../pages/Gmap'
 // import axios from 'axios';
 
 import { GoogleMap, Marker, useLoadScript,DirectionsRenderer,useJsApiLoader } from "@react-google-maps/api";
@@ -430,7 +430,7 @@ console.log(search);
   total>0 && 
 
  
-  <h2 id='result' ref={result}> ~ total cost: { total} euro ~</h2>
+  <h2 id='result' ref={result}>  total : { total} euro </h2>
 
 
 }

@@ -287,7 +287,15 @@ opacity: 0.5;
   
 }
 
-
+#result{
+  width: 40%;
+  margin-left: 20%;
+  border: #066aee 1px double;
+  text-align: center;
+  border-radius: 5%;
+  background-color: #066aee;
+  color: white;
+}
 
 
 
