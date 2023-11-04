@@ -4,7 +4,6 @@ import { Loader } from "@googlemaps/js-api-loader";
 import axios from 'axios';
 
 // import GMap from '../pages/Gmap'
-// import axios from 'axios';
 
 import { GoogleMap, Marker, useLoadScript,DirectionsRenderer,useJsApiLoader } from "@react-google-maps/api";
 import { usePlacesWidget,Autocomplete } from "react-google-autocomplete";
@@ -61,8 +60,8 @@ const [total,setTotal]=useState(Number);
 const result=useRef();
 const googleMapRef = useRef(null);
 const [map, setMap] = useState(null);
-// const [departureOptions,setDepartureOptions]=useState();
-// const [arrivingOptions,setArrivingOptions]=useState()
+const [departureOptions,setDepartureOptions]=useState();
+const [arrivingOptions,setArrivingOptions]=useState()
 
 setDefaults({
   key:  GOOGLE_MAP_API_KEY 
@@ -171,31 +170,50 @@ console.log(search);
    }
 
       
-// useEffect(()=>{
+useEffect(()=>{
 
 
-//   const fetchData=async()=>{
-//     await fetch(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${departure}&types=geocode&key=${GOOGLE_MAP_API_KEY}`,
-// ).then(res=>res.json())
-//       .then(res1=>console.log(res1))
-//   .catch(e=>console.log(e))
+  const fetchData=async()=>{
+    await axios(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${departure}&types=geocode&key=${GOOGLE_MAP_API_KEY}`,
+    { method: 'GET',
+      mode: 'no-cors',
+      withCredentials: true,
+      credentials: 'same-origin',
+      headers: {
+        "Cache-Control": "no-cache",
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": "*",
+      }}
+    ).then(res=>setDepartureOptions(res))
+      .then(res1=>console.log(res1))
+  .catch(e=>console.log(e))
       
-//       console.log(departureOptions);
+      console.log(departureOptions);
       
-//     await fetch(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${arriving}&types=geocode&key=${GOOGLE_MAP_API_KEY}`,
-//       )
-//       .then(ress=>ress.json())
+    await axios(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${arriving}&types=geocode&key=${GOOGLE_MAP_API_KEY}`,
+    {method: 'GET',
+    mode: 'no-cors',
+    withCredentials: true,
+      mode: 'no-cors',
+      headers: {
+        "Cache-Control": "no-cache",
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": "*",
+      }}
+      
+    )
+      .then(ress=>setArrivingOptions(ress))
      
-//      .catch(e=>console.log(e))
+     .catch(e=>console.log(e))
   
-//   console.log(arrivingOptions);
-//      }
+  console.log(arrivingOptions);
+     }
   
-// fetchData();
+fetchData();
 
 
 
-// },[arriving,departure])
+},[arriving,departure])
 
 
 useEffect(()=>{
