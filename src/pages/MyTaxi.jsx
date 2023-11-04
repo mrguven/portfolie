@@ -110,23 +110,6 @@ useEffect(() => {
     });
   });
 
-
-
-
-
-
-
-  // const options = {
-  //   apiKey: GOOGLE_MAP_API_KEY,
-  //   version: "weekly",
-  //   libraries: ['geometry']
-  // };
-
-  // new Loader(options).load().then(() => {
-   
-  // }).catch(e => {
-  //   console.error('Sorry, something went wrong: Please try again later. Error:', e);
-  // });
  }, []);
 
 
@@ -185,66 +168,8 @@ console.log(search);
         }
           )
 
-            
+   }
 
-          
-
-
-
-
-      //   if (arriving === "" || departure === "") {
-      
-      //     directionsRenderer.setMap(null);
-      //   }
-      //     if (!map)  return;
-
-      // if(arriving  && departure) 
-      // {fromAddress( departure)
-      //   .then(({ results }) => {
-      //     const { lat, lng } = results[0].geometry.location;
-      //     console.log(lat, lng);
-      //     var departure = new window.google.maps.LatLng(lat, lng);
-       
-        
-        
-      //   fromAddress(arriving)
-      //   .then(({ results }) => {
-      //     const { lat, lng } = results[0].geometry.location;
-      //     console.log(results);
-      //     var arriving = new window.google.maps.LatLng(lat, lng);
-        
-      //     const dir=  directionsService.route(request, function (response, status) {
-      //       if (status == 'OK') {
-      //         directionsRenderer.setDirections(response);
-      //         console.log('response', response);
-      //         directionsRenderer.setMap(map);
-      //         console.log(map)
-              
-              
-      //         setSearch(response);
-      //         console.log(search);
-      //       }}
-              
-             
-      //         )
-  
-      //         setDirectionsResponse(dir);
-      //         console.log(dir);
-        
-      //   })
-      //   .catch(console.error);
-      
-        
-      // })
-      // .catch(console.error);}
-      // else {
-      //   return
-      // }
-
-      
-      
-  
-    }
       
 // useEffect(()=>{
 
@@ -295,22 +220,6 @@ console.log(search);
 
 
 })
-
-
-// useEffect( ()=>{
-
-//   console.log(total);
-//    if(total>0) {
-//     result.current=total;
-//     console.log(result.current);
-//   }
-//   else {
-//     return
-//   }
-
-
-// })
-
 
 
 
