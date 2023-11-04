@@ -56,13 +56,13 @@ const [distance,setDistance]=useState(Number);
 const[travelTime,setTravelTime]=useState(Number);
 const [search, setSearch] = useState();
 const [directionsResponse, setDirectionsResponse] = useState(null);
-const [loadMap, setLoadMap] = useState(false);
+const [loadMap, setLoadMap] = useState();
 const [total,setTotal]=useState(Number);
 const result=useRef();
 const googleMapRef = useRef(null);
 const [map, setMap] = useState(null);
-const [departureOptions,setDepartureOptions]=useState();
-const [arrivingOptions,setArrivingOptions]=useState()
+// const [departureOptions,setDepartureOptions]=useState();
+// const [arrivingOptions,setArrivingOptions]=useState()
 
 setDefaults({
   key:  GOOGLE_MAP_API_KEY 
@@ -87,7 +87,7 @@ setDefaults({
 //    setMap(googleMap);
 // }, []);
 
-
+let newmap;
 useEffect(() => {
 
 
@@ -101,7 +101,7 @@ useEffect(() => {
   loader.load().then(async () => {
     const { Map } = await  window.google.maps.importLibrary("maps");
   
-    new Map(googleMapRef.current, {
+    newmap= new Map(googleMapRef.current, {
       center: {
         lat: 51.9244,
         lng: 4.4777
@@ -135,15 +135,33 @@ console.log(time);
 console.log(arriving);
 console.log(departure);
 
-const { isLoaded } = useJsApiLoader({
+// const { isLoaded } = useJsApiLoader({
     
-    googleMapsApiKey:  GOOGLE_MAP_API_KEY,
-  });
+//     googleMapsApiKey:  GOOGLE_MAP_API_KEY,
+//   });
 
 
 
 const makeReservation = async (event)=>{
         event.preventDefault();
+
+        const loader = new Loader({
+          apiKey: GOOGLE_MAP_API_KEY,
+          version: "weekly",
+          libraries: ['geometry']
+        });
+        
+        loader.load().then(async () => {
+          const { Map } = await  window.google.maps.importLibrary("maps");
+        newmap= new Map(googleMapRef.current, {
+          center: {
+            lat: 51.9244,
+            lng: 4.4777
+          },
+          zoom: 10
+        });
+      });
+        
        
        var directionsService = new window.google.maps.DirectionsService();
         var directionsRenderer = new window.google.maps.DirectionsRenderer();
@@ -158,7 +176,7 @@ const makeReservation = async (event)=>{
           if (status == 'OK') {
             directionsRenderer.setDirections(response);
             console.log(response);
-            directionsRenderer.setMap(map);
+            directionsRenderer.setMap(newmap);
             console.log(map);
             setSearch(response)
 console.log(search);
@@ -228,31 +246,31 @@ console.log(search);
   
     }
       
-useEffect(()=>{
+// useEffect(()=>{
 
 
-  const fetchData=async()=>{
-    await fetch(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${departure}&types=geocode&key=${GOOGLE_MAP_API_KEY}`,
-).then(res=>res.json())
-      .then(res1=>console.log(res1))
-  .catch(e=>console.log(e))
+//   const fetchData=async()=>{
+//     await fetch(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${departure}&types=geocode&key=${GOOGLE_MAP_API_KEY}`,
+// ).then(res=>res.json())
+//       .then(res1=>console.log(res1))
+//   .catch(e=>console.log(e))
       
-      console.log(departureOptions);
+//       console.log(departureOptions);
       
-    await fetch(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${arriving}&types=geocode&key=${GOOGLE_MAP_API_KEY}`,
-      )
-      .then(ress=>ress.json())
+//     await fetch(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${arriving}&types=geocode&key=${GOOGLE_MAP_API_KEY}`,
+//       )
+//       .then(ress=>ress.json())
      
-     .catch(e=>console.log(e))
+//      .catch(e=>console.log(e))
   
-  console.log(arrivingOptions);
-     }
+//   console.log(arrivingOptions);
+//      }
   
-fetchData();
+// fetchData();
 
 
 
-},[arriving,departure])
+// },[arriving,departure])
 
 
 useEffect(()=>{
@@ -377,7 +395,7 @@ console.log(search);
 </form>
 
 
-
+{/* 
 { isLoaded &&
     
      <GoogleMap id='mapContainerStyle'
@@ -406,7 +424,8 @@ console.log(search);
      
     </div> */}
 
-    <div>
+    
+     <div>
     {
   total>0 && 
 
