@@ -48,10 +48,10 @@ import { usePlacesWidget,Autocomplete } from "react-google-autocomplete";
       const GOOGLE_MAP_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 export default function MyTaxi () {
-useEffect(()=>{
-  UseScript(`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API_KEY}&libraries=places`)
 
-},[])
+  //UseScript(`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API_KEY}&libraries=places&callback=initMap`)
+
+
  
 const [departure,setDeparture]=useState('');
 const [arriving,setArriving]=useState('');
