@@ -11,7 +11,7 @@ import Costumers from './pages/Costumers';
 import MyTaxi from './pages/MyTaxi';
 import Footer from './components/Footer';
 import Nssg from './pages/Nssg';
-import Taxi2 from './pages/Taxi2'
+
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
 <Route path='/todo' element={<Todo />} />
 <Route path='/mytaxi' element={<MyTaxi />}></Route>
 <Route path='/nssg' element={<Nssg />}></Route>
-<Route path='/taxi2' element={<Taxi2 />}></Route>
+
 </Routes>
 <Footer />
 </BrowserRouter>

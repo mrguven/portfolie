@@ -238,16 +238,16 @@ console.log(search);
 
     <div id="header" >
         <div>
-        <h1 className='headVertical'>MyTaxi</h1>
+       
         </div>
         <div>
         
         <h1 id='head'>MyTaxi</h1>
         
-        <h1 id='head'>MyTaxi</h1>
+        
         </div>
         <div>
-        <h1 className='headVertical'>MyTaxi</h1>
+        
         
         </div>
      
