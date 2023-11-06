@@ -1,7 +1,7 @@
 
 import { useState,useEffect, useRef } from 'react';
 import { Loader } from "@googlemaps/js-api-loader";
-import UseScript from '../components/UseScript';
+//import UseScript from '../components/UseScript';
 import axios, { Axios } from 'axios';
 
 // import GMap from '../pages/Gmap'
@@ -49,7 +49,6 @@ import { usePlacesWidget,Autocomplete } from "react-google-autocomplete";
 
 export default function MyTaxi () {
 
-  //UseScript(`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API_KEY}&libraries=places&callback=initMap`)
 
 
  
@@ -75,38 +74,7 @@ setDefaults({
 
 
 
-useEffect(()=>{
-  function initService() {
-    const displaySuggestions = function (predictions, status) {
-      if (status != google.maps.places.PlacesServiceStatus.OK || !predictions) {
-        alert(status);
-        return;
-      }
-  
-      predictions.forEach((prediction) => {
-        const li = document.createElement("li");
-  
-        li.appendChild(document.createTextNode(prediction.description));
-        document.getElementById("results").appendChild(li);
-      });
-    };
-  
-    const service = new google.maps.places.AutocompleteService();
-  
-    service.getQueryPredictions({ input: arriving }, displaySuggestions);
-  }
-  
-  window.initService = initService;
-  
-},[arriving])
 
-
-// const initGoogleMap = () => {
-//   return new window.google.maps.Map(googleMapRef.current, {
-//     center: new window.google.maps.LatLng(51.9244, 4.4777),
-//     zoom: 10
-//   });
-// }
 
 
 // useEffect(() => {
@@ -115,7 +83,9 @@ useEffect(()=>{
 // }, []);
 
 let newmap;
-useEffect(async () => {
+
+
+const getMap=async () => {
 
 
 
@@ -136,11 +106,13 @@ useEffect(async () => {
       zoom: 10
     });
   });
+}
 
 
+useEffect(()=>{
   
 
-
+getMap()
 
 
  }, []);
