@@ -236,25 +236,25 @@ console.log(search);
 
 
 
-
-
-    <div id="header" >
-        <div>
+<div id='HeadContainer'>
+<div>
        
-        </div>
+       </div>
+    <div id="header" >
+    
         <div>
-        
-        <h1 id='head'>MyTaxi</h1>
-        
-        
-        </div>
-        <div>
-        
-        
-        </div>
+      <h1 id='head'>MyTaxi</h1>
+       </div>
+       <div>
+        <h1 className='headVertical'>MyTaxi</h1>
+       </div>
      
     </div>
-
+    <div>
+        
+        
+        </div>
+    </div>
 
 
 <form action="/makeReservation" method="post" id="reservationInfo">
