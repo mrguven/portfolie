@@ -154,7 +154,7 @@ height: 20%;
     font-size:100px;
     text-align:center;
     margin-top: 20px;
-   text-shadow:#066aee 5px;
+    text-shadow: 15px 15px #baadd8;
    
 }
 
@@ -313,7 +313,7 @@ opacity: 0.5;
   grid-template-columns: 10% 10%  10%  10% ;
   grid-template-areas:"footer footer footer footer";
   margin-top: 4%;
-  
+
 }
 
 .footerLinks{

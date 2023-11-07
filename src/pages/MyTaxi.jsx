@@ -174,6 +174,8 @@ console.log(search);
         }
           )
 
+          googleMapRef.current?.scrollIntoView({behavior: 'smooth'})
+
    }
 
       
