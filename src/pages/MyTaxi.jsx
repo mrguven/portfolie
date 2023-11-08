@@ -246,7 +246,7 @@ console.log(search);
       <h1 id='head'>MyTaxi</h1>
        </div>
        <div>
-        <h1 className='headVertical'>MyTaxi</h1>
+        <h1 className='head'>MyTaxi</h1>
        </div>
      
     </div>

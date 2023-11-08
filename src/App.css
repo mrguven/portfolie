@@ -148,7 +148,12 @@ color: #db4b9f;
 height: 20%;
 }
 
-
+#HeadContainer{
+  border-bottom: 2px blue;
+  border-style: inset;
+  padding-bottom: 25px;
+  
+}
 #head{
   font-family:monospace;
     font-size:100px;
