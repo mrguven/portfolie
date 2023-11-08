@@ -50,9 +50,7 @@ const change =()=> {
     
     
         setScore(score+1)
-    
-     setPause(true);
-     setCon(5)
+   setCon(5)
     }
     
 }
