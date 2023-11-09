@@ -145,7 +145,7 @@ color: #db4b9f;
   grid-template-columns: 25% 30% 20%;
   grid-template-rows: 80% 20% ;
   background-image: linear-gradient(to left, rgb(235, 234, 255), rgb(211, 187, 255));
-height: 20%;
+height: 10%;
 }
 
 #HeadContainer{
@@ -169,7 +169,7 @@ height: 20%;
   text-align:center;
   writing-mode:  vertical-rl;
 text-orientation:  mixed;
-height: 20%;
+height: 10%;
 
 }
 

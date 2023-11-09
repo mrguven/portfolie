@@ -1,46 +1,8 @@
 
 import { useState,useEffect, useRef } from 'react';
 import { Loader } from "@googlemaps/js-api-loader";
-//import UseScript from '../components/UseScript';
-import axios, { Axios } from 'axios';
 
-// import GMap from '../pages/Gmap'
-
-import { GoogleMap, Marker, useLoadScript,DirectionsRenderer,useJsApiLoader } from "@react-google-maps/api";
-import { usePlacesWidget,Autocomplete } from "react-google-autocomplete";
-
-
-
-
-    // import {
-    //     setKey,
-    //     setDefaults,
-    //     setLanguage,
-    //     setRegion,
-    //     fromAddress,
-    //     fromLatLng,
-    //     fromPlaceId,
-    //     setLocationType,
-    //     geocode,
-    //     RequestType,
-    //   } from "react-geocode";
-      
-    import {
-      setKey,
-      setDefaults,
-      setLanguage,
-      setRegion,
-      fromAddress,
-      fromLatLng,
-      fromPlaceId,
-      setLocationType,
-      geocode,
-      RequestType,
-    } from "react-geocode";
-
-    
-
-    const center = {
+const center = {
         lat: 51.9244,
         lng: 4.4777,
       };
@@ -67,29 +29,13 @@ const [map, setMap] = useState(null);
 const [departureOptions,setDepartureOptions]=useState();
 const [arrivingOptions,setArrivingOptions]=useState()
 
-setDefaults({
-  key:  GOOGLE_MAP_API_KEY 
-  
-});
 
-
-
-
-
-
-// useEffect(() => {
-//    const googleMap = initGoogleMap();
-//    setMap(googleMap);
-// }, []);
 
 let newmap;
 
 
 const getMap=async () => {
-
-
-
-  const loader = new Loader({
+const loader = new Loader({
     apiKey: GOOGLE_MAP_API_KEY,
     version: "weekly",
     libraries: ['geometry']
@@ -110,24 +56,9 @@ const getMap=async () => {
 
 
 useEffect(()=>{
-  
 
 getMap()
-
-
  }, []);
-
-
-
-
-console.log(time);
-console.log(arriving);
-console.log(departure);
-
-// const { isLoaded } = useJsApiLoader({
-    
-//     googleMapsApiKey:  GOOGLE_MAP_API_KEY,
-//   });
 
 
 
@@ -178,13 +109,7 @@ console.log(search);
 
    }
 
-      
 
-
-  
-  
-   
- 
 
 useEffect(()=>{
 console.log(search);
@@ -192,14 +117,7 @@ console.log(search);
     setDistance(search?.routes[0]?.legs[0]?.distance.value/1000)
               
     setTravelTime(search?.routes[0]?.legs[0]?.duration.value/60)
-   
-    
-    
- 
-  
-
-
-    setTotal(((distance*3)+(travelTime*0.40)).toFixed(2))
+ setTotal(((distance*3)+(travelTime*0.40)).toFixed(2))
 
    console.log(total);
    
@@ -208,24 +126,6 @@ console.log(search);
 
 
 })
-
-
-
-        
-       
-     
-
-          // const { ref } = usePlacesWidget({
-          //   apiKey: GOOGLE_MAP_API_KEY,
-          //   onPlaceSelected: (place) => console.log(place)
-            
-          // })
-     
-
-
-// console.log(ref);
-
-
 
 
 
