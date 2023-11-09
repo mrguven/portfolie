@@ -1,3 +1,6 @@
+import mrg from '../mrg.jpeg'
+
+
 export default function Home(){
 
 
@@ -12,9 +15,14 @@ export default function Home(){
 
 <div>
 
+<div id='infoContainer'>
 <div>
-<h1>Ontdek Ons</h1>
-<h2>Je kan hier vinden over mijn werken. </h2>
+<img src={mrg} alt="profil foto"  id='profil'/>
+</div>
+
+<div>
+
+</div>
 <h3>Portfolie</h3>
 <h3>Taxi Project...</h3>
 <h3>Todo App..</h3>
