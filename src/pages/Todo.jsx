@@ -46,7 +46,7 @@ return(
     todoList.map((task)=>{
        
        return(
-         <ul key={id} id="taskList"><li> <h2 id="task" > {task.todo}</h2></li></ul>
+         <ul key={id} id="taskList"><li> <h2 id="task" > -{task.todo}</h2></li></ul>
        )
     })
     

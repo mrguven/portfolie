@@ -323,6 +323,7 @@ opacity: 0.5;
 
 .footerLinks{
   color: #fff;
+  text-decoration: none;
 }
 
 
@@ -341,7 +342,8 @@ opacity: 0.5;
 
 
 #taskList {
-  display: block;
+  display: flex;
+
   
   background-color: #fff;
 }
