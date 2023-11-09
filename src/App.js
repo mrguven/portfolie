@@ -10,7 +10,7 @@ import Todo from './pages/Todo';
 import Costumers from './pages/Costumers';
 import MyTaxi from './pages/MyTaxi';
 import Footer from './components/Footer';
-import Nssg from './pages/Nssg';
+import Contact from './pages/Contact';
 
 
 function App() {
@@ -27,7 +27,8 @@ function App() {
 <Route path='/stock' element={<Stock />} />
 <Route path='/todo' element={<Todo />} />
 <Route path='/mytaxi' element={<MyTaxi />}></Route>
-<Route path='/nssg' element={<Nssg />}></Route>
+<Route path='/contact' element={<Contact />}></Route>
+
 
 </Routes>
 <Footer />

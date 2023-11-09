@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer ( ) {
 
 
@@ -17,12 +19,12 @@ export default function Footer ( ) {
 
 </div>
 <div>
-<h2> <a className="footerLinks" target="_blank" href="https://www.linkedin.com/in/rauf-guven-a76791a6/">LinkedIn </a>  </h2>
+ <h2> <Link className="footerLinks" target="_blank" to="/contact">Contact </Link>  </h2>
 
 </div>
 <div>
-<h2> <a className="footerLinks" target="_blank" href="https://www.linkedin.com/in/rauf-guven-a76791a6/">LinkedIn </a>  </h2>
 
+<h2 className="footerLinks">info@heshe.nl </h2>
 </div>
 
 
