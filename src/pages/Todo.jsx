@@ -30,7 +30,7 @@ return(
 <div>
 
 <h1>Toto List</h1>
-
+<div id="todoContainer">
 
 <input type="text" name="" id="todo"  placeholder="write your tasks"
   onChange={(e)=>{setTodo(e.target.value)}} value={todo}/>
@@ -51,6 +51,7 @@ return(
     })
     
 }
+</div>
 </div>
 </div>
 
