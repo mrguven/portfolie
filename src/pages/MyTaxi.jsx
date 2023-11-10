@@ -201,35 +201,6 @@ console.log(search);
 </form>
 
 
-{/* 
-{ isLoaded &&
-    
-     <GoogleMap id='mapContainerStyle'
-        center={center}
-        zoom={9}
-       
-        options={{
-          zoomControl: true,
-          streetViewControl: true,
-          mapTypeControl: true,
-          fullscreenControl: true,
-        }}
-        onLoad={(map) => setMap(map)}
-      >
-        <Marker position={center} />
-        {directionsResponse && (
-          <DirectionsRenderer directions={directionsResponse} />
-        )}
-      </GoogleMap>
-} 
-
-     {/* <div className="App">
-     
-      { !directionsResponse ? <div>Loading...</div> : <GMap   arrPlace={arriving} deparPlace={departure}   />}
-     
-     
-    </div> */}
-
     
      <div>
     {

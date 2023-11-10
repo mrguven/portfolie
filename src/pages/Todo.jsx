@@ -1,5 +1,6 @@
 import { useRef, useState } from "react"
-
+import ok from '../ok.jpg'
+import cross from '../cross.jpg'
 export default function Todo(){
 
 const [todoList,setTodoList]=useState([]);
@@ -46,7 +47,7 @@ return(
     todoList.map((task)=>{
        
        return(
-         <ul key={id} id="taskList"><li> <h2 id="task" > -{task.todo}</h2></li></ul>
+         <ul key={id} id="taskList"><li> <h2 id="task" > -{task.todo}</h2>  <img className="img" src={ok} alt="ok" />  <img className="img" src={cross} alt="cross" />  </li></ul>
        )
     })
     
