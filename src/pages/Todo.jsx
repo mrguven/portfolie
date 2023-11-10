@@ -47,7 +47,11 @@ return(
     todoList.map((task)=>{
        
        return(
-         <ul key={id} id="taskList"><li> <h2 id="task" > -{task.todo}</h2>  <img className="img" src={ok} alt="ok" />  <img className="img" src={cross} alt="cross" />  </li></ul>
+        <div id="toDoContainer">
+            <div className="taskList"  > <ul className="sublist" key={id} ><li className="titleL2"> <h2 className="taskh2" > -{task.todo}  </h2>    </li></ul></div>
+            <div className="OkImg"> <img className="img" src={ok} alt="ok" /> </div> 
+            <div className="deleteImg"> <img className="img" src={cross} alt="cross" />  </div>
+        </div>
        )
     })
     

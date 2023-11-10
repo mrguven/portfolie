@@ -341,22 +341,53 @@ opacity: 0.5;
 
 
 
-#taskList {
-  display: flex;
+.taskList {
+  grid-area: task1;
+  width: 70%;
 
   
-  background-color: #fff;
+  
+}
+
+
+.OkImg{
+  grid-area: Ok;
+}
+
+.deleteImg{
+  grid-area: delete;
 }
 
 #todoContainer{
   min-height: 60vh;
 }
 
+.sublist{
+  background-color: #fff;
+  
+}
+.titleL2{
+margin-right: 50%;
+}
+.taskh2{
+  text-align: left;
+}
 .img{
-  width: 10%;
-  height: 20px;
+  width: 50%;
+  height: 30px;
+  margin-top: 20px;
 }
 
+
+
+#toDoContainer{
+  display: grid;
+  grid-template-columns: 40% 10% 10%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  'task1 Ok delete'
+  ;
+}
 /* homepage */
 
 
