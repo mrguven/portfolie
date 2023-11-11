@@ -352,10 +352,12 @@ opacity: 0.5;
 
 .OkImg{
   grid-area: Ok;
+  cursor: pointer;
 }
 
 .deleteImg{
   grid-area: delete;
+  cursor: pointer;
 }
 
 #todoContainer{

@@ -7,12 +7,13 @@ const [todoList,setTodoList]=useState([]);
 const [todo,setTodo]=useState('');
 
 
-let id;
+let id=Number;
 const addToList=()=>{
+id+=1
 console.log('hello');
 if(todo!==''){
     setTodoList(
-        [...todoList,{todo:todo, id:todoList.length}]
+        [...todoList,{todo:todo, id:id}]
     )
 }else {
     alert('you should add somethings')
@@ -23,6 +24,14 @@ console.log(todoList);
 
 }
 
+const taskSucceed=()=>{
+
+}
+
+const taskDelete=()=>{
+
+
+}
 
 
 
@@ -48,9 +57,10 @@ return(
        
        return(
         <div id="toDoContainer">
-            <div className="taskList"  > <ul className="sublist" key={id} ><li className="titleL2"> <h2 className="taskh2" > -{task.todo}  </h2>    </li></ul></div>
-            <div className="OkImg"> <img className="img" src={ok} alt="ok" /> </div> 
-            <div className="deleteImg"> <img className="img" src={cross} alt="cross" />  </div>
+            <div className="taskList"  > <ul className="sublist" key={id} ><li className="titleL2"> 
+            <h2 className="taskh2" > -{task.todo}  </h2>    </li></ul></div>
+            <div className="OkImg"> <img className="img" src={ok} alt="ok" onClick={taskSucceed} /> </div> 
+            <div className="deleteImg"> <img className="img" src={cross} alt="cross" onClick={taskDelete} />  </div>
         </div>
        )
     })
