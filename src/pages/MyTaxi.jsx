@@ -1,7 +1,10 @@
 
 import { useState,useEffect, useRef } from 'react';
+import React from 'react';
 import { Loader } from "@googlemaps/js-api-loader";
-
+import { usePlacesWidget } from 'react-google-autocomplete';
+import usePlacesService from "react-google-autocomplete/lib/usePlacesAutocompleteService";
+import { Autocomplete } from '@react-google-maps/api';
 const center = {
         lat: 51.9244,
         lng: 4.4777,
@@ -28,10 +31,17 @@ const googleMapRef = useRef(null);
 const [map, setMap] = useState(null);
 const [departureOptions,setDepartureOptions]=useState();
 const [arrivingOptions,setArrivingOptions]=useState()
+//const arrOptions=useRef();
+//const deparOptions=useRef()
 
-
+const savePlaceDetailsToState=()=>{
+  console.log('savePlaceDetailsToState');
+}
 
 let newmap;
+
+
+
 
 
 const getMap=async () => {
@@ -110,6 +120,31 @@ console.log(search);
    }
 
 
+  
+
+  //  const {
+  //   placesService,
+  //   placePredictions,
+  //   getPlacePredictions,
+  //   isPlacePredictionsLoading,
+  // } = usePlacesService({
+  //   apiKey: GOOGLE_MAP_API_KEY,
+  // });
+
+  // useEffect(() => {
+  //   // fetch place details for the first element in placePredictions array
+  //   if (placePredictions.length)
+  //     placesService?.getDetails(
+  //       {
+  //         placeId: placePredictions[0].place_id,
+  //       },
+  //       (placeDetails) => savePlaceDetailsToState(placeDetails)
+  //     );
+  // }, [placePredictions]);
+
+
+
+
 
 useEffect(()=>{
 console.log(search);
@@ -131,7 +166,10 @@ console.log(search);
 
     return(
       
+
+      
 <div>
+
 
 
 
@@ -170,8 +208,11 @@ console.log(search);
                   </div>
                   <div>
                    <input type="text" name="departure" required  value={departure}
-                   onChange={(event)=> setDeparture(event.target.value)}
-                  className="reservationInput" id="departure"  placeholder="departure" />
+                   onChange={(event)=> {setDeparture(event.target.value);
+                   }}
+                  className="reservationInput" id="departure"  placeholder="departure" 
+                    />
+                
                    
                   </div>
         <div>
@@ -186,7 +227,14 @@ console.log(search);
          onChange={(event)=> setArriving(event.target.value)}
          className="reservationInput" required  placeholder="arriving" />
           
-        </div>
+
+
+
+        </div> 
+         
+        
+     
+       
         <div>
             <label htmlFor="date" className="reservationLabel"> Date:
              </label>
@@ -194,7 +242,7 @@ console.log(search);
         </div>
         <div>
         <input type="datetime-local" name="time" className="reservationInput"
-         value={time} onChange={(event)=>setTime(event.target.value)}  required />
+         value={time} onChange={(event)=>setTime(event.target.value)}  required  />
         </div>
     <button type="submit"  onClick={makeReservation}  className="submitButtons">Make reservation</button>
    
@@ -226,4 +274,9 @@ console.log(search);
 
 
     )
+
+    
+
+
+
 }

@@ -13,7 +13,6 @@ export default function NavBar() {
 <nav>
 <ul>
   <li><Link to="/">Home</Link></li>
-  {/* <li><Link to="/costumers">Costumers</Link></li> */}
   <li><Link to='/mytaxi'>MyTaxi</Link></li>
    <li><Link to='/myplaylist'>MyPlay</Link></li>
   <li><Link to="/todo">Todo</Link></li>

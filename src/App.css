@@ -191,19 +191,21 @@ height: 10%;
  grid-template-columns: 50% 50%;
   margin: 4%;
   width: 60%;
-  border-style: inset;
+  
   margin-top: 10px;
   background-image: linear-gradient(to right, rgb(235, 234, 255), rgb(101, 24, 245));
   border-style: none;
   margin-left: 20%;
-  border-radius: 7%;
+  border-radius: 15px;
 }
 
 .reservationLabel {
   font-size:30px;
   margin:15px;
   width: 30%;
-  color: rgb(126, 126, 255);
+  color: rgb(50, 50, 207);
+  
+  
   
 }
 
@@ -215,7 +217,7 @@ height: 10%;
   text-align: center;
   color: blue;
   border-radius: 2%;
-  border-start-start-radius: 20px;
+  border-radius: 20px;
   background-color: rgb(235, 234, 255);
   border:none;
   border-bottom-right-radius: 20px;
@@ -232,68 +234,40 @@ height: 10%;
   background-clip: padding-box;
   background-color: #134ff3;
   border: 1px solid transparent;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
-  display: inline-flex;
+ 
+  position: relative;
   font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 16px;
   font-weight: 600;
   justify-content: center;
-  line-height: 1.25;
+  
   margin: 0;
   min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  position: relative;
-  text-decoration: none;
+
+ 
+  
   transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
+  
+  
   touch-action: manipulation;
-  vertical-align: baseline;
+ 
   width: 40%;
 }
 
 
-.submitButtons:focus {
-  background-color: #fb8332;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-}
+
 
 .submitButtons:hover {
-  transform: translateY(-1px);
+  transform: translateY(-5px);
 }
 
-.submitButtons:active {
-  background-color: #c85000;
-  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
-  transform: translateY(0);
-}
 
-#taxiImg{
 
-  width: 70%;
-  height: 60%;
-opacity: 0.5;
-  -webkit-animation:spin 10s linear infinite;
-    -moz-animation:spin 10s linear infinite;
-    animation:spin 10s linear infinite;
-}
-@-moz-keyframes spin { 
-    100% { -moz-transform: rotate(360deg); } 
-}
-@-webkit-keyframes spin { 
-    100% { -webkit-transform: rotate(360deg); } 
-}
-@keyframes spin { 
-    100% { 
-        -webkit-transform: rotate(360deg); 
-        transform:rotateY(360deg); 
-    } 
 
-  
-}
 
 #result{
   width: 25%;
@@ -362,6 +336,7 @@ opacity: 0.5;
 
 #todoContainer{
   min-height: 60vh;
+  
 }
 
 .sublist{
@@ -382,13 +357,15 @@ margin-right: 50%;
 
 
 
-#toDoContainer{
+#toDoList{
   display: grid;
   grid-template-columns: 40% 10% 10%;
   grid-template-rows: auto;
   grid-template-areas: 
-  'task1 Ok delete'
-  ;
+  'task1 Ok delete';
+  border-bottom: 1px blue double;
+  width: 80%;
+  margin-left: 4%;
 }
 /* homepage */
 

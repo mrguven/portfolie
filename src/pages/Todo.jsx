@@ -7,29 +7,33 @@ const [todoList,setTodoList]=useState([]);
 const [todo,setTodo]=useState('');
 
 
-let id=Number;
+
 const addToList=()=>{
-id+=1
+
 console.log('hello');
 if(todo!==''){
     setTodoList(
-        [...todoList,{todo:todo, id:id}]
+        [...todoList,todo]
     )
 }else {
     alert('you should add somethings')
 }
 
-console.log(todoList.id);
+
 console.log(todoList);
 
 }
 
 const taskSucceed=()=>{
 
+  
+
 }
 
-const taskDelete=()=>{
-
+const taskDelete=(index)=>{
+setTodoList(old=>{
+ return old.filter((_,i)=>i!==index)
+})
 
 }
 
@@ -53,14 +57,14 @@ return(
 {
     todoList && 
    
-    todoList.map((task)=>{
+    todoList.map((task,index)=>{
        
        return(
-        <div id="toDoContainer">
-            <div className="taskList"  > <ul className="sublist" key={id} ><li className="titleL2"> 
-            <h2 className="taskh2" > -{task.todo}  </h2>    </li></ul></div>
-            <div className="OkImg"> <img className="img" src={ok} alt="ok" onClick={taskSucceed} /> </div> 
-            <div className="deleteImg"> <img className="img" src={cross} alt="cross" onClick={taskDelete} />  </div>
+        <div id="toDoList"  key={index}>
+            <div className="taskList"  > <ul className="sublist"  ><li className="titleL2"> 
+            <h2 className="taskh2" > -{task}  </h2>    </li></ul></div>
+            <div className="OkImg"> <img className="img" src={ok} alt="ok" onClick={()=>{taskSucceed(index)}} /> </div> 
+            <div className="deleteImg"> <img className="img" src={cross} alt="cross" onClick={()=>{taskDelete(index)}} />  </div>
         </div>
        )
     })
