@@ -13,7 +13,7 @@ export default function Home(){
     return(
 
 
-<div>
+
 
 <div id='infoContainer'>
 <div id='profil'>
@@ -52,10 +52,12 @@ export default function Home(){
 
 
 
-<div className="subCont" id='myTaxi'></div>
-<div className="subCont" id='todo'></div>
-<div className="subCont" id='catch'></div>
-<div className="subCont" id='coming'></div>
+<div className="subCont" id='myTaxi'>dg</div>
+<div className="subCont" id='todo'>dfg</div>
+<div className="subCont" id='catch'>dfg</div>
+<div className="subCont" id='coming'> detail waarbij ik ICT-knelpunten tijdig identificeer.
+         Dit doe ik op een vrolijke en gestructureerde manier
+          zonder aandacht te verliezen voor de organisatiedoelstellinge</div>
 
 </div>
 
@@ -66,6 +68,6 @@ export default function Home(){
        
        
 
-        </div>
+        
     )
 }
