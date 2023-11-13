@@ -370,10 +370,59 @@ margin-right: 50%;
 /* homepage */
 
 
+
+
+
+#infoContainer{
+  display: grid;
+  grid-template-columns: 10% 40% 40%;
+  grid-template-rows: 40% 40% 40%;
+grid-template-areas: 
+'port profil subInfo'
+'port  myTaxi todo'
+'port catch coming';
+}
+
 #profil{
   width: 20%;
   margin: 4%;
   border-radius: 5%;
   box-shadow: #16437e 5px 5px;
+  grid-area: profil;
   
+}
+
+#subInfo{
+  grid-area: subInfo;
+  border: #066aee 1px double;
+border-radius: 15px;
+}
+
+#port{
+  grid-area: port;
+  border: #066aee 1px double;
+border-radius: 15px;
+}
+#myTaxi{
+grid-area: myTaxi;
+border: #066aee 1px double;
+border-radius: 15px;
+}
+
+#todo{
+  grid-area: todo;
+  border: #066aee 1px double;
+border-radius: 15px;
+}
+
+#catch{
+  grid-area:catch;
+  border: #066aee 1px double;
+border-radius: 15px;
+}
+
+#coming{
+  grid-area: coming;
+  border: #066aee 1px double;
+border-radius: 15px;
 }
