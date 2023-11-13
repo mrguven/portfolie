@@ -376,24 +376,53 @@ margin-right: 50%;
 #infoContainer{
   display: grid;
   grid-template-columns: 10% 40% 40%;
-  grid-template-rows: 40% 40% 40%;
+  grid-template-rows: 60% 40% 40% 40%;
 grid-template-areas: 
 'port profil subInfo'
+'port  subInfo-2 subInfo-3'
 'port  myTaxi todo'
 'port catch coming';
+column-gap: 10px;
+  row-gap: 15px;
+  justify-items: center;
+  text-align: justify;
+  padding: 1%;
+
 }
 
 #profil{
-  width: 20%;
-  margin: 4%;
-  border-radius: 5%;
-  box-shadow: #16437e 5px 5px;
-  grid-area: profil;
+
+ 
   
+  border: #066aee 1px double;
+  border-radius: 15px;
+  padding: 3%;
+  grid-area: profil;
+  color: #066aee;
+  
+}
+
+#foto{
+  box-shadow: #16437e 5px 5px;
+  width: 50%;
+  height: auto;
+  border-radius: 5%;
+  margin: 4%;
 }
 
 #subInfo{
   grid-area: subInfo;
+  border: #066aee 1px double;
+border-radius: 15px;
+
+}
+#subInfo-2{
+grid-area:subInfo-2 ;
+border: #066aee 1px double;
+border-radius: 15px;
+}
+#subInfo-3{
+  grid-area:subInfo-3 ;
   border: #066aee 1px double;
 border-radius: 15px;
 }
@@ -425,4 +454,10 @@ border-radius: 15px;
   grid-area: coming;
   border: #066aee 1px double;
 border-radius: 15px;
+}
+
+.classSubinfo h1{
+  font-size: 100%;
+  color: #066aee;
+  margin: 2%;
 }
