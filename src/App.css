@@ -351,10 +351,7 @@ bottom: 0;
   cursor: pointer;
 }
 
-#todoContainer{
-  min-height: 60vh;
-  
-}
+
 
 .sublist{
   background-color: #fff;
@@ -393,7 +390,7 @@ margin-right: 50%;
 #infoContainer{
   display: grid;
   grid-template-columns: 10% 40% 40%;
-  grid-template-rows: 60% 40% 40% 40%;
+  grid-template-rows: 30% 20% 30% 40%;
 grid-template-areas: 
 'port profil subInfo'
 'port  subInfo-2 subInfo-3'
@@ -413,7 +410,7 @@ margin-bottom: 10%;
 
  
   
-  border: #066aee 1px double;
+  border: #e7ecf3  1px double;
   border-radius: 15px;
   padding: 3%;
   grid-area: profil;
@@ -431,59 +428,76 @@ margin-bottom: 10%;
 
 #subInfo{
   grid-area: subInfo;
-  border: #066aee 1px double;
+  border:  #e7ecf3  1px double;
 border-radius: 15px;
+
 
 
 }
 #subInfo-2{
 grid-area:subInfo-2 ;
-border: #066aee 1px double;
+border:  #e7ecf3  1px double;
 border-radius: 15px;
 
 }
 #subInfo-3{
   grid-area:subInfo-3 ;
-  border: #066aee 1px double;
+  border:  #e7ecf3  1px double;
 border-radius: 15px;
 }
 
 #port{
   grid-area: port;
-  border: #066aee 1px double;
+  border:  #e7ecf3  1px double;
 border-radius: 15px;
+padding: 7%;
+color:  #2574e4 ;
+
 }
 #myTaxi{
 grid-area: myTaxi;
-border: #066aee 1px double;
+border:  #e7ecf3  1px double;
 border-radius: 15px;
 }
 
 #todo{
   grid-area: todo;
-  border: #066aee 1px double;
+  border:  #e7ecf3  1px double;
 border-radius: 15px;
 }
 
 #catch{
   grid-area:catch;
-  border: #066aee 1px double;
+  border:  #e7ecf3  1px double;
 border-radius: 15px;
 }
 
 #coming{
   grid-area: coming;
-  border: #066aee 1px double;
+  border: #e7ecf3 1px double;
 border-radius: 15px;
 }
 
 .classSubinfo h1{
   font-size: 100%;
-  color: #066aee;
+  color:  #0450bb ;
   margin: 2%;
   text-align:justify;
+  justify-self: center;
 }
 
-#root{
-  height: 100%;
+.subCont img{
+  width:50%;
+  margin: 5%;
+  padding-left: 20%;
+  padding-top: 10%;
+}
+.subCont h3{
+  
+  
+  padding-left: 35%;
+  padding-bottom: 5%;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color:#1c00bb;
+  
 }

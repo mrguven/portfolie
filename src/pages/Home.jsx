@@ -1,5 +1,5 @@
 import mrg from '../mrg.jpeg'
-
+import logo from '../logo.png'
 
 export default function Home(){
 
@@ -45,19 +45,29 @@ export default function Home(){
 </div>
 <div id='port'>
 <h3>Portfolie</h3>
-<h3>Taxi Project...</h3>
-<h3>Todo App..</h3>
-<h3>CatchMe Games..</h3>
+<h3>MyTaxi</h3>
+<h3>TodoApp</h3>
+<h3>CatchMe</h3>
 </div>
 
 
 
-<div className="subCont" id='myTaxi'>dg</div>
-<div className="subCont" id='todo'>dfg</div>
-<div className="subCont" id='catch'>dfg</div>
-<div className="subCont" id='coming'> detail waarbij ik ICT-knelpunten tijdig identificeer.
-         Dit doe ik op een vrolijke en gestructureerde manier
-          zonder aandacht te verliezen voor de organisatiedoelstellinge</div>
+<div className="subCont" id='myTaxi'>
+    <img src={logo} alt="logo" />
+    <h3>Coming Soon</h3>
+</div>
+<div className="subCont" id='todo'>
+<img src={logo} alt="logo" />
+<h3>Coming Soon</h3>
+</div>
+<div className="subCont" id='catch'>
+<img src={logo} alt="logo" />
+<h3>Coming Soon</h3>
+</div>
+<div className="subCont" id='coming'> 
+<img src={logo} alt="logo" />
+<h3>Coming Soon</h3>
+</div>
 
 </div>
 
