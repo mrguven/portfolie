@@ -454,6 +454,17 @@ padding: 7%;
 color:  #2574e4 ;
 
 }
+
+
+#port h3{
+  border: #0450bb 1px double;
+  border-radius: 15px;
+  text-align: center;
+}
+#port h3:hover{
+  background-color: #0450bb;
+  color: wheat;
+}
 #myTaxi{
 grid-area: myTaxi;
 border:  #e7ecf3  1px double;
