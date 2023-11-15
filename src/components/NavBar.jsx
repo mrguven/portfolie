@@ -10,8 +10,8 @@ export default function NavBar() {
 
 
     return(
-<nav>
-<ul>
+<nav id="navContainer"  >
+<ul id='navUl'>
   <li><Link to="/">Home</Link></li>
   <li><Link to='/mytaxi'>MyTaxi</Link></li>
    <li><Link to='/myplaylist'>MyPlay</Link></li>

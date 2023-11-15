@@ -7,7 +7,7 @@ export default function Home(){
 
 
 const open=(links)=>{
-    window.location.href = links;
+    window.location.href =  links;
 }
 
 
