@@ -238,14 +238,14 @@ height: 10%;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
- 
+margin-left: 160%;
   position: relative;
   font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 16px;
   font-weight: 600;
   justify-content: center;
   
-  margin: 0;
+  
   min-height: 3rem;
 
  
@@ -290,9 +290,9 @@ height: 10%;
   
   grid-template-columns: 25% 25%  25%  25% ;
   grid-template-areas:"subFooter subFooter1 subFooter2 subFooter3";
-  margin-top: 4%;
-  height:10%;
-width: 100%;
+  
+  padding-bottom: 1%;
+  width: 100%;
 padding-left: 2%;
 bottom: 0;
     left: 0;
@@ -303,6 +303,11 @@ bottom: 0;
 .footerLinks{
   color: #fff;
   text-decoration: none;
+}
+.footerLinks:hover{
+  
+  transform: scale(1.1);
+  transition: transform .5s;
 }
 
 #subFooter{
@@ -419,8 +424,8 @@ margin-bottom: 10%;
 }
 
 #foto{
-  box-shadow: #16437e 5px 5px;
-  width: 50%;
+ 
+  width: 40%;
   height: auto;
   border-radius: 5%;
   margin: 4%;
@@ -457,13 +462,18 @@ color:  #2574e4 ;
 
 
 #port h3{
-  border: #0450bb 1px double;
+  border: #c0d2ec 1px double;
   border-radius: 15px;
   text-align: center;
 }
 #port h3:hover{
-  background-color: #0450bb;
-  color: wheat;
+  background-color: #1a59b3;
+  color:white;
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: transform .5s;
+ 
+  
 }
 #myTaxi{
 grid-area: myTaxi;
@@ -491,11 +501,15 @@ border-radius: 15px;
 
 .classSubinfo h1{
   font-size: 100%;
-  color:  #0450bb ;
+  color:  #0a182b ;
   margin: 2%;
   text-align:justify;
-  justify-self: center;
+ font-style:oblique;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ font-size: 130%;
+ 
 }
+
 
 .subCont img{
   width:50%;

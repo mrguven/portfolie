@@ -26,7 +26,7 @@ console.log(todoList);
 
 const taskSucceed=()=>{
 
-  
+
 
 }
 
@@ -41,10 +41,9 @@ setTodoList(old=>{
 
 return(
 
-<div>
-
-<h1>Toto List</h1>
 <div id="todoContainer">
+<h1 id="toDoTitle" >Toto List</h1>
+<div >
 
 <input type="text" name="" id="todo"  placeholder="write your tasks"
   onChange={(e)=>{setTodo(e.target.value)}} value={todo}/>

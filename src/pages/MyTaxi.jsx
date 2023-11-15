@@ -205,8 +205,8 @@ console.log(search);
                   <label htmlFor="departure" className="reservationLabel"  >
                     Departure:  
                   </label>
-                  </div>
-                  <div>
+        </div>
+        <div>
                    <input type="text" name="departure" required  value={departure}
                    onChange={(event)=> {setDeparture(event.target.value);
                    }}
@@ -214,7 +214,7 @@ console.log(search);
                     />
                 
                    
-                  </div>
+        </div>
         <div>
                   <label htmlFor="arriving"   className="reservationLabel">
                     Arriving: </label>
@@ -241,10 +241,11 @@ console.log(search);
             
         </div>
         <div>
-        <input type="datetime-local" name="time" className="reservationInput"
-         value={time} onChange={(event)=>setTime(event.target.value)}  required  />
+                <input type="datetime-local" name="time" className="reservationInput"
+                value={time} onChange={(event)=>setTime(event.target.value)}  required  />
         </div>
-    <button type="submit"  onClick={makeReservation}  className="submitButtons">Make reservation</button>
+        
+    <button type="submit"  onClick={makeReservation}  className="submitButtons">Make Reservation</button>
    
 </form>
 
