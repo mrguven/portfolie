@@ -6,9 +6,9 @@ export default function Home(){
 
 
 
-const open=(links)=>{
-    window.location.href =  links;
-}
+// const open=(links)=>{
+//     window.location.href =  links;
+// }
 
 
 
@@ -48,10 +48,10 @@ const open=(links)=>{
 </h1>
 </div>
 <div id='port'>
-<h3   onClick={()=>{open("/")}}>Portfolie</h3>
-<h3  onClick={()=>{open('/mytaxi')}} >MyTaxi </h3>
-<h3  onClick={()=>{open("/todo")}}>TodoApp </h3>
-<h3 onClick={()=>{open('/catchMe')}}>CatchMe  </h3>
+<h3  > <a href="/">Portfolie</a></h3>
+<h3  ><a href="/mytaxi">MyTaxi </a> </h3>
+<h3  ><a href="/todo">TodoApp </a></h3>
+<h3 > <a href="/catchMe">CatchMe</a>  </h3>
 </div>
 
 

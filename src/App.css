@@ -474,18 +474,19 @@ padding-top: 10vw;
 }
 
 
-#port h3{
+#port h3 a{
   border: #c0d2ec;
   border-radius: 15px;
   text-align: center;
-  padding: 1vw;
+  padding: 10%;
   font-size: 1.3vw;
   box-sizing: border-box;
+  text-decoration: none;
  
 }
 
 
-#port h3:hover{
+#port h3 a:hover{
   background-color: #1a59b3;
   color:white;
   cursor: pointer;
@@ -554,7 +555,7 @@ border-radius: 15px;
   /* homepage */
 
 
-  
+
   #infoContainer{
     display: grid;
     grid-template-columns: 20% 80%;
@@ -577,4 +578,17 @@ border-radius: 15px;
   height: 100%;
   
   }
+
+
+#port{
+  padding: 10%;
+  padding-top: 40%;
+  
+  
+}
+
+#port h3 a {
+  font-size: 3vw;
+}
+
 }
