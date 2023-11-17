@@ -3,7 +3,9 @@ import logo from '../logo.png'
 import music from '../music.png'
 import checlist from '../checklist.jpg'
 import catchMe from '../catchme.jpg'
-
+import taxi from '../taxi.png'
+import github from '../gtihub for web.png';
+import linkedin from '../linkedin.png'
 export default function Home(){
 
 
@@ -44,11 +46,10 @@ export default function Home(){
        </h1>
 </div>
 <div className='classSubinfo'  id='subInfo-2'>
-    <h1> </h1>
+    <img src={linkedin} id='linkedId' alt="linkedin" />
 </div>
 <div className='classSubinfo'  id='subInfo-3'>
-    <h1>
-</h1>
+   <img src={github} id='githubId' alt="github" />
 </div>
 <div id='port'>
     <ul id='portUlList'>
@@ -62,19 +63,22 @@ export default function Home(){
 
 
 <div className="subCont" id='myTaxi'>
-    <img src={logo} alt="logo" />
-    <h3>Coming Soon</h3>
+    <img src={taxi} alt="logo" />
+    <h3>met die applicatie kan je altijd een taxi reserveren
+        om ergens te gaan. Je kan kies een tijd,vertrek en bestemming.
+        Na jou ko
+    </h3>
 </div>
 <div className="subCont" id='todo'>
-<img src={logo} alt="logo" />
+<img src={checlist} alt="logo" />
 <h3>Coming Soon</h3>
 </div>
 <div className="subCont" id='catch'>
-<img src={logo} alt="logo" />
+<img src={music} alt="logo" />
 <h3>Coming Soon</h3>
 </div>
 <div className="subCont" id='coming'> 
-<img src={logo} alt="logo" />
+<img src={catchMe} alt="logo" />
 <h3>Coming Soon</h3>
 </div>
 
