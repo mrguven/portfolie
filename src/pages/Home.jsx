@@ -1,5 +1,8 @@
 import mrg from '../mrg.jpg'
 import logo from '../logo.png'
+import music from '../music.png'
+import checlist from '../checklist.jpg'
+import catchMe from '../catchme.jpg'
 
 export default function Home(){
 
@@ -48,10 +51,12 @@ export default function Home(){
 </h1>
 </div>
 <div id='port'>
-<h3  > <a href="/">Portfolie</a></h3>
-<h3  ><a href="/mytaxi">MyTaxi </a> </h3>
-<h3  ><a href="/todo">TodoApp </a></h3>
-<h3 > <a href="/catchMe">CatchMe</a>  </h3>
+    <ul id='portUlList'>
+    <li className='portLinks'><a   href="/">Portfolie</a></li>
+    <li className='portLinks'><a   href="/mytaxi">MyTaxi </a> </li>
+    <li className='portLinks'><a   href="/todo">TodoApp </a> </li>
+    <li className='portLinks'><a   href="/catchMe">CatchMe</a>   </li>
+ </ul>
 </div>
 
 
