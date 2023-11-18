@@ -46,10 +46,11 @@ export default function Home(){
        </h1>
 </div>
 <div className='classSubinfo'  id='subInfo-2'>
-    <img src={linkedin} id='linkedId' alt="linkedin" />
+   <a href="https://www.linkedin.com/in/rauf-guven-a76791a6/" target="https://www.linkedin.com/in/rauf-guven-a76791a6/" > <img src={linkedin} id='linkedId' alt="linkedin" /></a>
+   <a href="https://github.com/mrguven"  target="https://github.com/mrguven"><img src={github} id='githubId' alt="github" /></a>
 </div>
 <div className='classSubinfo'  id='subInfo-3'>
-   <img src={github} id='githubId' alt="github" />
+   
 </div>
 <div id='port'>
     <ul id='portUlList'>
@@ -63,23 +64,23 @@ export default function Home(){
 
 
 <div className="subCont" id='myTaxi'>
-    <img src={taxi} alt="logo" />
-    <h3>met die applicatie kan je altijd een taxi reserveren
+    <img src={taxi} alt="logo" id='taxilogo' />
+    <h3 id='taxilogoText'>met die applicatie kan je altijd een taxi reserveren
         om ergens te gaan. Je kan kies een tijd,vertrek en bestemming.
         Na jou ko
     </h3>
 </div>
 <div className="subCont" id='todo'>
-<img src={checlist} alt="logo" />
-<h3>Coming Soon</h3>
+<img src={checlist} alt="logo"  id='checklistImg'/>
+<h3 id='checklistText'>Coming Soon</h3>
 </div>
-<div className="subCont" id='catch'>
-<img src={music} alt="logo" />
-<h3>Coming Soon</h3>
+<div className="subCont" id='music'>
+<img src={music} alt="logo" id='musicImg'/>
+<h3 id='musicText'>Coming Soon</h3>
 </div>
-<div className="subCont" id='coming'> 
-<img src={catchMe} alt="logo" />
-<h3>Coming Soon</h3>
+<div className="subCont" id='catchMe'> 
+<img src={catchMe} alt="logo" id='catchMeImg' />
+<h3 id='catchMeText'>Coming Soon</h3>
 </div>
 
 </div>

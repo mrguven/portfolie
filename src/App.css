@@ -293,7 +293,7 @@ margin-left: 160%;
   
   grid-template-columns: 25% 25%  25%  25% ;
   grid-template-areas:"subFooter subFooter1 subFooter2 subFooter3";
-  
+  grid-area: footer;
   
   max-width: 100%;
 
@@ -400,12 +400,13 @@ margin-right: 50%;
 #infoContainer{
   display: grid;
   grid-template-columns: 10% 40% 40%;
-  grid-template-rows: auto auto auto auto;
+  grid-template-rows: auto auto auto auto auto;
 grid-template-areas: 
 'port profil subInfo'
 'port  subInfo-2 subInfo-3'
 'port  myTaxi todo'
-'port catch coming';
+'port catch catchMe'
+'footer footer footer';
 column-gap: 1%;
   row-gap: 1%;
  background-color:rgb(255, 255, 255);
@@ -435,7 +436,7 @@ height: 100%;
   box-sizing: border-box;
   max-width: 70%;
   height: auto;
- 
+ filter: drop-shadow(16px 7px 8px blue);
   margin: 4%;
   
 }
@@ -481,10 +482,11 @@ padding-top: 10vw;
   font-size: 1.9vw;
   box-sizing: border-box;
   text-decoration: none;
-  padding-right: 13vw;
+  
 }
 #port ul {
   list-style-type: none;
+  
 }
 
 .portLinks a:hover{
@@ -501,24 +503,101 @@ padding-top: 10vw;
 grid-area: myTaxi;
 border:  #e7ecf3  1px double;
 border-radius: 15px;
+display: grid;
+grid-template-columns: 100%;
+grid-template-rows: auto auto;
+grid-template-areas: 'taxilogo'
+'taxilogoText';
+column-gap: 1%;
+  row-gap: 1%;
 }
+
+#taxilogo{
+  grid-area: taxilogo;
+  justify-self: center;
+ 
+}
+
+#taxilogoText{
+  grid-area: taxilogoText;
+  
+}
+
+.subCont img{
+  max-width:50%;
+  margin: 1%;
+  cursor: pointer;
+}
+.subCont h3{
+  
+  text-align: center;
+ 
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color:#1c00bb;
+  
+}
+
 
 #todo{
   grid-area: todo;
   border:  #e7ecf3  1px double;
 border-radius: 15px;
+display: grid;
+grid-template-columns: 100%;
+grid-template-rows: auto auto;
+grid-template-areas: 'checklistImg'
+'checklistText';
+column-gap: 1%;
+  row-gap: 1%;
+}
+#checklistImg{
+  grid-area: checklistImg;
+  justify-self: center;
+}
+#checklistText{
+  grid-area: checklistText;
 }
 
-#catch{
+#music{
   grid-area:catch;
   border:  #e7ecf3  1px double;
 border-radius: 15px;
+display: grid;
+grid-template-columns: 100%;
+grid-template-rows: auto auto;
+grid-template-areas: 'musicImg'
+'musicText';
+column-gap: 1%;
+  row-gap: 1%;
+}
+#musicImg{
+  grid-area: musicImg;
+  justify-self: center;
+}
+#musicText{
+  grid-area: musicText;
 }
 
-#coming{
-  grid-area: coming;
+
+#catchMe{
+  grid-area: catchMe;
   border: #e7ecf3 1px double;
 border-radius: 15px;
+display: grid;
+grid-template-columns: 100%;
+grid-template-rows: auto auto;
+grid-template-areas: 'catchMeImg'
+'catchMeText';
+column-gap: 1%;
+  row-gap: 1%;
+}
+
+#catchMeImg{
+  grid-area: catchMeImg;
+  justify-self: center;
+}
+#catchMeText{
+  grid-area: catchMeText;
 }
 
 .classSubinfo h1{
@@ -539,30 +618,14 @@ border-radius: 15px;
   padding-top: 10%;
   cursor: pointer;
 }
-#githubIdop{
-  max-width:20%;
+#githubId{
+ max-width:20%;
   margin: 5%;
   padding-left: 20%;
   padding-top: 10%;
   cursor: pointer;
 }
 
-.subCont img{
-  max-width:50%;
-  margin: 5%;
-  padding-left: 20%;
-  padding-top: 10%;
-  cursor: pointer;
-}
-.subCont h3{
-  
-  
-  padding-left: 35%;
-  padding-bottom: 5%;
-  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color:#1c00bb;
-  
-}
 
 
 
@@ -584,7 +647,7 @@ border-radius: 15px;
   'port  myTaxi '
   'port  todo'
    'port catch '
-   'port  coming';
+   'port  catchMe';
   column-gap: 0.4%;
     row-gap: 1%;
    background-color:rgb(255, 255, 255);
