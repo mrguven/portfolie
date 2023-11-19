@@ -168,16 +168,14 @@ console.log(search);
       
 
       
-<div>
+<div id='mainContainer'>
 
 
 
 
 
-<div id='HeadContainer'>
-<div>
-       
-       </div>
+
+
     <div id="header" >
     
         <div>
@@ -186,17 +184,20 @@ console.log(search);
        <div>
         <h1 className='head'>MyTaxi</h1>
        </div>
-<div><h3>We Zijn Altijd Klaar...</h3></div>
-<div><h3>Altijd Bereikbaar</h3></div>
-<div><h4>7/24 Dienst</h4></div>
-
-
-    </div>
     <div>
-        
-        
-        </div>
+      <h3>We Zijn Altijd Klaar...</h3>
+      </div>
+    <div>
+      <h3>Altijd Bereikbaar</h3>
+      </div>
+    <div>
+      <h4>7/24 Dienst</h4>
+      </div>
+
+
     </div>
+   
+    
 
 
 <form action="/makeReservation" method="post" id="reservationInfo">

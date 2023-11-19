@@ -42,16 +42,16 @@ setTodoList(old=>{
 return(
 
 <div id="todoContainer">
-<h1 id="toDoTitle" >Toto List</h1>
-<div >
+<h1 id="toDoTitle" >ToDo List</h1>
 
-<input type="text" name="" id="todo"  placeholder="write your tasks"
+
+<input type="text" name="todoList" id="todoInput"  placeholder="write your tasks"
   onChange={(e)=>{setTodo(e.target.value)}} value={todo}/>
-<button  onClick={addToList} >add</button>
+<button id="todoButton" onClick={addToList} >add</button>
 
 
 
-<div>
+<div id="mainList" >
 
 {
     todoList && 
@@ -59,7 +59,7 @@ return(
     todoList.map((task,index)=>{
        
        return(
-        <div id="toDoList"  key={index}>
+        <div id="toDoList" key={index}>
             <div className="taskList"  > <ul className="sublist"  ><li className="titleL2"> 
             <h2 className="taskh2" > -{task}  </h2>    </li></ul></div>
             <div className="OkImg"> <img className="img" src={ok} alt="ok" onClick={()=>{taskSucceed(index)}} /> </div> 
@@ -70,7 +70,10 @@ return(
     
 }
 </div>
-</div>
+
+<div id="doneList"></div>
+
+
 </div>
 
  

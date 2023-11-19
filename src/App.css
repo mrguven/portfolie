@@ -32,7 +32,9 @@
 
 
 #navUl li a:hover {
-  background-color: #111;
+  background-color: white ;
+  color:rgb(108, 2, 206) ;
+  transition: .8s;
 }
 
 
@@ -141,28 +143,28 @@ color: #db4b9f;
 #header{
   display: grid;
   margin-top: 5px;
-  padding-left: 25%;
-  padding-right: 25%;
-  padding-right: 2%;
-  color: rgb(108, 22, 189);
+  padding-left: 10%;
+ 
+ 
+  color: rgb(209, 218, 191);
   grid-template-columns: 25% 30% 20%;
   grid-template-rows: 80% 20% ;
-  background-image: linear-gradient(to left, rgb(235, 234, 255), rgb(211, 187, 255));
-height: 10%;
-}
-
-#HeadContainer{
   border-bottom: 2px blue;
   border-style: inset;
   padding-bottom: 25px;
-  
+height: 10%;
+background-image: url('./taxi-sign-night.jpg');
+background-position: center; 
+background-repeat: no-repeat; 
+background-size: cover; 
 }
+
 #head{
   font-family:monospace;
-    font-size:6vw;
+    font-size:10vw;
     text-align:center;
     margin-top: 20px;
-    text-shadow: 15px 15px #baadd8;
+   
    
 }
 
@@ -290,11 +292,12 @@ margin-left: 160%;
 #footer{
   background-color: rgb(108, 2, 206);
   display: grid;
-  
+  margin-top: 10px;
   grid-template-columns: 25% 25%  25%  25% ;
+  
   grid-template-areas:"subFooter subFooter1 subFooter2 subFooter3";
   grid-area: footer;
-  
+ 
   max-width: 100%;
 
 
@@ -306,25 +309,25 @@ margin-left: 160%;
   font-size: 1.6vw;
   
 }
-.linkDivs h2:hover{
-  
-  transform: scale(1.1);
-  transition: transform .5s;
-}
+
 .linkDivs:first-child{
   padding-left: 20%;
 }
 
 #subFooter{
   grid-area: subFooter;
+  padding-top: 10px;
 }
 
 #subFooter1{
   grid-area: subFooter1;
+  padding-top: 10px;
 }
 #subFooter2{
   grid-area: subFooter2;
+  padding-top: 10px;
 }
+
 #subFooter3{
   grid-area: subFooter3;
 }
@@ -340,7 +343,35 @@ margin-left: 160%;
 
 /* todo list */
 
+#todoContainer{
+  min-height: 500px;
 
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100px 50px auto ;
+grid-template-areas: 
+'toDoTitle toDoTitle'
+'todoInput todoButton'
+'mainList  doneList';
+column-gap: 1%;
+  row-gap: 1%;
+margin-bottom: 30px;
+padding: 1%;
+
+}
+
+#toDoList{
+  display: grid;
+  grid-template-columns: 80% 10% 10%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  'task1 Ok delete';
+  border-bottom: 1px blue double;
+  max-width: 80%;
+  margin-left: 4%;
+ 
+  
+}
 
 .taskList {
   grid-area: task1;
@@ -350,6 +381,38 @@ margin-left: 160%;
   
 }
 
+#toDoTitle{
+  grid-area: toDoTitle;
+  align-self: center;
+  justify-self: center;
+  font-size: 4vw;
+  
+}
+#todoButton{
+  grid-area: todoButton;
+  width: 30%;
+  border-radius: 30px;
+  background-color: #7295f7;
+  color: white;
+  margin-left: 10%;
+}
+#todoButton:hover{
+  background-color: #baadd8;
+  color: #111;
+  cursor: pointer;
+  
+}
+#todoInput{
+  grid-area: todoInput;
+  border-radius: 30px;
+  
+}
+#mainList{
+  grid-area: mainList;
+}
+#doneList{
+  grid-area: doneList;
+}
 
 .OkImg{
   grid-area: Ok;
@@ -365,13 +428,16 @@ margin-left: 160%;
 
 .sublist{
   background-color: #fff;
+  list-style-type: none;
+  
   
 }
 .titleL2{
 margin-right: 50%;
 }
 .taskh2{
-  text-align: left;
+  text-align: center;
+  font-size: 2vw;
 }
 .img{
   max-width: 50%;
@@ -381,16 +447,7 @@ margin-right: 50%;
 
 
 
-#toDoList{
-  display: grid;
-  grid-template-columns: 40% 10% 10%;
-  grid-template-rows: auto;
-  grid-template-areas: 
-  'task1 Ok delete';
-  border-bottom: 1px blue double;
-  max-width: 80%;
-  margin-left: 4%;
-}
+
 /* homepage */
 
 
@@ -399,21 +456,22 @@ margin-right: 50%;
 
 #infoContainer{
   display: grid;
-  grid-template-columns: 10% 40% 40%;
-  grid-template-rows: auto auto auto auto auto;
+  grid-template-columns: 20% auto auto;
+  grid-template-rows: auto auto auto auto ;
 grid-template-areas: 
 'port profil subInfo'
 'port  subInfo-2 subInfo-3'
 'port  myTaxi todo'
-'port catch catchMe'
-'footer footer footer';
+'port catch catchMe';
+
 column-gap: 1%;
   row-gap: 1%;
  background-color:rgb(255, 255, 255);
   
   padding: 1%;
-margin: 1%;
-height: 100%;
+margin:1%;
+
+
 
 }
 
@@ -453,7 +511,20 @@ box-sizing: border-box;
 grid-area:subInfo-2 ;
 border:  #e7ecf3  1px double;
 border-radius: 15px;
+display: grid;
+grid-template-columns: 50% 50%;
+grid-template-rows: auto;
+grid-template-areas: 'linkedinLink githubLink';
+column-gap: 1%;
+  row-gap: 1%;
 
+}
+#linkedinLink{
+  grid-area: linkedinLink;
+  
+}
+#githubLink{
+grid-area: githubLink;
 }
 #subInfo-3{
   grid-area:subInfo-3 ;
@@ -463,39 +534,44 @@ border-radius: 15px;
 
 #port{
   grid-area: port;
-  border:  #e7ecf3  1px double;
-border-radius: 15px;
+
 
 color:  #2574e4 ;
 padding-top: 10vw;
 
+display: grid;
+grid-template-columns: 100%;
+grid-template-rows: 30% 30% 30% 30%;
+
+
+  row-gap: 5%;
+  position: fixed;
+  bottom: 40%;
 }
 
 
 
 
-.portLinks a{
-  border: #c0d2ec;
-  border-radius: 15px;
+.portLinks {
+  border-bottom: #c01355 4px dotted;
+  
   text-align: center;
-
+  padding:10% 130% 10% 14%;
   font-size: 1.9vw;
   box-sizing: border-box;
   text-decoration: none;
   
 }
-#port ul {
-  list-style-type: none;
-  
-}
 
-.portLinks a:hover{
- 
+
+.portLinks:hover{
+ opacity: 0.8;
  transition: .8s;
   background-color: #1a59b3;
   color:white;
-  
-  
+  padding: 10% 130% 10% 130%;
+  border-bottom: none;
+  border-radius: 30px;
 }
 
 
@@ -523,10 +599,15 @@ column-gap: 1%;
   
 }
 
-.subCont img{
-  max-width:50%;
+.subCont a{ display: flex;
+  justify-content: center;
+  align-items: center;}
+.subCont a img{
+  padding: 4%;
+  max-width:60%;
   margin: 1%;
   cursor: pointer;
+ 
 }
 .subCont h3{
   
@@ -536,6 +617,11 @@ column-gap: 1%;
   color:#1c00bb;
   
 }
+
+.subCont img:hover{
+  opacity: 0.63;
+}
+
 
 
 #todo{
@@ -608,11 +694,15 @@ column-gap: 1%;
  font-style:oblique;
  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
  font-size: 1.9vw;
- 
+ overflow: auto;
+
 }
 
+.classSubinfo a:hover{
+opacity: 0.66;
+}
 #linkedId{
-  max-width:20%;
+  max-width:30%;
   margin: 5%;
   padding-left: 20%;
   padding-top: 10%;
@@ -621,8 +711,8 @@ column-gap: 1%;
 #githubId{
  max-width:20%;
   margin: 5%;
-  padding-left: 20%;
-  padding-top: 10%;
+ 
+  padding-top: 5%;
   cursor: pointer;
 }
 
@@ -637,7 +727,7 @@ column-gap: 1%;
 
   #infoContainer{
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 30% 80%;
     grid-template-rows: auto auto auto auto;
   grid-template-areas: 
   'port profil '
