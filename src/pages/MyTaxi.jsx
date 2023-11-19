@@ -252,7 +252,7 @@ console.log(search);
 
 
     
-     <div>
+     <div id='resultBox'>
     {
   total>0 && 
 
@@ -264,10 +264,10 @@ console.log(search);
     </div>
 
     <div id='mapsStyle'
-    ref={googleMapRef}
+    ref={googleMapRef}/>
     
    
-  /></div>
+  </div>
 
 
 
