@@ -50,7 +50,7 @@ return(
 <button id="todoButton" onClick={addToList} >add</button>
 
 
-
+<div id="todoAds"></div>
 <div id="mainList" >
 
 {
