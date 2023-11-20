@@ -388,8 +388,8 @@ padding: 1%;
   grid-template-areas: 
   'task1 Ok delete';
   border-bottom: 1px blue double;
-  
-  margin-left: 4%;
+  resize: horizontal;
+ 
  
   
 }
@@ -399,8 +399,8 @@ padding: 1%;
 }
 .taskList {
   grid-area: task1;
-  
-  
+ padding-right: 4%;
+ margin-right: 5%;
   
 
   
@@ -417,8 +417,9 @@ padding: 1%;
 #todoButton{
   grid-area: todoButton;
   width: 30%;
+  border: none;
   border-radius: 30px;
-  background-color: #7295f7;
+  background-color: #356bff;
   color: white;
   margin-left: 10%;
 }
@@ -433,6 +434,8 @@ padding: 1%;
   border-radius: 30px;
   width:40% ;
   justify-self: end;
+ border: #537ff7 1px;
+ border-style: inset;
   
 }
 #mainList{
@@ -445,11 +448,13 @@ padding: 1%;
 .OkImg{
   grid-area: Ok;
   cursor: pointer;
+  align-self: center;
 }
 
 .deleteImg{
   grid-area: delete;
   cursor: pointer;
+  align-self: center;
 }
 
 

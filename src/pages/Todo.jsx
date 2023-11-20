@@ -20,7 +20,7 @@ if(todo!==''){
 }
 
 
-console.log(todoList);
+setTodo('')
 
 }
 
