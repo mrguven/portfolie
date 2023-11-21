@@ -36,12 +36,12 @@ export default function Home(){
      zijn kwaliteiten die mij omschrijven. Ik ben een toegewijde
       medewerker met ervaring in het helpen van organisaties
        om bedrijfsdoelen te behalen en te overtreffen.
-       <br />
+       <br /> <br />
        Ik heb 
        een passie voor ICT en ik leer snel. Ik heb een oog voor
         detail waarbij ik ICT-knelpunten tijdig identificeer.
          Dit doe ik op een vrolijke en gestructureerde manier zonder aandacht te verliezen voor de organisatiedoelstellingen.
-         Ik heb een oog voor
+         <br /> <br />Ik heb een oog voor
         detail waarbij ik ICT-knelpunten tijdig identificeer.
          Dit doe ik op een vrolijke en gestructureerde manier
           zonder aandacht te verliezen voor de organisatiedoelstellingen.

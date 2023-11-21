@@ -61,7 +61,7 @@ return(
 <input type="text" name="todoList" id="todoInput"  placeholder="write your tasks"
   onChange={(e)=>{setTodo(e.target.value);setErrorMsg('')}  } value={todo}/>
   <p id="errorMsg"> {errorMsg}</p>
-<button id="todoButton" onClick={addToList} >add</button>
+<button id="todoButton" onClick={addToList} >+</button>
 
 
 <div id="todoAds"></div>

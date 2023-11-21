@@ -22,10 +22,7 @@ export default function Footer ( ) {
   <Link className="footerLinks" target="_blank" to="/contact">Contact </Link>  
 
 </div>
-<div id="subFooter3" className="linkDivs">
 
-<h2 className="footerLinks">info@heshe.nl </h2>
-</div>
 
 
 </div>
