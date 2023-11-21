@@ -389,6 +389,7 @@ padding: 1%;
   grid-template-areas: 
   'task1 Ok delete';
   border-bottom: 1px blue double;
+  margin-right: 15%;
 }
 
 #errorMsg{
@@ -422,7 +423,9 @@ padding: 1%;
   align-self: center;
   justify-self: center;
   font-size: 4vw;
-  
+  font-family: "MV Boli", Times, serif;
+  color: #c85000;
+  font-weight: bolder;
 }
 
 #todoDone{
@@ -501,16 +504,21 @@ padding: 1%;
 .taskh2{
   text-align: left;
   font-size: 2vw;
- 
+ color: #356bff;
+ font-family: "MV Boli", Times, serif;
 }
 .img{
   max-width: 50%;
   height: 30px;
   margin-top: 20px;
+  font-style: oblique;
 }
 
 
-
+.taskTitle{
+  color: rgb(56, 78, 3);
+  font-family: "Ink Free", Times, serif;
+}
 
 /* homepage */
 

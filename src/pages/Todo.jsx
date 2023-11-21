@@ -66,7 +66,7 @@ return(
 
 <div id="todoAds"></div>
 <div id="mainList" >
-<h2>We are waiting you</h2>
+<h2  className="taskTitle">WE ARE WAITING YOU</h2>
 {
     todoList && 
    
@@ -76,7 +76,7 @@ return(
         <div id="toDoList" key={index}>
             
             <div className="taskList"  > <ul className="sublist"  ><li className="titleL2"> 
-            <h2 className="taskh2" > *{task}  </h2>    </li></ul></div>
+            <h2 className="taskh2" > {task}  </h2>    </li></ul></div>
             <div className="OkImg"> <img className="img" src={ok} alt="ok" onClick={()=>{taskSucceed(index)}} /> </div> 
             <div className="deleteImg"> <img className="img" src={cross} alt="cross" onClick={()=>{taskDelete(index)}} />  </div>
         </div>
@@ -87,7 +87,7 @@ return(
 </div>
 
 <div id="doneList">
-<h2>Thanks, we are done</h2>
+<h2 className="taskTitle">THANKS, WE ARE DONE</h2>
 { 
     todoDone && 
    
@@ -97,7 +97,7 @@ return(
         <div id="todoDone" key={index}>
            
             <div className="donetaskList"  > <ul className="sublist"  ><li className="titleL2"> 
-            <h2 className="taskh2" > *{doneTask}  </h2>    </li></ul></div>
+            <h2 className="taskh2" > {doneTask}  </h2>    </li></ul></div>
           
             <div className="deleteImg"> <img className="img" src={cross} alt="cross" onClick={()=>{DonetaskDelete(index)}} />  </div>
         </div>
