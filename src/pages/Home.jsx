@@ -6,13 +6,20 @@ import catchMe from '../catchme.jpg'
 import taxi from '../taxi.png'
 import github from '../gtihub for web.png';
 import linkedin from '../linkedin.png';
-import arrow from '../arrow.jpg'
+import arrowD from '../arrow.jpg'
+import arrowUp from '../arrowUp.jpg'
 import { Link } from 'react-router-dom'
+import { useRef, useState } from 'react'
+
+
+
 
 export default function Home(){
 
 
-
+    const [expanded,setExpanded]=useState(false);
+    const text=useRef();
+const textArrow=useRef();
 
 // const open=(links)=>{
 //     window.location.href =  links;
@@ -21,7 +28,18 @@ export default function Home(){
 
 const expandText=()=>{
 
-    
+    if(!expanded){
+        text.current.style.height="100%";
+        textArrow.current.src=arrowUp
+setExpanded(true)
+    } else {
+        text.current.style.height="30%";
+        textArrow.current.src=arrowD;
+        setExpanded(false)
+    }
+
+
+
 }
 
 
@@ -40,7 +58,7 @@ const expandText=()=>{
 </div>
 
 <div className='classSubinfo'  id='subInfo'>
-    <div id='textPart'>
+    <div id='textPart' ref={text}>
     <h1>Communicatief, sociaal, gedreven, geordend, analytisch,
      oplossingsgericht, professioneel en resultaatgericht 
      zijn kwaliteiten die mij omschrijven. Ik ben een toegewijde
@@ -58,7 +76,7 @@ const expandText=()=>{
        </h1>
        
     </div>
-    <img  id='arrow' src={arrow} onClick={expandText} alt="arrow" />
+    <img  id='arrow' src={arrowD} onClick={expandText} alt="arrow" ref={textArrow}/>
 
 </div>
 <div className='classSubinfo'  id='subInfo-2'>

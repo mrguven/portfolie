@@ -562,7 +562,7 @@ margin-bottom: 3%;
 border-radius: 15px;
 display: grid;
 grid-template-columns: auto;
-grid-template-rows:auto 10%;
+grid-template-rows:auto auto;
 grid-template-areas: 
 'textPart'
 'arrow';
@@ -570,7 +570,7 @@ grid-template-areas:
 
 #textPart{
   height: 30%;
-  overflow: hidden;
+  overflow:hidden;
 grid-area: textPart;
 
 }
@@ -586,7 +586,11 @@ grid-area: textPart;
 }
 
 #arrow:hover{
-  transform: scale(1.3);
+  transform: scale(1.2);
+  transition: .7s;
+}
+#arrow:not(:hover){
+  transform: scale(1);
   transition: .7s;
 }
 
@@ -637,7 +641,7 @@ grid-template-rows: 30% 30% 30% 30%;
   border-bottom: #c01355 4px dotted;
   
   text-align: center;
-  padding:10% 130% 10% 14%;
+  padding:7% 130% 7% 14%;
   font-size: 1.9vw;
   box-sizing: border-box;
   text-decoration: none;
@@ -656,6 +660,17 @@ grid-template-rows: 30% 30% 30% 30%;
   height: 80%;
 }
 
+.portLinks:not(:hover) {
+  border-bottom: #c01355 4px dotted;
+  opacity: 1;
+ transition: .8s;
+  text-align: center;
+  padding:7% 130% 7% 14%;
+  font-size: 1.9vw;
+ 
+  text-decoration: none;
+  
+}
 
 #myTaxi{
 grid-area: myTaxi;
