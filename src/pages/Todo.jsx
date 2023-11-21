@@ -5,7 +5,8 @@ export default function Todo(){
 
 const [todoList,setTodoList]=useState([]);
 const [todo,setTodo]=useState('');
-
+const [todoDone,setTODoDone]=useState([])
+const [errorMsg,setErrorMsg]=useState()
 
 
 const addToList=()=>{
@@ -16,7 +17,7 @@ if(todo!==''){
         [...todoList,todo]
     )
 }else {
-    alert('you should add somethings')
+    setErrorMsg( "*add a task")
 }
 
 
@@ -24,9 +25,13 @@ setTodo('')
 
 }
 
-const taskSucceed=()=>{
-
-
+const taskSucceed=(index)=>{
+    setTodoList(old=>{
+        return old.filter((_,i)=>i!==index)
+    })
+    setTODoDone(
+        [...todoDone,todoList[index]]
+    )
 
 }
 
@@ -35,6 +40,14 @@ setTodoList(old=>{
  return old.filter((_,i)=>i!==index)
 })
 
+
+
+}
+
+const DonetaskDelete=(index)=>{
+    setTODoDone(old=>{
+        return old.filter((_,a)=>a!==index)
+       })
 }
 
 
@@ -46,13 +59,14 @@ return(
 
 
 <input type="text" name="todoList" id="todoInput"  placeholder="write your tasks"
-  onChange={(e)=>{setTodo(e.target.value)}} value={todo}/>
+  onChange={(e)=>{setTodo(e.target.value);setErrorMsg('')}  } value={todo}/>
+  <p id="errorMsg"> {errorMsg}</p>
 <button id="todoButton" onClick={addToList} >add</button>
 
 
 <div id="todoAds"></div>
 <div id="mainList" >
-
+<h2>We are waiting you</h2>
 {
     todoList && 
    
@@ -60,8 +74,9 @@ return(
        
        return(
         <div id="toDoList" key={index}>
+            
             <div className="taskList"  > <ul className="sublist"  ><li className="titleL2"> 
-            <h2 className="taskh2" > -{task}  </h2>    </li></ul></div>
+            <h2 className="taskh2" > *{task}  </h2>    </li></ul></div>
             <div className="OkImg"> <img className="img" src={ok} alt="ok" onClick={()=>{taskSucceed(index)}} /> </div> 
             <div className="deleteImg"> <img className="img" src={cross} alt="cross" onClick={()=>{taskDelete(index)}} />  </div>
         </div>
@@ -71,9 +86,26 @@ return(
 }
 </div>
 
-<div id="doneList"></div>
-
-
+<div id="doneList">
+<h2>Thanks, we are done</h2>
+{ 
+    todoDone && 
+   
+    todoDone.map((doneTask,index)=>{
+       
+       return(
+        <div id="todoDone" key={index}>
+           
+            <div className="donetaskList"  > <ul className="sublist"  ><li className="titleL2"> 
+            <h2 className="taskh2" > *{doneTask}  </h2>    </li></ul></div>
+          
+            <div className="deleteImg"> <img className="img" src={cross} alt="cross" onClick={()=>{DonetaskDelete(index)}} />  </div>
+        </div>
+       )
+    })
+    
+}
+</div>
 </div>
 
  
