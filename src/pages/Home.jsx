@@ -5,7 +5,8 @@ import checlist from '../checklist.jpg'
 import catchMe from '../catchme.jpg'
 import taxi from '../taxi.png'
 import github from '../gtihub for web.png';
-import linkedin from '../linkedin.png'
+import linkedin from '../linkedin.png';
+import arrow from '../arrow.jpg'
 import { Link } from 'react-router-dom'
 
 export default function Home(){
@@ -16,6 +17,14 @@ export default function Home(){
 // const open=(links)=>{
 //     window.location.href =  links;
 // }
+
+
+const expandText=()=>{
+
+    
+}
+
+
 
 
 
@@ -31,7 +40,8 @@ export default function Home(){
 </div>
 
 <div className='classSubinfo'  id='subInfo'>
-<h1>Communicatief, sociaal, gedreven, geordend, analytisch,
+    <div id='textPart'>
+    <h1>Communicatief, sociaal, gedreven, geordend, analytisch,
      oplossingsgericht, professioneel en resultaatgericht 
      zijn kwaliteiten die mij omschrijven. Ik ben een toegewijde
       medewerker met ervaring in het helpen van organisaties
@@ -46,6 +56,10 @@ export default function Home(){
          Dit doe ik op een vrolijke en gestructureerde manier
           zonder aandacht te verliezen voor de organisatiedoelstellingen.
        </h1>
+       
+    </div>
+    <img  id='arrow' src={arrow} onClick={expandText} alt="arrow" />
+
 </div>
 <div className='classSubinfo'  id='subInfo-2'>
     <div id='linkedinLink'>   <a  href="https://www.linkedin.com/in/rauf-guven-a76791a6/" target="https://www.linkedin.com/in/rauf-guven-a76791a6/" > <img src={linkedin} id='linkedId' alt="linkedin" /></a>
