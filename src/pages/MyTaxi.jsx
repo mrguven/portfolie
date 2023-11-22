@@ -68,6 +68,15 @@ const loader = new Loader({
 useEffect(()=>{
 
 getMap()
+
+
+window.onload=function(){//from ww  w . j  a  va2s. c  o  m
+  var today = new Date().toISOString().split('T')[0];
+  document.getElementsByName("time")[0].setAttribute('min', today);
+      }
+
+
+
  }, []);
 
 

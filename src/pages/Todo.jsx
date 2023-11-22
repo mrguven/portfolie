@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import ok from '../ok.jpg'
 import cross from '../cross.jpg'
 export default function Todo(){
@@ -7,7 +7,9 @@ const [todoList,setTodoList]=useState([]);
 const [todo,setTodo]=useState('');
 const [todoDone,setTODoDone]=useState([])
 const [errorMsg,setErrorMsg]=useState()
-
+const [doneListFromLocae,setoneListFromLocal]=useState([]);
+const [todoListFromLocal,setTodoListFromLocal]=useState([])
+const taskInput = useRef()
 
 const addToList=()=>{
 
@@ -22,6 +24,8 @@ if(todo!==''){
 
 
 setTodo('')
+
+taskInput.current.focus()
 
 }
 
@@ -52,14 +56,46 @@ const DonetaskDelete=(index)=>{
 
 
 
+
+useEffect(()=>{
+
+if(todoList !=='' & todoDone!=='') {
+    localStorage.setItem('todoList',JSON.stringify(todoList));
+    localStorage.setItem('todoDone',JSON.stringify(todoDone));
+}
+
+},[todoDone,todoList])
+
+
+
+
+useEffect(()=>{
+
+    const items = JSON.parse(localStorage.getItem('todoList'));
+    if (items) {
+        setTodoList(items);
+    }
+
+    const list = JSON.parse(localStorage.getItem('todoDone'));
+    if (list) {
+        setTODoDone(list);
+    }
+
+
+
+
+},[])
+
+
+
 return(
 
 <div id="todoContainer">
 <h1 id="toDoTitle" >ToDo List</h1>
 
 
-<input type="text" name="todoList" id="todoInput"  placeholder="write your tasks"
-  onChange={(e)=>{setTodo(e.target.value);setErrorMsg('')}  } value={todo}/>
+<input type="text" name="todoList" id="todoInput" autoFocus placeholder="your tasks"
+  onChange={(e)=>{setTodo(e.target.value);setErrorMsg('')}  } ref={taskInput} value={todo}/>
   <p id="errorMsg"> {errorMsg}</p>
 <button id="todoButton" onClick={addToList} >+</button>
 
