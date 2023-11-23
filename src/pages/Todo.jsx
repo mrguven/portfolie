@@ -7,8 +7,11 @@ const [todoList,setTodoList]=useState([]);
 const [todo,setTodo]=useState('');
 const [todoDone,setTODoDone]=useState([])
 const [errorMsg,setErrorMsg]=useState()
-const [doneListFromLocae,setoneListFromLocal]=useState([]);
-const [todoListFromLocal,setTodoListFromLocal]=useState([])
+const [doneListFromLocal,setDoneListFromLocal]=useState("");
+const [todoListFromLocal,setTodoListFromLocal]=useState("")
+const [toLocalList,setToLocalList]=useState([]);
+const [toLocalDoneList,setToLocalDoneList]=useState([])
+
 const taskInput = useRef()
 
 const addToList=()=>{
@@ -19,13 +22,24 @@ if(todo!==''){
         [...todoList,todo]
     )
 }else {
+
+  let showErrorMessage=  setInterval(()=>{
     setErrorMsg( "*add a task")
+  },0)
+setTimeout(() => {
+    clearInterval(showErrorMessage)
+    setErrorMsg( "")
+  
+}, 4000);
+    
 }
 
 
 setTodo('')
 
 taskInput.current.focus()
+
+
 
 }
 
@@ -52,35 +66,49 @@ const DonetaskDelete=(index)=>{
     setTODoDone(old=>{
         return old.filter((_,a)=>a!==index)
        })
+
+      
 }
 
 
 
 
 useEffect(()=>{
+    
+   
 
-if(todoList !=='' & todoDone!=='') {
+if(todoList !=='' || todoDone!=='') {
+    
     localStorage.setItem('todoList',JSON.stringify(todoList));
     localStorage.setItem('todoDone',JSON.stringify(todoDone));
 }
 
-},[todoDone,todoList])
+
+
+},[todoDone,todo])
 
 
 
 
 useEffect(()=>{
 
-    const items = JSON.parse(localStorage.getItem('todoList'));
-    if (items) {
-        setTodoList(items);
-    }
-
-    const list = JSON.parse(localStorage.getItem('todoDone'));
-    if (list) {
-        setTODoDone(list);
-    }
-
+    if(JSON.parse(localStorage.getItem('todoList')) || 
+     JSON.parse(localStorage.getItem('todoDone'))) {
+        const items = JSON.parse(localStorage.getItem('todoList'));
+        if (items) {
+            setTodoListFromLocal(items);
+           
+        }
+    setTodoList(todoListFromLocal)
+        
+        const list = JSON.parse(localStorage.getItem('todoDone'));
+        if (list) {
+            setDoneListFromLocal(list);
+            
+        }
+    
+    setTODoDone(doneListFromLocal)
+     }
 
 
 

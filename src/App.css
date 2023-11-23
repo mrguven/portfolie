@@ -144,9 +144,10 @@ color: #db4b9f;
 #mainContainer{
   display: grid;
   grid-template-columns: 40% 60% ;
-  grid-template-rows: 30% 30% 40% ;
+  grid-template-rows: 30% auto 30% 40% ;
   grid-template-areas: 
   'header header'
+  'taxiInfo extraInfo'
   'reservationInfo mapsStyle '
   ' resultBox mapsStyle';
   row-gap: 4%;
@@ -155,6 +156,13 @@ color: #db4b9f;
   margin-right: 1%;
 }
 
+#taxiInfoPart{
+  grid-area: taxiInfo;
+}
+
+#extraInfo{
+  grid-area: extraInfo;
+}
 
 #header{
   display: grid;
@@ -463,6 +471,9 @@ padding: 1%;
  border: #537ff7 1px;
  border-style: inset;
   
+}
+#todoInput:active{
+  border-color: #066aee ;
 }
 #mainList{
   grid-area: mainList;

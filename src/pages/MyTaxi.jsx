@@ -206,7 +206,13 @@ console.log(search);
 
     </div>
    
-    
+    <div id='taxiInfoPart'>
+          <i>You can make a reservation in our system. </i>
+          
+    </div>
+    <div id='extraInfo'>
+
+    </div>
 
 
 <form action="/makeReservation" method="post" id="reservationInfo">

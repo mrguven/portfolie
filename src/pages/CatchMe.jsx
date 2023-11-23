@@ -141,13 +141,8 @@ useEffect(()=>{
    setBestFromLocal(JSON.parse(localStorage.getItem('bestScore')));
  console.log(score);
  }
-,[score])
+,[score,bestToLocal])
 
-
-useEffect(()=>{
-    
-    setBestFromLocal(JSON.parse(localStorage.getItem('bestScore')));
-},[bestToLocal])
 
 
 bestScoreView.current= 'best score:' + bestFromLocal;
