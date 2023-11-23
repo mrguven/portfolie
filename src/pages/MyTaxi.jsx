@@ -31,8 +31,7 @@ const googleMapRef = useRef(null);
 const [map, setMap] = useState(null);
 const [departureOptions,setDepartureOptions]=useState();
 const [arrivingOptions,setArrivingOptions]=useState()
-//const arrOptions=useRef();
-//const deparOptions=useRef()
+
 
 const savePlaceDetailsToState=()=>{
   console.log('savePlaceDetailsToState');
@@ -70,7 +69,7 @@ useEffect(()=>{
 getMap()
 
 
-window.onload=function(){//from ww  w . j  a  va2s. c  o  m
+window.onload=function(){
   var today = new Date().toISOString().split('T')[0];
   document.getElementsByName("time")[0].setAttribute('min', today);
       }
@@ -207,13 +206,17 @@ console.log(search);
     </div>
    
     <div id='taxiInfoPart'>
-          <i>You can make a reservation in our system. </i>
-          
+         <b><i>Make reservation easly..<br />
+          You can select date and destinations... <br />
+
+         </i>  </b> 
     </div>
     <div id='extraInfo'>
 
     </div>
 
+
+<div id='adsPart' ></div>
 
 <form action="/makeReservation" method="post" id="reservationInfo">
     
