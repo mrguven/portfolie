@@ -152,7 +152,7 @@ bestScoreView.current= 'best score:' + bestFromLocal;
 
     return(
 
-<div>
+<div id="catchContainer" >
 <div>
     <div className="wrapper">
     <h1 id="title">Catch Me</h1>

@@ -39,10 +39,6 @@ const savePlaceDetailsToState=()=>{
 
 let newmap;
 
-
-
-
-
 const getMap=async () => {
 const loader = new Loader({
     apiKey: GOOGLE_MAP_API_KEY,
@@ -65,20 +61,12 @@ const loader = new Loader({
 
 
 useEffect(()=>{
-
 getMap()
-
-
 window.onload=function(){
   var today = new Date().toISOString().split('T')[0];
   document.getElementsByName("time")[0].setAttribute('min', today);
       }
-
-
-
  }, []);
-
-
 
 const makeReservation = async (event)=>{
         event.preventDefault();
@@ -174,17 +162,8 @@ console.log(search);
 
     return(
       
-
-      
 <div id='mainContainer'>
-
-
-
-
-
-
-
-    <div id="header" >
+ <div id="header" >
     
         <div>
       <h1 id='head'>MyTaxi</h1>
