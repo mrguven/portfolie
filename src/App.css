@@ -645,9 +645,9 @@ grid-template-rows: 30% 30% 30% 30%;
   border-bottom: #c01355 4px dotted;
   
   text-align: center;
-  padding:7% 130% 7% 14%;
+  padding:10%  120% 10%  14%;
   font-size: 1.9vw;
-  box-sizing: border-box;
+ margin: 1%;
   text-decoration: none;
   
 }
@@ -661,7 +661,7 @@ grid-template-rows: 30% 30% 30% 30%;
   padding: 10% 120% 10% 90%;
   border-bottom: none;
   border-radius: 30px;
-  height: 80%;
+  
 }
 
 .portLinks:not(:hover) {
@@ -671,7 +671,7 @@ grid-template-rows: 30% 30% 30% 30%;
   text-align: center;
   padding:7% 130% 7% 14%;
   font-size: 1.9vw;
- 
+ margin: 1%;
   text-decoration: none;
   
 }
@@ -822,6 +822,34 @@ opacity: 0.66;
 
 
 
+
+
+#playListContainer{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width:600px)  {
 
   /* homepage */
@@ -863,6 +891,28 @@ opacity: 0.66;
   font-size: 3vw;
 }
 
+.portLinks {
+  border-bottom: #c01355 4px dotted;
+  
+  text-align: center;
+  padding:1%;
+  font-size: 1.9vw;
+  box-sizing: border-box;
+  text-decoration: none;
+  
+}
+
+
+.portLinks:hover{
+ opacity: 0.8;
+ transition: .8s;
+  background-color: #1a59b3;
+  color:white;
+  padding: 1% ;
+  border-bottom: none;
+  border-radius: 30px;
+  height: 80%;
+}
 
 
 }

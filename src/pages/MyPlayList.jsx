@@ -12,7 +12,7 @@ export default function MyPlayList () {
 <div id="playListContainer">
 <h1> MyPlay List</h1>
 
-<div></div>
+<div id="playlistInput"> <input type="text" name="music" id="musicInput" /></div>
 <div></div>
 <div></div>
 <div></div>
