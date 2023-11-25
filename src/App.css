@@ -213,7 +213,7 @@ height: 10%;
   
   grid-area:reservationInfo ;
   
-  background-image: linear-gradient(to right, rgb(235, 234, 255), rgb(13, 4, 27));
+  background-image: linear-gradient(to right, rgb(235, 234, 255), rgb(72, 92, 100));
   
   
   border-radius: 15px;
@@ -235,13 +235,17 @@ height: 10%;
   height: 35px;
   font-size: 1.2vw;
   text-align: center;
-  color: blue;
+ 
   border-radius: 20px;
   background-color: rgb(235, 234, 255);
   border:none;
  
   
   
+}
+.reservationInput:focus{
+  outline:none;
+ 
 }
 
 
@@ -822,7 +826,7 @@ opacity: 0.66;
 
 
 
-
+/* --playlist Page-- */
 
 #playListContainer{
   display: grid;
@@ -831,7 +835,9 @@ opacity: 0.66;
 }
 
 
-
+.control-Panel-Image{
+   width: 7%;
+}
 
 
 
