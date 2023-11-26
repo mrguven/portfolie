@@ -324,7 +324,7 @@ font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,
   background-color: rgb(147, 207, 247);
   background-image: none;
   color: #002861;
-  box-shadow: #aba0f3 0 0 5px 5px;
+  box-shadow:  0 0 5px #aba0f3;
 }
 
 
@@ -569,7 +569,7 @@ padding: 1%;
 #infoContainer{
   display: grid;
   grid-template-columns: 20% auto auto;
-  grid-template-rows: auto auto auto auto ;
+  grid-template-rows: 25% auto auto auto ;
 grid-template-areas: 
 'port profil subInfo'
 'port  subInfo-2 subInfo-3'
@@ -600,8 +600,10 @@ margin-bottom: 3%;
 }
 
 #foto{
-   max-width: 100%;
+   width: 50%;
  height: auto;
+ border-radius: 100px;
+ 
 }
 
 #subInfo{
@@ -637,6 +639,7 @@ grid-area: textPart;
 #arrow:hover{
   transform: scale(1.2);
   transition: .7s;
+  box-shadow: 0 0 5px rgb(8, 8, 8);
 }
 #arrow:not(:hover){
   transform: scale(1);
@@ -657,6 +660,7 @@ column-gap: 1%;
 }
 #linkedinLink{
   grid-area: linkedinLink;
+ 
   
 }
 
@@ -856,13 +860,13 @@ opacity: 0.66;
   padding-left: 20%;
   padding-top: 10%;
   cursor: pointer;
+ 
 }
 #githubId{
  max-width:20%;
   margin: 5%;
- 
-  padding-top: 5%;
   cursor: pointer;
+  padding-top: 5%;
 }
 
 

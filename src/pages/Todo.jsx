@@ -16,7 +16,7 @@ const taskInput = useRef()
 
 const addToList=()=>{
 
-console.log('hello');
+
 if(todo!==''){
     setTodoList(
         [...todoList,todo]
@@ -41,6 +41,34 @@ taskInput.current.focus()
 
 
 
+}
+
+const handleKeyDown=(enterB)=>{
+    if (enterB.key === 'Enter') {
+        if(todo!==''){
+            setTodoList(
+                [...todoList,todo]
+            )
+        }else {
+        
+          let showErrorMessage=  setInterval(()=>{
+            setErrorMsg( "*add a task")
+          },0)
+        setTimeout(() => {
+            clearInterval(showErrorMessage)
+            setErrorMsg( "")
+          
+        }, 4000);
+            
+        }
+        
+        
+        setTodo('')
+        
+        taskInput.current.focus()
+        
+        
+      }
 }
 
 const taskSucceed=(index)=>{
@@ -122,10 +150,10 @@ return(
 <h1 id="toDoTitle" >ToDo List</h1>
 
 
-<input type="text" name="todoList" id="todoInput" autoFocus placeholder="your tasks"
+<input type="text" name="todoList" id="todoInput" onKeyDown={handleKeyDown}  autoFocus placeholder="your tasks"
   onChange={(e)=>{setTodo(e.target.value);setErrorMsg('')}  } ref={taskInput} value={todo}/>
   <p id="errorMsg"> {errorMsg}</p>
-<button id="todoButton" onClick={addToList} >+</button>
+<button id="todoButton" onClick={addToList}  >+</button>
 
 
 <div id="todoAds"></div>
