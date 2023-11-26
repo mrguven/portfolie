@@ -199,12 +199,12 @@ console.log(search);
 
 <form action="/makeReservation" method="post" id="reservationInfo">
     
-         <div>
+         <div id='daparture-Label'>
                   <label htmlFor="departure" className="reservationLabel"  >
                     Departure:  
                   </label>
         </div>
-        <div>
+        <div id='departure-Input'>
                    <input type="text" name="departure" required  value={departure}
                    onChange={(event)=> {setDeparture(event.target.value);
                    }}
@@ -213,38 +213,31 @@ console.log(search);
                 
                    
         </div>
-        <div>
+        <div id='arriving-Label'>
                   <label htmlFor="arriving"   className="reservationLabel">
                     Arriving: </label>
                            
         </div>
 
-        <div>
+        <div id='arriving-Input'>
        
         <input type="text" name="arriving"  value={arriving}
          onChange={(event)=> setArriving(event.target.value)}
          className="reservationInput" required  placeholder="arriving" />
-          
-
-
-
-        </div> 
-         
-        
-     
-       
-        <div>
+   </div> 
+   <div id='reservation-Date-Label'>
             <label htmlFor="date" className="reservationLabel"> Date:
              </label>
             
         </div>
-        <div>
+        <div id='reservation-Date-Input'>
                 <input type="datetime-local" name="time" className="reservationInput"
                 value={time} onChange={(event)=>setTime(event.target.value)}  required  />
         </div>
-        
+      
+        <div id='reservation-Button'>
     <button type="submit"  onClick={makeReservation}  className="submitButtons">Make Reservation</button>
-   
+    </div>
 </form>
 
 

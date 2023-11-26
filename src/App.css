@@ -210,19 +210,59 @@ height: 10%;
   display: grid;
  grid-template-columns: 30% 70%;
   margin: 4%;
-  
+  grid-template-rows: auto auto auto auto;
   grid-area:reservationInfo ;
-  
-  background-image: linear-gradient(to right, rgb(235, 234, 255), rgb(72, 92, 100));
-  
-  
-  border-radius: 15px;
+  grid-template-areas:
+ ' daparture-Label departure-Input '
+ ' arriving-Label arriving-Input '
+ ' reservation-Date-Label reservation-Date-Input '
+ ' reservation-Button reservation-Button ';
+ border: thistle 1px solid;
+ border-radius: 15px;
+ padding: 3%;
 }
+
+#daparture-Label{
+  grid-area: daparture-Label;
+  
+ 
+
+}
+#departure-Input{
+  grid-area: departure-Input;
+  justify-self: end;
+
+}
+#arriving-Input{
+  grid-area: arriving-Input;
+  justify-self: end;
+
+}
+#arriving-Label{
+  grid-area: arriving-Label;
+
+}
+#reservation-Date-Label{
+  grid-area: reservation-Date-Label;
+}
+
+#reservation-Date-Input{
+  grid-area: reservation-Date-Input;
+
+}
+
+#reservation-Button{
+  grid-area: reservation-Button;
+  justify-self: end;
+  align-self: self-end;
+
+}
+
 
 .reservationLabel {
   font-size:1.5vw;
-  margin:15px;
- 
+  
+ color: #10045a;
  font-weight: bolder;
   
   
@@ -231,7 +271,7 @@ height: 10%;
 
 .reservationInput{
   max-width: 80%;
-  margin: 2%;
+  margin-left: 15%;
   height: 35px;
   font-size: 1.2vw;
   text-align: center;
@@ -245,6 +285,8 @@ height: 10%;
 }
 .reservationInput:focus{
   outline:none;
+  border-color: #356bff;
+  box-shadow: 0 0 10px #054080
  
 }
 
@@ -253,7 +295,7 @@ height: 10%;
 .submitButtons{
   background-image: linear-gradient(to right, rgb(50, 50, 68), rgb(24, 13, 46));
   border-radius: 15px;
-  align-items: center;
+ width: 100%;
   background-clip: padding-box;
 
   border: 1px solid transparent;
@@ -261,24 +303,17 @@ height: 10%;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
-
-  position: relative;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 1.4vw;;
   font-weight: 600;
-  justify-content: center;
-  
-  
+
   min-height: 3rem;
 
- 
-  
   transition: all 250ms;
-  
-  
+
   touch-action: manipulation;
  
-  max-width: 40%;
+
 }
 
 
@@ -286,6 +321,10 @@ height: 10%;
 
 .submitButtons:hover {
   transform: translateY(-5px);
+  background-color: rgb(147, 207, 247);
+  background-image: none;
+  color: #002861;
+  box-shadow: #aba0f3 0 0 5px 5px;
 }
 
 
@@ -456,6 +495,7 @@ padding: 1%;
   background-color: #baadd8;
   color: #111;
   cursor: pointer;
+  box-shadow: 0 0 10px #054080;
   
 }
 #todoInput{
@@ -465,10 +505,12 @@ padding: 1%;
   justify-self: end;
  border: #537ff7 1px;
  border-style: inset;
-  
+  padding-left: 2%;
 }
-#todoInput:active{
-  border-color: #066aee ;
+#todoInput:focus{
+  border-color: #356bff;
+  box-shadow: 0 0 10px #054080;
+  outline:none;
 }
 #mainList{
   grid-area: mainList;
