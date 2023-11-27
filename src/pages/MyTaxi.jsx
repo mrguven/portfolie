@@ -191,7 +191,8 @@ console.log(search);
          </i>  </b> 
     </div>
     <div id='extraInfo'>
-
+        <h3> <i>Do not hesitate to contact us</i> <br />
+       <i>if you need to help</i> </h3>
     </div>
 
 

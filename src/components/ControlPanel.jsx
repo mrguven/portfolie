@@ -1,26 +1,17 @@
 import { useState } from "react"
 import nextButton from '../nextButton.png'
-import './ControlPanel.css'
+import playButton from '../play button.png';
+import pauseButton from '../pauseButton.png';
+import stopButton from '../stopButton.png'
 
 export default function ControlPanel(){
 
 
-    let playListContainer={
-        display:" grid",
-        gridTemplateColumns: "auto auto auto",
-        gridTemplateRows: "auto auto auto auto",
-        gridArea:'ControlPanel'
-      }
-      
-      
-       let controlPanelImage={
-         width: '7%'
-      }
-      
+
 
     return(
 
-        <div style={playListContainer}>
+        <div id="playListContainer">
 <h1> MyPlay List</h1>
 
 <div id="playlistInput"> 
@@ -36,9 +27,18 @@ export default function ControlPanel(){
 </div>
 <div id="playlist-Image"></div>
 <div id="control-Panel">
-    <img className="control-Panel-Image" src={nextButton} style={controlPanelImage} alt="" />
+    <img className="control-Panel-Image" src={nextButton} id='nextButtonImage' alt="next" />
 </div>
-
+<div>
+<img className="control-Panel-Image" src={playButton} id='playButtonImage' alt="play" />
+</div>
+<div>
+<img className="control-Panel-Image" src={pauseButton} id='pauseButtonlImage' alt="pause" />
+</div>
+<div>
+<img className="control-Panel-Image" src={stopButton} id='stopButtonlImage' alt="stop" />
+</div>
+<div></div>
 
 </div>
     )

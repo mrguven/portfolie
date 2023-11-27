@@ -172,11 +172,6 @@ background-size: cover;
   font-family:monospace;
     font-size:10vw;
     text-align:center;
-  
-    
-
-    
-   
    
 }
 
@@ -874,24 +869,13 @@ opacity: 0.66;
   display: grid;
   grid-template-columns: auto auto auto;
   grid-template-rows: auto auto auto auto;
+ 
 }
 
 
 .control-Panel-Image{
    width: 7%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
