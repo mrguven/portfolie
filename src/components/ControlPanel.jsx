@@ -1,6 +1,6 @@
 import { useState } from "react"
 import nextButton from '../nextButton.png'
-
+import './ControlPanel.css'
 
 export default function ControlPanel(){
 

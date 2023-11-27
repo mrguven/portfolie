@@ -165,19 +165,21 @@ console.log(search);
 <div id='mainContainer'>
  <div id="header" >
     
-        <div>
+        
       <h1 id='head'>MyTaxi</h1>
-       </div>
-     
-    <div>
+      
+       
+        <h1 className='subHead'>MyTaxi</h1>
+      
+    
       <h3>We Zijn Altijd Klaar...</h3>
-      </div>
-    <div>
+      
+    
       <h3>Altijd Bereikbaar</h3>
-      </div>
-    <div>
+      
+    
       <h3>7/24 Dienst</h3>
-      </div>
+     
 
 
     </div>
