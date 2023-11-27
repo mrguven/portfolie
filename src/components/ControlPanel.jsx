@@ -5,11 +5,22 @@ import nextButton from '../nextButton.png'
 export default function ControlPanel(){
 
 
-
+    let playListContainer={
+        display:" grid",
+        gridTemplateColumns: "auto auto auto",
+        gridTemplateRows: "auto auto auto auto",
+        gridArea:'ControlPanel'
+      }
+      
+      
+       let controlPanelImage={
+         width: '7%'
+      }
+      
 
     return(
 
-        <div id="playListContainer">
+        <div style={playListContainer}>
 <h1> MyPlay List</h1>
 
 <div id="playlistInput"> 
@@ -25,7 +36,7 @@ export default function ControlPanel(){
 </div>
 <div id="playlist-Image"></div>
 <div id="control-Panel">
-    <img className="control-Panel-Image" src={nextButton} alt="" />
+    <img className="control-Panel-Image" src={nextButton} style={controlPanelImage} alt="" />
 </div>
 
 
