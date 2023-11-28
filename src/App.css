@@ -34,7 +34,7 @@
 #navUl li a:hover {
   background-color: white ;
   color:rgb(108, 2, 206) ;
-  transition: .8s;
+  transition: .5s;
 }
 
 
@@ -876,11 +876,37 @@ opacity: 0.66;
 
 
 .control-Panel-Image{
-   width: 7%;
+   width: 20%;
 }
 
+#control-Panel{
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20%;
+  grid-template-rows: 40% 15%  70%;
+  grid-template-areas: 'playlist-Image playlist-Image playlist-Image playlist-Image'
+  'music-Info music-Info music-Info music-Info'
+  'playButtonImage pauseButtonlImage nextButtonImage stopButtonlImage';
+}
 
+#playlist-Image{
+  grid-area: playlist-Image;
+}
+#music-Info{
+  grid-area: music-Info;
+}
+#playButtonImage{
+  grid-area: playButtonImage;
+}
 
+#pauseButtonlImage{
+  grid-area: pauseButtonlImage;
+}
+#nextButtonImage{
+  grid-area: nextButtonImage;
+}
+#stopButtonlImage{
+  grid-area: stopButtonlImage;
+}
 
 
 

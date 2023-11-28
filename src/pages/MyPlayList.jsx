@@ -31,20 +31,22 @@ export default function MyPlayList () {
         <li></li>
     </ul>
 </div>
-<div id="playlist-Image"></div>
+
 <div id="control-Panel">
-    <div>
-    <img className="control-Panel-Image" src={nextButton} id='nextButtonImage' alt="next" />
-</div>
-<div>
-<img className="control-Panel-Image" src={playButton} id='playButtonImage' alt="play" />
-</div>
-<div>
-<img className="control-Panel-Image" src={pauseButton} id='pauseButtonlImage' alt="pause" />
-</div>
-<div>
-<img className="control-Panel-Image" src={stopButton} id='stopButtonlImage' alt="stop" />
-</div>
+    <div id="playlist-Image"></div>
+    <div id="music-Info"></div>
+    <div id='nextButtonImage'>
+        <img className="control-Panel-Image" src={nextButton}  alt="next" />
+    </div>
+    <div id='playButtonImage'>
+        <img className="control-Panel-Image" src={playButton}  alt="play" />
+    </div>
+    <div id='pauseButtonlImage'>
+        <img className="control-Panel-Image" src={pauseButton}  alt="pause" />
+    </div>
+    <div id='stopButtonlImage'>
+        <img className="control-Panel-Image" src={stopButton}  alt="stop" />
+    </div>
 </div>
 
 </div>
