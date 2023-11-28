@@ -764,7 +764,9 @@ column-gap: 1%;
   opacity: 0.63;
 }
 
-
+.subContImg{
+  border-radius: 30px;
+}
 
 #todo{
   grid-area: todo;
