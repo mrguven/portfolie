@@ -869,12 +869,62 @@ opacity: 0.66;
 
 #playListContainer{
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto auto auto;
- 
+  grid-template-columns: 15% auto auto auto 15%;
+  grid-template-rows: auto auto 70% 30%;
+ grid-template-areas: 
+ 'playList-Title playList-Title playList-Title playList-Title playList-Title'
+ 'Playlist-Ads playlistInput searchButton searchButton Playlist-Ads-2 '
+ 'Playlist-Ads control-Panel control-Panel control-Panel Playlist-Ads-2 '
+ 'Playlist-Ads music-Suggestions music-Suggestions music-Suggestions Playlist-Ads-2 ';
+
+ margin-bottom: 20%;
 }
 
+#playList-Title{
+  grid-area: playList-Title;
+}
+#playList-Title{
+  grid-area: playList-Title;
+}
+#playList-Title{
+  grid-area: playList-Title;
+}
+#Playlist-Ads-2{
+  grid-area: Playlist-Ads-2;
+}
+#playlistInput{
+  grid-area: playlistInput;
+  justify-self: end;
+ 
+ 
+  
+}
 
+#musicInput{
+  margin-right: 4%;
+  grid-area: todoInput;
+  border-radius: 30px;
+  width:40% ;
+  justify-self: end;
+ border: #537ff7 1px;
+ border-style: inset;
+  padding-left: 2%;
+}
+
+#musicInput:focus{
+  border-color: #356bff;
+  box-shadow: 0 0 10px #054080;
+  outline:none;
+}
+#searchButton{
+  grid-area: searchButton;
+}
+#control-Panel{
+  grid-area: control-Panel;
+}
+#music-Suggestions{
+  grid-area: music-Suggestions;
+}
 .control-Panel-Image{
    width: 20%;
 }
@@ -882,7 +932,7 @@ opacity: 0.66;
 #control-Panel{
   display: grid;
   grid-template-columns: 20% 20% 20% 20%;
-  grid-template-rows: 40% 15%  70%;
+  grid-template-rows: auto auto  auto;
   grid-template-areas: 'playlist-Image playlist-Image playlist-Image playlist-Image'
   'music-Info music-Info music-Info music-Info'
   'playButtonImage pauseButtonlImage nextButtonImage stopButtonlImage';
@@ -907,6 +957,25 @@ opacity: 0.66;
 #stopButtonlImage{
   grid-area: stopButtonlImage;
 }
+
+#playList-Title h1{
+  font-size: 7vw;
+  color: #1c00bb;
+  font-family:fantasy;
+}
+
+
+
+
+ 
+
+
+
+
+
+
+
+
 
 
 

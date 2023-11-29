@@ -18,19 +18,18 @@ export default function MyPlayList () {
     return (
 
 <div id="playListContainer">
+    <div id="Playlist-Ads"></div>
+    <div id="Playlist-Ads-2"></div>
+    <div  id="playList-Title">
 <h1> MyPlay List</h1>
-
+</div>
 <div id="playlistInput"> 
  <input type="text" name="music" id="musicInput" placeholder="search..."/>
  </div>
-<div id="search-Music-Div">
+<div id="searchButton">
 <button type="submit" id="search-Music-Button"> +</button>
 </div>
-<div id="music-Suggestions">
-    <ul>
-        <li></li>
-    </ul>
-</div>
+
 
 <div id="control-Panel">
     <div id="playlist-Image"></div>
@@ -47,6 +46,9 @@ export default function MyPlayList () {
     <div id='stopButtonlImage'>
         <img className="control-Panel-Image" src={stopButton}  alt="stop" />
     </div>
+
+    <div id="music-Suggestions">
+   </div>
 </div>
 
 </div>
