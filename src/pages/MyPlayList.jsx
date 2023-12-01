@@ -15,6 +15,13 @@ export default function MyPlayList () {
 
 
 
+
+
+
+
+    
+
+
     return (
 
 <div id="playListContainer">
@@ -27,7 +34,7 @@ export default function MyPlayList () {
  <input type="text" name="music" id="musicInput" placeholder="search..."/>
  </div>
 <div id="searchButton">
-<button type="submit" id="search-Music-Button"> +</button>
+<button type="submit" id="search-Music-Button"> Search</button>
 </div>
 
 
