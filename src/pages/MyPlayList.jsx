@@ -19,7 +19,7 @@ export default function MyPlayList () {
 
 
 
-    
+
 
 
     return (
@@ -31,10 +31,10 @@ export default function MyPlayList () {
 <h1> MyPlay List</h1>
 </div>
 <div id="playlistInput"> 
- <input type="text" name="music" id="musicInput" placeholder="search..."/>
+ <input type="text" name="music" id="musicInput" placeholder="music,artists..."/>
  </div>
 <div id="searchButton">
-<button type="submit" id="search-Music-Button"> Search</button>
+<button type="submit" id="search-Music-Button"> Search </button>
 </div>
 
 

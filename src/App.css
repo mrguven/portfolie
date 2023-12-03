@@ -870,10 +870,10 @@ opacity: 0.66;
 #playListContainer{
   display: grid;
   grid-template-columns: 15% auto auto auto 15%;
-  grid-template-rows: auto auto 70% 30%;
+  grid-template-rows: 70% 20% 40% 30%;
  grid-template-areas: 
  'playList-Title playList-Title playList-Title playList-Title playList-Title'
- 'Playlist-Ads playlistInput searchButton searchButton Playlist-Ads-2 '
+ 'Playlist-Ads playlistInput playlistInput searchButton Playlist-Ads-2 '
  'Playlist-Ads control-Panel control-Panel control-Panel Playlist-Ads-2 '
  'Playlist-Ads music-Suggestions music-Suggestions music-Suggestions Playlist-Ads-2 ';
 
@@ -883,11 +883,11 @@ opacity: 0.66;
 #playList-Title{
   grid-area: playList-Title;
 }
-#playList-Title{
-  grid-area: playList-Title;
+#searchButton{
+  grid-area: searchButton;
 }
-#playList-Title{
-  grid-area: playList-Title;
+#control-Panel{
+  grid-area: control-Panel;
 }
 #Playlist-Ads-2{
   grid-area: Playlist-Ads-2;
@@ -895,17 +895,18 @@ opacity: 0.66;
 #playlistInput{
   grid-area: playlistInput;
   justify-self: end;
-  
+  margin-right: 1%;
+  width:90% ;
  
   
 }
 
 #musicInput{
-  
-  
+  width: 70%;
+  color: #356bff;
   border-radius: 30px;
-  width:90% ;
-  
+  font-size: 3vw;
+  height: 90%;
  border: #537ff7 1px;
  border-style: inset;
   padding-left: 3%;
@@ -915,6 +916,29 @@ opacity: 0.66;
   border-color: #356bff;
   box-shadow: 0 0 10px #054080;
   outline:none;
+}
+#search-Music-Button{
+  border-radius: 100px;
+  height: auto;
+  color: rgb(12, 33, 124);
+  font-size: 2vw;
+  width: auto;
+  padding: 5%;
+  background-color: yellowgreen;
+  border: transparent;
+  
+}
+#search-Music-Button:hover{
+background-color: #066aee;
+color: white;
+border: transparent;
+border-radius: 100px;
+  height: auto;
+   font-size: 2vw;
+  width: auto;
+  padding: 5%;
+  box-shadow: 0 0 10px #054080;
+ cursor: pointer;
 }
 #searchButton{
   grid-area: searchButton;
@@ -926,7 +950,7 @@ opacity: 0.66;
   grid-area: music-Suggestions;
 }
 .control-Panel-Image{
-   width: 20%;
+   width: 25%;
 }
 
 #control-Panel{
@@ -936,6 +960,12 @@ opacity: 0.66;
   grid-template-areas: 'playlist-Image playlist-Image playlist-Image playlist-Image'
   'music-Info music-Info music-Info music-Info'
   'playButtonImage pauseButtonlImage nextButtonImage stopButtonlImage';
+}
+.control-Panel-Image:hover{
+  box-shadow: 0 0 10px blue;
+  border-radius: 50px;
+  opacity: .7;
+  transform: scale(1.1);
 }
 
 #playlist-Image{
@@ -958,10 +988,15 @@ opacity: 0.66;
   grid-area: stopButtonlImage;
 }
 
+
+
+
 #playList-Title h1{
-  font-size: 7vw;
-  color: #1c00bb;
-  font-family:fantasy;
+ text-align: center;
+  font-size: 6vw;
+  font-family: "MV Boli", Times, serif;
+  color: #c85000;
+  font-weight: bolder;
 }
 
 
