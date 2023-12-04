@@ -611,7 +611,7 @@ grid-template-areas:
 
 #textPart{
   height: 30%;
-  overflow:hidden;
+  overflow:auto;
 grid-area: textPart;
 
 }
@@ -683,10 +683,10 @@ grid-template-rows: 30% 30% 30% 30%;
 
 
 .portLinks {
-  border-bottom: #c01355 4px dotted;
   
+  border: transparent;
   text-align: center;
-  padding:10%  120% 10%  14%;
+  padding:7% 130% 7% 14%;
   font-size: 1.9vw;
  margin: 1%;
   text-decoration: none;
@@ -699,14 +699,16 @@ grid-template-rows: 30% 30% 30% 30%;
  transition: .8s;
   background-color: #1a59b3;
   color:white;
-  padding: 10% 120% 10% 90%;
+  padding: 7% 120% 7% 90%;
   border-bottom: none;
   border-radius: 30px;
-  
+  border: transparent;
+  font-size: 1.9vw;
+  margin: 1%;
 }
 
 .portLinks:not(:hover) {
-  border-bottom: #c01355 4px dotted;
+ 
   opacity: 1;
  transition: .8s;
   text-align: center;
@@ -714,6 +716,7 @@ grid-template-rows: 30% 30% 30% 30%;
   font-size: 1.9vw;
  margin: 1%;
   text-decoration: none;
+  border: transparent;
   
 }
 
@@ -904,7 +907,7 @@ opacity: 0.66;
 #musicInput{
   width: 70%;
   color: #356bff;
-  border-radius: 30px;
+  border-radius: 50px;
   font-size: 3vw;
   height: 90%;
  border: #537ff7 1px;
@@ -964,7 +967,7 @@ border-radius: 100px;
 .control-Panel-Image:hover{
   box-shadow: 0 0 10px blue;
   border-radius: 50px;
-  opacity: .7;
+  opacity: .8;
   transform: scale(1.1);
 }
 

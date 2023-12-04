@@ -59,7 +59,14 @@ setExpanded(true)
 
 <div className='classSubinfo'  id='subInfo'>
     <div id='textPart' ref={text}>
-    <h1>Communicatief, sociaal, gedreven, geordend, analytisch,
+    <h1>Ik werk aan deze projecten:  <br />
+    -Taxi reservering programma <br />
+    - Music playList <br />
+    - To do App <br />
+    - Catch me Game <br />
+        
+        
+       Ik ben communicatief, sociaal, gedreven, geordend, analytisch,
      oplossingsgericht, professioneel en resultaatgericht 
      zijn kwaliteiten die mij omschrijven. Ik ben een toegewijde
       medewerker met ervaring in het helpen van organisaties
