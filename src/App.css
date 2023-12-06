@@ -905,11 +905,11 @@ opacity: 0.66;
 }
 
 #musicInput{
-  width: 70%;
+  width: 90%;
   color: #356bff;
   border-radius: 50px;
   font-size: 3vw;
-  height: 90%;
+  height: 60%;
  border: #537ff7 1px;
  border-style: inset;
   padding-left: 3%;
@@ -926,7 +926,7 @@ opacity: 0.66;
   color: rgb(12, 33, 124);
   font-size: 2vw;
   width: auto;
-  padding: 5%;
+  padding: 3%;
   background-color: yellowgreen;
   border: transparent;
   
@@ -939,7 +939,7 @@ border-radius: 100px;
   height: auto;
    font-size: 2vw;
   width: auto;
-  padding: 5%;
+  padding: 3%;
   box-shadow: 0 0 10px #054080;
  cursor: pointer;
 }
