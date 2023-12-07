@@ -765,11 +765,15 @@ column-gap: 1%;
 
 .subCont img:hover{
   opacity: 0.63;
+  transform: translateY(-10px);
+
 }
 
 .subContImg{
   border-radius: 30px;
+  transition: transform 0.3s ease;
 }
+
 
 #todo{
   grid-area: todo;
