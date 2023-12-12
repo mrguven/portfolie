@@ -593,8 +593,16 @@ margin-bottom: 3%;
 #foto{
    width: 50%;
  height: auto;
- border-radius: 100px;
- 
+ border-radius: 150px;
+ transition: 0.5s all ease-in-out;
+}
+
+
+
+#foto:hover{
+  transform: scale(1.1);
+border-radius: 15px;
+
 }
 
 #subInfo{
@@ -607,13 +615,23 @@ grid-template-rows:auto auto;
 grid-template-areas: 
 'textPart'
 'arrow';
+
+}
+
+#textPart:hover + #arrow{
+  height: 100%;
+display: none;
+}
+#textPart:hover{
+  height: 100%;
+  
 }
 
 #textPart{
   height: 30%;
   overflow:auto;
 grid-area: textPart;
-
+transition:  height 2s ;
 }
 
 #arrow {
