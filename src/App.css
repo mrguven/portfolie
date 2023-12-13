@@ -650,26 +650,9 @@ transition:  all ease-in-out 2s ;
 
 }
 
-#arrow {
-  width: 15%;
-  height: 40%;
-  grid-area: arrow;
-  justify-self: center;
-  margin-bottom: 4%;
-  cursor: pointer;
-  border-radius: 30px;
 
-}
 
-#arrow:hover{
-  transform: scale(1.2);
-  transition: .7s;
-  box-shadow: 0 0 5px rgb(8, 8, 8);
-}
-#arrow:not(:hover){
-  transform: scale(1);
-  transition: .7s;
-}
+
 
 #subInfo-2{
 grid-area:subInfo-2 ;
@@ -891,8 +874,17 @@ font-size: 1.5vw;
 
 .classSubinfo a:hover{
 opacity: 0.66;
+transform: scale(1.3);
+}
 
-
+.classSubinfo a img:hover{
+  
+  transform: scale(1.3);
+  
+  
+  }
+.classSubinfo a img{
+  transition: transform .7s;
 }
 #linkedId{
   max-width:30%;
