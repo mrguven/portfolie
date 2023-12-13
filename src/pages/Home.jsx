@@ -17,30 +17,7 @@ import { useRef, useState } from 'react'
 export default function Home(){
 
 
-    const [expanded,setExpanded]=useState(false);
-    const text=useRef();
-const textArrow=useRef();
 
-// const open=(links)=>{
-//     window.location.href =  links;
-// }
-
-
-const expandText=()=>{
-
-    if(!expanded){
-        text.current.style.height="100%";
-        textArrow.current.src=arrowUp
-setExpanded(true)
-    } else {
-        text.current.style.height="30%";
-        textArrow.current.src=arrowD;
-        setExpanded(false)
-    }
-
-
-
-}
 
 
 
@@ -58,7 +35,7 @@ setExpanded(true)
 </div>
 
 <div className='classSubinfo'  id='subInfo'>
-    <div id='textPart' ref={text}>
+    <div id='textPart' >
     <h1>Ik werk aan deze projecten:  <br />
     -Taxi reservering programma <br />
     - Music playList <br />
@@ -83,7 +60,6 @@ setExpanded(true)
        </h1>
        
     </div>
-    <img  id='arrow' src={arrowD} onClick={expandText} alt="arrow" ref={textArrow}/>
 
 </div>
 <div className='classSubinfo'  id='subInfo-2'>

@@ -560,7 +560,7 @@ padding: 1%;
 #infoContainer{
   display: grid;
   grid-template-columns: 20% auto auto;
-  grid-template-rows: 25% auto auto auto ;
+  grid-template-rows: 35% auto auto auto ;
 grid-template-areas: 
 'port profil subInfo'
 'port  subInfo-2 subInfo-3'
@@ -582,7 +582,7 @@ margin-bottom: 3%;
 
 
 #profil{
- border: #e7ecf3  1px double;
+ 
   border-radius: 15px;
   padding: 3%;
   grid-area: profil;
@@ -595,6 +595,7 @@ margin-bottom: 3%;
  height: auto;
  border-radius: 150px;
  transition: 0.5s all ease-in-out;
+ 
 }
 
 
@@ -607,7 +608,7 @@ border-radius: 15px;
 
 #subInfo{
   grid-area: subInfo;
-  border:  #e7ecf3  1px double;
+ 
 border-radius: 15px;
 display: grid;
 grid-template-columns: auto;
@@ -617,21 +618,17 @@ grid-template-areas:
 'arrow';
 
 }
-
-#textPart:hover + #arrow{
-  height: 100%;
-display: none;
-}
 #textPart:hover{
   height: 100%;
-  
 }
 
+
 #textPart{
-  height: 30%;
+  height: 50%;
   overflow:auto;
 grid-area: textPart;
-transition:  height 2s ;
+transition:  all ease-in-out 2s ;
+
 }
 
 #arrow {
@@ -657,7 +654,7 @@ transition:  height 2s ;
 
 #subInfo-2{
 grid-area:subInfo-2 ;
-border:  #e7ecf3  1px double;
+
 border-radius: 15px;
 display: grid;
 grid-template-columns: 50% 50%;
@@ -678,7 +675,7 @@ grid-area: githubLink;
 }
 #subInfo-3{
   grid-area:subInfo-3 ;
-  border:  #e7ecf3  1px double;
+  
 border-radius: 15px;
 }
 
@@ -862,8 +859,14 @@ column-gap: 1%;
   text-align:justify;
  font-style:oblique;
  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
- font-size: 1.9vw;
+ font-size: 1vw;
  overflow: auto;
+transition: 3s all  ease-in-out;
+}
+
+.classSubinfo div h1:hover{
+  
+font-size: 1.5vw;
 
 }
 
