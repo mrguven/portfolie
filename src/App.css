@@ -607,8 +607,8 @@ margin-bottom: 3%;
     linear-gradient(90deg,var(--_g)) 50%/var(--_i,100%) 100% no-repeat;
   outline: calc(var(--w)/2) solid rgba(133, 46, 46, 0.6);
   outline-offset: calc(var(--w)/-2 - 2*var(--s));
-  transition: .4s;
-
+  transition: .4s ease-in-out;
+  object-fit: cover;
   
  height: auto;
 
