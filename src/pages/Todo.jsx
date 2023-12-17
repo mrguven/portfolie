@@ -149,6 +149,7 @@ return(
 <div id="todoContainer">
 <h1 id="toDoTitle" >ToDo List</h1>
 
+<h3>Do not forget what will you do</h3>
 
 <input type="text" name="todoList" id="todoInput" onKeyDown={handleKeyDown}  autoFocus placeholder="your tasks"
   onChange={(e)=>{setTodo(e.target.value);setErrorMsg('')}  } ref={taskInput} value={todo}/>
