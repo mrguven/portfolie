@@ -10,6 +10,7 @@ import MyTaxi from './pages/MyTaxi';
 import Footer from './components/Footer';
 import Contact from './pages/Contact';
 import MyPlayList from './pages/MyPlayList';
+import Portfolio from './pages/Portfolio';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
 <NavBar />
 <Routes>
   <Route path='/' element={<Home />} />
+  <Route path='/Portfolio' element={<Portfolio />} />
 <Route path='/login' element={<Login />} ></Route>
 <Route path='/catchMe' element={<CatchMe />} />
 <Route path='/myplaylist' element={<MyPlayList />} />
