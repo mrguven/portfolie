@@ -1,4 +1,4 @@
-import mrg from '../mrg.jpg'
+
 import logo from '../logo.png'
 import music from '../music.png'
 import checlist from '../checklist.jpg'
@@ -16,21 +16,11 @@ import { useRef, useState } from 'react'
 
 export default function Portfolio(){
 
-
-
-
-
-
-
-
     return(
-
-
-
 
 <div id='infoContainer'>
 <div id='profil'>
-<img src={mrg} alt="profil foto"  id='foto'/>
+
 
 </div>
 
