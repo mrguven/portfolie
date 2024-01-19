@@ -9,16 +9,31 @@ import arrowD from "../arrow.jpg";
 import arrowUp from "../arrowUp.jpg";
 import { Link } from "react-router-dom";
 import { useRef, useState } from "react";
-
+import Accordion from '@mui/material/Accordion';
+import AccordionActions from '@mui/material/AccordionActions';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import * as React from 'react';
 export default function Portfolio() {
   return (
+
     <div id="infoContainer">
       <div id="profil"></div>
 
       <div className="classSubinfo" id="subInfo">
         <div id="textPart">
-          <h1>
-            Ik werk aan deze projecten: <br />
+
+        <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1-content"
+          id="panel1-header"
+        >
+          Read More...
+        </AccordionSummary>
+        <AccordionDetails>
+        Ik werk aan deze projecten: <br />
             -Taxi reservering programma <br />
             - Music playList <br />
             - To do App <br />
@@ -37,7 +52,10 @@ export default function Portfolio() {
             Ik heb een oog voor detail waarbij ik ICT-knelpunten tijdig
             identificeer. Dit doe ik op een vrolijke en gestructureerde manier
             zonder aandacht te verliezen voor de organisatiedoelstellingen.
-          </h1>
+        </AccordionDetails>
+
+        </Accordion>
+        
         </div>
       </div>
       <div className="classSubinfo" id="subInfo-2">
