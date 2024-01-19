@@ -16,6 +16,11 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import * as React from 'react';
 export default function Portfolio() {
+
+
+
+
+
   return (
 
     <div id="infoContainer">
@@ -30,7 +35,8 @@ export default function Portfolio() {
           aria-controls="panel1-content"
           id="panel1-header"
         >
-          Read More...
+       <p><b>Ik ben communicatief, sociaal, gedreven.....  </b>  <br />
+      <i>Read More...</i></p>
         </AccordionSummary>
         <AccordionDetails>
         Ik werk aan deze projecten: <br />
