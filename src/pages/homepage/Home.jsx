@@ -5,9 +5,6 @@ export default function Home1(){
 
 
 
-const container={
-
-}
 
 
 
@@ -16,20 +13,17 @@ const container={
 
     return(
 <div >
-<h1>home</h1>
-        <div>
-            <img src={mrg} alt="profil foto"   id='foto'/>
-        </div>
-        <div> 
-            <h1 id='test'>asd;fdsfds</h1>
-        </div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        
+
+  <div>  
+    <a href="src\downloadFile\CVRaufGuven.pdf" > download cv</a>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+   
 </div>
+
     )
 }
