@@ -1,12 +1,10 @@
-import logo from "../logo.png";
-import music from "../music.png";
-import checlist from "../checklist.jpg";
-import catchMe from "../catchme.jpg";
-import taxi from "../taxi.png";
-import github from "../gtihub for web.png";
-import linkedin from "../linkedin.png";
-import arrowD from "../arrow.jpg";
-import arrowUp from "../arrowUp.jpg";
+import './portfolio.css'
+import music from "./music.png";
+import checlist from "./checklist.jpg";
+import catchMe from "./catchme.jpg";
+import taxi from "./taxi.png";
+import github from "./gtihub for web.png";
+import linkedin from "./linkedin.png";
 import { Link } from "react-router-dom";
 import { useRef, useState } from "react";
 import Accordion from '@mui/material/Accordion';
@@ -14,7 +12,10 @@ import AccordionActions from '@mui/material/AccordionActions';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import * as React from 'react';
+
+
+
+
 export default function Portfolio() {
 
 
@@ -24,7 +25,7 @@ export default function Portfolio() {
   return (
 
     <div id="infoContainer">
-      <div id="profil"></div>
+      <div id="profil">profil</div>
 
       <div className="classSubinfo" id="subInfo">
         <div id="textPart">
@@ -85,7 +86,7 @@ export default function Portfolio() {
           </a>
         </div>
       </div>
-      <div className="classSubinfo" id="subInfo-3"></div>
+      <div className="classSubinfo" id="subInfo-3">subInfo-3</div>
       <div id="port">
         <Link className="portLinks" to="/">
           Portfolie
@@ -100,7 +101,7 @@ export default function Portfolio() {
           CatchMe
         </Link>
       </div>
-
+      
       <div className="subCont" id="myTaxi">
         <Link id="taxilogo" to="/mytaxi">
           <img className="subContImg" src={taxi} alt="logo" />
@@ -137,6 +138,7 @@ export default function Portfolio() {
           speel verloren.{" "}
         </h3>
       </div>
+      
     </div>
   );
 }

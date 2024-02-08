@@ -10,7 +10,7 @@ import MyTaxi from './pages/MyTaxi';
 import Footer from './components/Footer';
 import Contact from './pages/Contact';
 import MyPlayList from './pages/MyPlayList';
-import Portfolio from './pages/Portfolio';
+import Portfolio from './pages/portfolio/Portfolio';
 import Home from './pages/homepage/Home';
 
 
