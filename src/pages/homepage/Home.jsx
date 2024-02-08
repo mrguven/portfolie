@@ -1,7 +1,8 @@
 import mrg from './mrg.jpg'
 import './homepage.css';
+import {cv} from './'
 
-export default function Home1(){
+export default function Home(){
 
 
 
@@ -15,7 +16,7 @@ export default function Home1(){
 <div >
 
   <div>  
-    <a href="src\downloadFile\CVRaufGuven.pdf" > download cv</a>
+    <a href={cv} download={'sdf'}> download cv</a>
   </div>
   <div></div>
   <div></div>
