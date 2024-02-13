@@ -1,6 +1,6 @@
 import mrg from './mrg.jpg'
 import './homepage.css';
-import {cv} from './'
+
 
 export default function Home(){
 
@@ -13,10 +13,11 @@ export default function Home(){
 
 
     return(
-<div >
+<div id='mainContainerHome' >
 
-  <div>  
-    <a href={cv} download={'sdf'}> download cv</a>
+  <div id='profileDiv'>  
+    
+    
   </div>
   <div></div>
   <div></div>

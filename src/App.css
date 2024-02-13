@@ -30,6 +30,7 @@
   background-color: white;
   color: rgb(108, 2, 206);
   transition: 0.5s;
+  border-radius: 10px;
 }
 
 /* this is catchMe part */
