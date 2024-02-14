@@ -1,13 +1,11 @@
-body{
-    background-image: url(./back.jpeg);
-    background-repeat: no-repeat;
-    background-size:cover;
-}
+
 
 #mainContainerHome {
     
-    
-    
+    background-image: url(./back.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 440px;
 }
 
 #test{
