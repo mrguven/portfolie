@@ -18,27 +18,22 @@
     width: 30%;
     border-radius: 50%;
     height: 350px;
-    animation: profil;
-    animation-duration: 4s;
-    animation-timing-function: ease;
-    padding-left: 40%;
+   margin-left: 20%;
 }
 
-@keyframes profil {
-    from{display: none;} to {display:block;}
-}
 
-/* @keyframes slidetext {
+
+ /* @keyframes slidetext {
     from{padding: 0px;opacity: 0;}to{padding: 100px;opacity: 1;}
-}
-#text{
+} */
+ #text1{
     top: 0;
     font-size: xx-large;
     color: aliceblue;
     font-style: oblique;
-animation: slidetext ;
+/* animation: slidetext ;
 animation-duration:2s;
 animation-timing-function: ease-in;
-animation-fill-mode: forwards;
-} */
+animation-fill-mode: forwards; */
+} 
 
