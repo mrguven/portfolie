@@ -5,7 +5,8 @@
     background-image: url(./back.jpeg);
     background-repeat: no-repeat;
     background-size:cover;
-    height: 440px;
+
+    height: 1000px;
     
 }
 
@@ -17,4 +18,27 @@
     width: 30%;
     border-radius: 50%;
     height: 350px;
+    animation: profil;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    padding-left: 40%;
 }
+
+@keyframes profil {
+    from{display: none;} to {display:block;}
+}
+
+/* @keyframes slidetext {
+    from{padding: 0px;opacity: 0;}to{padding: 100px;opacity: 1;}
+}
+#text{
+    top: 0;
+    font-size: xx-large;
+    color: aliceblue;
+    font-style: oblique;
+animation: slidetext ;
+animation-duration:2s;
+animation-timing-function: ease-in;
+animation-fill-mode: forwards;
+} */
+
