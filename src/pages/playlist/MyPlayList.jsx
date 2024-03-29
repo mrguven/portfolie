@@ -1,9 +1,10 @@
-import ControlPanel from "../components/ControlPanel";
+import ControlPanel from "../../components/ControlPanel";
 import { useState } from "react";
-import nextButton from "../nextButton.png";
-import playButton from "../play button.png";
-import pauseButton from "../pauseButton.png";
-import stopButton from "../stopButton.png";
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
+import PauseCircleOutlineIcon from '@mui/icons-material/PauseCircleOutline';
+import StopCircleIcon from '@mui/icons-material/StopCircle';
+import SkipNextIcon from '@mui/icons-material/SkipNext';
+
 
 export default function MyPlayList() {
   return (
@@ -32,16 +33,16 @@ export default function MyPlayList() {
         <div id="playlist-Image"></div>
         <div id="music-Info"></div>
         <div id="nextButtonImage">
-          <img className="control-Panel-Image" src={nextButton} alt="next" />
+          <SkipNextIcon />
         </div>
         <div id="playButtonImage">
-          <img className="control-Panel-Image" src={playButton} alt="play" />
+          <PlayCircleOutlineIcon />
         </div>
         <div id="pauseButtonlImage">
-          <img className="control-Panel-Image" src={pauseButton} alt="pause" />
+          <PauseCircleOutlineIcon />
         </div>
         <div id="stopButtonlImage">
-          <img className="control-Panel-Image" src={stopButton} alt="stop" />
+          <StopCircleIcon />
         </div>
 
         <div id="music-Suggestions"></div>

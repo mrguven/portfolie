@@ -1,3 +1,9 @@
+
+ /* Navbar */
+.active{
+  text-decoration: none;
+}
+
 #navUl li:last-child {
   border-right: none;
   float: right;
