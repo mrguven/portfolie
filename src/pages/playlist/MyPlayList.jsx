@@ -1,4 +1,3 @@
-import ControlPanel from "../../components/ControlPanel";
 import { useState } from "react";
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import PauseCircleOutlineIcon from '@mui/icons-material/PauseCircleOutline';

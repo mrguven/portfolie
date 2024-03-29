@@ -48,7 +48,7 @@ export default function NavBar() {
               aria-expanded={open ? "true" : undefined}
               onClick={handleClick}
             >
-              <AccountCircleIcon />
+              <AccountCircleIcon style={{color:"white",fontSize:"40px"}}/>
             </Button>
             <Menu
               id="basic-menu"

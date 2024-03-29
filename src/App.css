@@ -2,6 +2,7 @@
  /* Navbar */
 .active{
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 #navUl li:last-child {
