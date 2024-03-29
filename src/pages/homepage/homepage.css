@@ -1,14 +1,15 @@
 
 
-#mainContainerHome {
+#mainContainerHome{
     
     background-image: url(./back.png);
     background-repeat: no-repeat;
     background-size:cover;
-
+    background-attachment: fixed;
     height: 1000px;
-    
+   
 }
+
 
 #test{
     font-size: 100px;
