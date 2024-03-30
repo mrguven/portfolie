@@ -27,9 +27,7 @@ export default function MyTaxi() {
   const [departureOptions, setDepartureOptions] = useState();
   const [arrivingOptions, setArrivingOptions] = useState();
 
-  const savePlaceDetailsToState = () => {
-    console.log("savePlaceDetailsToState");
-  };
+  const savePlaceDetailsToState = () => {};
 
   let newmap;
 
@@ -56,7 +54,7 @@ export default function MyTaxi() {
   useEffect(() => {
     getMap();
     window.onload = function () {
-      var today = new Date().toISOString().split("T")[0];
+      let today = new Date().toISOString().split("T")[0];
       document.getElementsByName("time")[0].setAttribute("min", today);
     };
   }, []);
@@ -81,10 +79,10 @@ export default function MyTaxi() {
       });
     });
 
-    var directionsService = new window.google.maps.DirectionsService();
-    var directionsRenderer = new window.google.maps.DirectionsRenderer();
+    let directionsService = new window.google.maps.DirectionsService();
+    let directionsRenderer = new window.google.maps.DirectionsRenderer();
 
-    var request = {
+    let request = {
       origin: departure,
       destination: arriving,
       travelMode: "DRIVING",
@@ -92,11 +90,9 @@ export default function MyTaxi() {
     await directionsService.route(request, function (response, status) {
       if (status == "OK") {
         directionsRenderer.setDirections(response);
-        console.log(response);
+
         directionsRenderer.setMap(newmap);
-        console.log(map);
         setSearch(response);
-        console.log(search);
       }
     });
 
@@ -124,25 +120,17 @@ export default function MyTaxi() {
   // }, [placePredictions]);
 
   useEffect(() => {
-    console.log(search);
-
     setDistance(search?.routes[0]?.legs[0]?.distance.value / 1000);
-
     setTravelTime(search?.routes[0]?.legs[0]?.duration.value / 60);
     setTotal((distance * 3 + travelTime * 0.4).toFixed(2));
-
-    console.log(total);
-
-    console.log(travelTime);
-    console.log(distance);
   });
 
   return (
     <div id="mainContainer">
       <div id="header">
-        <h1 id="head">MyTaxi</h1>
+        <h1 id="head">MayTax</h1>
 
-        <h1 className="subHead">MyTaxi</h1>
+        <h1 className="subHead">MayTax</h1>
 
         <h3>We Zijn Altijd Klaar...</h3>
 
